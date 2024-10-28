@@ -25,6 +25,12 @@
     --radius: 0.5rem;
   }
 
+  /* No seu arquivo global CSS, por exemplo, styles/globals.css */
+html, body {
+  overflow-x: hidden; /* Remove a rolagem horizontal */
+}
+
+  
 @layer base {
   * {
     @apply box-border;

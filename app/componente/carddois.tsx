@@ -6,11 +6,11 @@ import Link from "next/link";
 const CardDois = () => {
   return (
     <>
-      <div className="m-2 h-[700px] w-[450px] justify-center rounded-xl bg-white shadow-xl">
+      <div className="m-2 h-[700px] w-[600px] justify-center rounded-xl bg-white shadow-xl">
         <Image
           className="rounded-t-xl"
           src={mario}
-          width={500}
+          width={600}
           height={500}
           alt="imagem de controle"
         />

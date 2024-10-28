@@ -1,16 +1,16 @@
 import Image from "next/image";
-import controle from "@/public/controle.png";
+import teste from "@/public/crash.jpg";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const Card = () => {
   return (
     <>
-      <div className="m-2 h-[700px] w-[450px] justify-center rounded-xl bg-white shadow-xl">
+      <div className="m-2 h-[700px] w-[600px] justify-center rounded-xl bg-white shadow-xl">
         <Image
           className="rounded-t-xl"
-          src={controle}
-          width={500}
+          src={teste}
+          width={600}
           height={500}
           alt="imagem de controle"
         />
