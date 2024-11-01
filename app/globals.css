@@ -28,6 +28,11 @@
   /* No seu arquivo global CSS, por exemplo, styles/globals.css */
 html, body {
   overflow-x: hidden; /* Remove a rolagem horizontal */
+  scrollbar-width: none; /* Firefox */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari e Opera */
 }
 
   

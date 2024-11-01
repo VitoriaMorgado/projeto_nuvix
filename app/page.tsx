@@ -25,11 +25,13 @@ import CardTres from "./componente/cardtres";
 import Cardquatro from "./componente/cardquatro";
 import Link from "next/link";
 import logo from "@/public/logo.png";
+import JogoAcao from "./componente/jogo";
+import Red from "@/public/red.png";
 
 const Home = () => {
   return (
     <>
-      <div className="flex-column m-0 h-full w-screen justify-center bg-gradient-to-b from-blue-900 to-blue-950 p-0">
+      <div className="m-0 h-full w-full flex-col justify-center bg-gradient-to-b from-[#111e42] to-[#184988] p-0">
         {/* BANNER COMEÇO */}
 
         {/* FUNDO BANNER COMEÇO */}
@@ -45,12 +47,18 @@ const Home = () => {
 
         {/* FUNDO BANNER FIM */}
 
-        <div>
+        <div className="flex flex-col">
           <div>
             {/* MENU COMEÇO */}
             <div className="sticky flex">
-              <Menubar className="border-transparent bg-transparent">
+              <Menubar className="w-full border-transparent bg-transparent">
                 <MenubarMenu>
+                  <Image
+                    src={logo}
+                    width={100}
+                    height={100}
+                    alt="imagem do mine"
+                  />
                   <MenubarTrigger className="h-[30px] w-[80px] justify-center text-xl font-bold text-sky-100">
                     File
                   </MenubarTrigger>
@@ -123,7 +131,7 @@ const Home = () => {
             {/* MENU FIM */}
 
             {/* ESCRITAS DO BANNER COMEÇO */}
-            <div className="h-[860px]">
+            <div className="h-auto">
               <div className="sticky h-[800px] w-screen justify-items-center">
                 <div className="h-[800px] w-screen content-center">
                   <div className="mx-3">
@@ -140,7 +148,10 @@ const Home = () => {
                       Doloribus, quo ad nisi soluta error esse beatae placeat!
                     </p>
                     <div className="mx-[140px]">
-                      <button className="h-[55px] w-[230px] rounded-full bg-blue-700 text-3xl text-sky-100">
+                      <button className="text-dark h-[55px] w-[230px] rounded-full bg-[#98FF98] text-3xl font-bold">
+                        {/* Cores
+                        vermelho: #b41a1a
+                         */}
                         Jogue agora
                       </button>
                     </div>
@@ -155,11 +166,44 @@ const Home = () => {
 
         {/* CATALOGO COMEÇO */}
         <div>
-          <div className="h-[1000px]">
-            <div className="h-[160px] content-center justify-items-center">
+          <div className="h-[650px]">
+            <div className="h-[200px] content-center justify-items-center">
               <h1 className="text-6xl font-bold text-sky-100">
                 Explorar catalogo
               </h1>
+            </div>
+            <div className="justify-items-center">
+              <div className="w-[1800px]">
+                <Carousel>
+                  <CarouselContent>
+                    <CarouselItem className="lg:basis:-3/4 md:basis-1/4">
+                      <JogoAcao></JogoAcao>
+                    </CarouselItem>
+                    <CarouselItem className="lg:basis:-3/4 md:basis-1/4">
+                      <JogoAcao></JogoAcao>
+                    </CarouselItem>
+                    <CarouselItem className="lg:basis:-3/4 md:basis-1/4">
+                      <JogoAcao></JogoAcao>
+                    </CarouselItem>
+                    <CarouselItem className="lg:basis:-3/4 md:basis-1/4">
+                      <JogoAcao></JogoAcao>
+                    </CarouselItem>
+                  </CarouselContent>
+                  <CarouselPrevious />
+                  <CarouselNext />
+                </Carousel>
+              </div>
+            </div>
+          </div>
+          <div className="my-5 h-[500px]">
+            <div className="mx-[70px] h-[450px] w-[1100px] content-center bg-slate-500">
+              <Image
+                className="mx-[35px]"
+                src={Red}
+                width={600}
+                height={500}
+                alt="imagem do red"
+              />
             </div>
           </div>
         </div>

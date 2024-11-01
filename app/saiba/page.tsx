@@ -5,7 +5,7 @@ const Saibamais = () => {
   return (
     <>
       <div className="h-screen bg-cyan-700">
-        <Link href="/vitoria">
+        <Link href="/">
           <button>
             <CornerUpLeft />
           </button>
