@@ -1,0 +1,31 @@
+.cardi{
+    background-color: white;
+    width: 600px;
+    height: 700px;
+    border-radius: 10px;
+    margin: 8px;
+}
+.azulzin{
+    background-color: #019EC2;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: max-content;
+    color: #F6F7F8;
+    font-size: 20px;
+    font-weight: bold;
+}
+.titulo{
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.paragrafo{
+    font-family: monospace;
+    font-size: 20px;
+}
+
+.botao{
+    padding: 4px;
+    font-weight: bold;
+    box-shadow: 2px 3px 10px #0000007e;
+}

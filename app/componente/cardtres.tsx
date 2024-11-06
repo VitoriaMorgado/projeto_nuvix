@@ -1,36 +1,29 @@
 import Image from "next/image";
-import play from "@/public/play.png";
-import { ArrowRight } from "lucide-react";
+import estilo from "./card.module.css";
+import jogos from "@/public/play.png";
 import Link from "next/link";
 
 const CardTres = () => {
   return (
     <>
-      <div className="m-2 h-[700px] w-[600px] justify-center rounded-xl bg-white shadow-xl">
+      <div className={estilo.cardi}>
         <Image
           className="rounded-t-xl"
-          src={play}
+          src={jogos}
           width={600}
           height={500}
           alt="imagem de controle"
         />
         <div className="m-10">
-          <div className="h-7 w-[200px] justify-items-center bg-sky-500">
-            <p className="font-bold text-white">Jogos com os amigos</p>
-          </div>
-          <h1 className="py-2 text-3xl font-bold">
-            Explore o catalogo de jogos co-op
-          </h1>
-          <p className="font-mono text-[18px]">
+          <p className={estilo.azulzin}>Jogos com os amigos</p>
+          <h1 className={estilo.titulo}>Explore o catalogo co-op</h1>
+          <p className={estilo.paragrafo}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
             dignissimos, assumenda laboriosam, repellendus eos numquam
             doloremque, neque rem deserunt molestias laborum odit maiores?
           </p>
           <Link href="/saiba">
-            <button className="flex p-1 font-bold shadow">
-              <p className="my-1">SAIBA MAIS</p>
-              <ArrowRight className="mx-0.5 my-1.5 w-[16px]" />
-            </button>
+            <button className={estilo.botao}>SAIBA MAIS</button>
           </Link>
         </div>
       </div>

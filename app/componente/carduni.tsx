@@ -1,9 +1,9 @@
 import Image from "next/image";
 import estilo from "./card.module.css";
-import jogos from "@/public/mario.png";
+import jogos from "@/public/crash.jpg";
 import Link from "next/link";
 
-const CardDois = () => {
+const Carduni = () => {
   return (
     <>
       <div className={estilo.cardi}>
@@ -15,11 +15,13 @@ const CardDois = () => {
           alt="imagem de controle"
         />
         <div className="m-10">
-          <p className={estilo.azulzin}>Jogos classicos</p>
-          <h1 className={estilo.titulo}>Os melhores jogos</h1>
+          <p className={estilo.azulzin}>A maior varidade de jogos</p>
+          <h1 className={estilo.titulo}>Explore</h1>
           <p className={estilo.paragrafo}>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            Reprehenderit nam officiis atque laborum tempora animi quisquam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
+            ipsa? Similique odio fugit veniam autem cupiditate quas quod! Et
+            maxime asperiores maiores voluptate illum odit, corporis numquam
+            expedita laboriosam quo.
           </p>
           <Link href="/saiba">
             <button className={estilo.botao}>SAIBA MAIS</button>
@@ -30,4 +32,4 @@ const CardDois = () => {
   );
 };
 
-export default CardDois;
+export default Carduni;
