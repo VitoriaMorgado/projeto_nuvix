@@ -24,9 +24,15 @@ import CardTres from "./componente/cardtres";
 import Cardquatro from "./componente/cardquatro";
 import Link from "next/link";
 import logo from "@/public/logo.png";
-import JogoAcao from "./componente/jogo";
 import Red from "@/public/red.png";
 import Carduni from "./componente/carduni";
+import Card02 from "./componente/cards/card02";
+import Card01 from "./componente/cards/card01";
+import Card03 from "./componente/cards/card03";
+import Card04 from "./componente/cards/card04";
+import Card05 from "./componente/cards/card05";
+import Card06 from "./componente/cards/card06";
+import Card07 from "./componente/cards/card07";
 
 const Home = () => {
   return (
@@ -178,25 +184,25 @@ const Home = () => {
                   <Carousel>
                     <CarouselContent>
                       <CarouselItem className="mx-3 md:basis-1/6">
-                        <JogoAcao></JogoAcao>
+                        <Card01></Card01>
                       </CarouselItem>
                       <CarouselItem className="mx-3 md:basis-1/6">
-                        <JogoAcao></JogoAcao>
+                        <Card02></Card02>
                       </CarouselItem>
                       <CarouselItem className="mx-3 md:basis-1/6">
-                        <JogoAcao></JogoAcao>
+                        <Card03></Card03>
                       </CarouselItem>
                       <CarouselItem className="mx-3 md:basis-1/6">
-                        <JogoAcao></JogoAcao>
+                        <Card04></Card04>
                       </CarouselItem>
                       <CarouselItem className="mx-3 md:basis-1/6">
-                        <JogoAcao></JogoAcao>
+                        <Card05></Card05>
                       </CarouselItem>
                       <CarouselItem className="mx-3 md:basis-1/6">
-                        <JogoAcao></JogoAcao>
+                        <Card06></Card06>
                       </CarouselItem>
                       <CarouselItem className="mx-3 md:basis-1/6">
-                        <JogoAcao></JogoAcao>
+                        <Card07></Card07>
                       </CarouselItem>
                     </CarouselContent>
                     <CarouselPrevious />
@@ -252,7 +258,7 @@ const Home = () => {
             <h1>Maximize sua diversão com a Nuvix</h1>
           </div>
           <div className="justify-items-center">
-            <div className="w-[1900px] p-6">
+            <div className="w-[1700px] justify-center p-6">
               <Carousel>
                 <CarouselContent>
                   <CarouselItem className="md:basis-3/6 lg:basis-3/6">
@@ -272,6 +278,9 @@ const Home = () => {
                   </CarouselItem>
                   <CarouselItem className="md:basis-3/6 lg:basis-3/6">
                     <Cardquatro></Cardquatro>
+                  </CarouselItem>
+                  <CarouselItem className="md:basis-3/6 lg:basis-3/6">
+                    <CardDois></CardDois>
                   </CarouselItem>
                 </CarouselContent>
                 <CarouselPrevious />
@@ -310,7 +319,7 @@ const Home = () => {
                 <p className="mb-2 text-center">Benefícios</p>
                 <p className="mb-2 text-center">Benefícios</p>
                 <Link href="/login">
-                  <button className="mt-10 w-full rounded bg-[#019EC2] py-2 text-white hover:bg-blue-900">
+                  <button className="mt-10 w-full rounded bg-[#019EC2] py-2 text-white hover:bg-[#198097]">
                     Assinar
                   </button>
                 </Link>
@@ -326,7 +335,7 @@ const Home = () => {
                 <p className="mb-2 text-center">Benefícios</p>
                 <p className="mb-2 text-center">Benefícios</p>
                 <Link href="/login">
-                  <button className="mt-10 w-full rounded bg-[#019EC2] py-2 text-white hover:bg-blue-900">
+                  <button className="mt-10 w-full rounded bg-[#019EC2] py-2 text-white hover:bg-[#198097]">
                     Assinar
                   </button>
                 </Link>

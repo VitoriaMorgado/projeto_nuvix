@@ -31,6 +31,42 @@ const JogoPage = () => {
             </div>
           </div>
         </div>
+        <div className="m-9 flex">
+          <h1 className="font-mono text-5xl text-white">God of War Ragnarök</h1>
+          <div className="w-[1300px] content-center">
+            <div className="justify-self-end">
+              <button className="h-[40px] w-[150px] rounded-md bg-lime-500 text-2xl font-bold">
+                Qualquer
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className="m-8 h-[700px] w-[1740px] justify-self-center bg-slate-600">
+          <div className="flex">
+            <div className="p-8">
+              <Image
+                src="/god.jpg"
+                width={900}
+                height={500}
+                alt="imagem de controle"
+              />
+            </div>
+            <div className="p-8">
+              <Image
+                src="/god2.jpg"
+                width={700}
+                height={500}
+                alt="imagem de controle"
+              />
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+                non ratione placeat aliquam exercitationem cum natus architecto
+                alias deserunt eligendi vel ad omnis facilis consequuntur, odio
+                repellat modi? Est, nisi.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
