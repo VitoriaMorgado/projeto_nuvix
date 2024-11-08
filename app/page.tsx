@@ -56,7 +56,7 @@ const Home = () => {
         <div className="flex flex-col">
           <div>
             {/* MENU COMEÇO */}
-            <div className="sticky flex">
+            <div className="sticky flex bg-black">
               <Menubar className="w-full border-transparent bg-transparent">
                 <MenubarMenu>
                   <Image
@@ -66,7 +66,7 @@ const Home = () => {
                     alt="imagem do mine"
                   />
                   <MenubarTrigger className="h-[30px] w-[80px] justify-center text-xl font-bold text-[#F6F7F8]">
-                    File
+                    Destaques
                   </MenubarTrigger>
                   <MenubarContent>
                     <MenubarItem>
@@ -81,7 +81,7 @@ const Home = () => {
                 </MenubarMenu>
                 <MenubarMenu>
                   <MenubarTrigger className="h-[30px] w-[80px] justify-center text-xl font-bold text-[#F6F7F8]">
-                    File
+                    Jogos
                   </MenubarTrigger>
                   <MenubarContent>
                     <MenubarItem>
@@ -96,7 +96,7 @@ const Home = () => {
                 </MenubarMenu>
                 <MenubarMenu>
                   <MenubarTrigger className="h-[30px] w-[80px] justify-center text-xl font-bold text-[#F6F7F8]">
-                    File
+                    Assinatura
                   </MenubarTrigger>
                   <MenubarContent>
                     <MenubarItem>
@@ -110,8 +110,8 @@ const Home = () => {
                   </MenubarContent>
                 </MenubarMenu>
                 <MenubarMenu>
-                  <MenubarTrigger className="h-[30px] w-[80px] justify-center text-xl font-bold text-[#F6F7F8]">
-                    File
+                  <MenubarTrigger className="h-[30px] w-[150px] justify-center text-xl font-bold text-[#F6F7F8]">
+                    Fale conosco
                   </MenubarTrigger>
                   <MenubarContent>
                     <MenubarItem>
@@ -259,27 +259,32 @@ const Home = () => {
           </div>
           <div className="justify-items-center">
             <div className="w-[1700px] justify-center p-6">
-              <Carousel>
-                <CarouselContent>
-                  <CarouselItem className="md:basis-3/6 lg:basis-3/6">
+              <Carousel
+                opts={{
+                  align: "center",
+                  loop: true,
+                }}
+              >
+                <CarouselContent className="gap-6">
+                  <CarouselItem className="lg:basis-3/6">
                     <Carduni></Carduni>
                   </CarouselItem>
-                  <CarouselItem className="md:basis-3/6 lg:basis-3/6">
+                  <CarouselItem className="lg:basis-3/6">
                     <CardDois></CardDois>
                   </CarouselItem>
-                  <CarouselItem className="md:basis-3/6 lg:basis-3/6">
+                  <CarouselItem className="lg:basis-3/6">
                     <CardTres></CardTres>
                   </CarouselItem>
-                  <CarouselItem className="md:basis-3/6 lg:basis-3/6">
+                  <CarouselItem className="lg:basis-3/6">
                     <Cardquatro></Cardquatro>
                   </CarouselItem>
-                  <CarouselItem className="md:basis-3/6 lg:basis-3/6">
+                  <CarouselItem className="lg:basis-3/6">
                     <Cardquatro></Cardquatro>
                   </CarouselItem>
-                  <CarouselItem className="md:basis-3/6 lg:basis-3/6">
+                  <CarouselItem className="lg:basis-3/6">
                     <Cardquatro></Cardquatro>
                   </CarouselItem>
-                  <CarouselItem className="md:basis-3/6 lg:basis-3/6">
+                  <CarouselItem className="lg:basis-3/6">
                     <CardDois></CardDois>
                   </CarouselItem>
                 </CarouselContent>
