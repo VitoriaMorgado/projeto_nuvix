@@ -1,6 +1,6 @@
 import Image from "next/image";
 import estilo from "./card.module.css";
-import jogos from "@/public/mario.png";
+import jogos from "@/public/classico.jpg";
 import Link from "next/link";
 
 const CardDois = () => {
@@ -18,8 +18,10 @@ const CardDois = () => {
           <p className={estilo.azulzin}>Jogos classicos</p>
           <h1 className={estilo.titulo}>Os melhores jogos</h1>
           <p className={estilo.paragrafo}>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            Reprehenderit nam officiis atque laborum tempora animi quisquam.
+            Na Nuvix, você pode jogar os grandes sucessos de antigamente
+            diretamente do navegador, sem precisar de consoles antigos ou
+            downloads pesados. É nostalgia na ponta dos dedos, com qualidade e
+            praticidade!
           </p>
           <Link href="/saiba">
             <button className={estilo.botao}>SAIBA MAIS</button>

@@ -8,10 +8,9 @@ import {
   MenubarItem,
   MenubarMenu,
   MenubarSeparator,
-  MenubarShortcut,
   MenubarTrigger,
 } from "@/components/ui/menubar";
-import { Search } from "lucide-react";
+import { CircleUser, Search } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -38,6 +37,87 @@ const Home = () => {
   return (
     <>
       <div className="m-0 h-full w-full flex-col justify-center p-0">
+        {/* MENU COMEÇO */}
+        <div>
+          <div className="flex h-[60px] bg-black">
+            <Menubar className="mt-2 w-full border-transparent bg-transparent">
+              <MenubarMenu>
+                <Image
+                  src={logo}
+                  width={150}
+                  height={100}
+                  alt="imagem do mine"
+                />
+                <MenubarTrigger className="h-[30px] w-[120px] justify-center text-xl font-bold text-[#F6F7F8]">
+                  Destaques
+                </MenubarTrigger>
+                <MenubarContent>
+                  <MenubarItem>Catalogo</MenubarItem>
+                  <MenubarSeparator />
+                  <MenubarItem>Jogos Em Destaque</MenubarItem>
+                  <MenubarSeparator />
+                  <MenubarItem>Novidades</MenubarItem>
+                </MenubarContent>
+              </MenubarMenu>
+              <MenubarMenu>
+                <MenubarTrigger className="h-[30px] w-[80px] justify-center text-xl font-bold text-[#F6F7F8]">
+                  Jogos
+                </MenubarTrigger>
+                <MenubarContent>
+                  <MenubarItem>Catalogo</MenubarItem>
+                  <MenubarSeparator />
+                  <MenubarItem>Destaque</MenubarItem>
+                  <MenubarSeparator />
+                </MenubarContent>
+              </MenubarMenu>
+              <MenubarMenu>
+                <MenubarTrigger className="h-[30px] w-[120px] justify-center text-xl font-bold text-[#F6F7F8]">
+                  Assinatura
+                </MenubarTrigger>
+                <MenubarContent>
+                  <MenubarItem>Nuvix Plus</MenubarItem>
+                  <MenubarSeparator />
+                  <MenubarItem>Pacote Essencial</MenubarItem>
+                </MenubarContent>
+              </MenubarMenu>
+              <MenubarMenu>
+                <MenubarTrigger className="h-[30px] w-[150px] justify-center text-xl font-bold text-[#F6F7F8]">
+                  Fale conosco
+                </MenubarTrigger>
+                <MenubarContent>
+                  <MenubarItem>Sobre Nós</MenubarItem>
+                  <MenubarSeparator />
+                  <MenubarItem>Nos Contate</MenubarItem>
+                  <MenubarSeparator />
+                </MenubarContent>
+              </MenubarMenu>
+              <MenubarMenu>
+                <MenubarTrigger className="h-[30px] w-[110px] text-xl font-bold text-[#F6F7F8]">
+                  <div className="flex">
+                    <CircleUser className="me-2 mt-0.5" />
+                    <p>Conta</p>
+                  </div>
+                </MenubarTrigger>
+                <MenubarContent>
+                  <MenubarItem>Cadastre-se</MenubarItem>
+                  <MenubarSeparator />
+                  <MenubarItem>Login</MenubarItem>
+                  <MenubarSeparator />
+                </MenubarContent>
+              </MenubarMenu>
+            </Menubar>
+            <div className="flex">
+              <Search className="mx-2 mt-4 text-white" />
+              <input
+                type="text"
+                className="bg-transparent text-xl text-white"
+                placeholder="Search"
+              />
+            </div>
+          </div>
+        </div>
+        {/* MENU FIM */}
+
         {/* BANNER COMEÇO */}
 
         {/* FUNDO BANNER COMEÇO */}
@@ -55,108 +135,32 @@ const Home = () => {
 
         <div className="flex flex-col">
           <div>
-            {/* MENU COMEÇO */}
-            <div className="sticky flex bg-black">
-              <Menubar className="w-full border-transparent bg-transparent">
-                <MenubarMenu>
-                  <Image
-                    src={logo}
-                    width={100}
-                    height={100}
-                    alt="imagem do mine"
-                  />
-                  <MenubarTrigger className="h-[30px] w-[80px] justify-center text-xl font-bold text-[#F6F7F8]">
-                    Destaques
-                  </MenubarTrigger>
-                  <MenubarContent>
-                    <MenubarItem>
-                      New Tab <MenubarShortcut>⌘T</MenubarShortcut>
-                    </MenubarItem>
-                    <MenubarItem>New Window</MenubarItem>
-                    <MenubarSeparator />
-                    <MenubarItem>Share</MenubarItem>
-                    <MenubarSeparator />
-                    <MenubarItem>Print</MenubarItem>
-                  </MenubarContent>
-                </MenubarMenu>
-                <MenubarMenu>
-                  <MenubarTrigger className="h-[30px] w-[80px] justify-center text-xl font-bold text-[#F6F7F8]">
-                    Jogos
-                  </MenubarTrigger>
-                  <MenubarContent>
-                    <MenubarItem>
-                      New Tab <MenubarShortcut>⌘T</MenubarShortcut>
-                    </MenubarItem>
-                    <MenubarItem>New Window</MenubarItem>
-                    <MenubarSeparator />
-                    <MenubarItem>Share</MenubarItem>
-                    <MenubarSeparator />
-                    <MenubarItem>Print</MenubarItem>
-                  </MenubarContent>
-                </MenubarMenu>
-                <MenubarMenu>
-                  <MenubarTrigger className="h-[30px] w-[80px] justify-center text-xl font-bold text-[#F6F7F8]">
-                    Assinatura
-                  </MenubarTrigger>
-                  <MenubarContent>
-                    <MenubarItem>
-                      New Tab <MenubarShortcut>⌘T</MenubarShortcut>
-                    </MenubarItem>
-                    <MenubarItem>New Window</MenubarItem>
-                    <MenubarSeparator />
-                    <MenubarItem>Share</MenubarItem>
-                    <MenubarSeparator />
-                    <MenubarItem>Print</MenubarItem>
-                  </MenubarContent>
-                </MenubarMenu>
-                <MenubarMenu>
-                  <MenubarTrigger className="h-[30px] w-[150px] justify-center text-xl font-bold text-[#F6F7F8]">
-                    Fale conosco
-                  </MenubarTrigger>
-                  <MenubarContent>
-                    <MenubarItem>
-                      New Tab <MenubarShortcut>⌘T</MenubarShortcut>
-                    </MenubarItem>
-                    <MenubarItem>New Window</MenubarItem>
-                    <MenubarSeparator />
-                    <MenubarItem>Share</MenubarItem>
-                    <MenubarSeparator />
-                    <MenubarItem>Print</MenubarItem>
-                  </MenubarContent>
-                </MenubarMenu>
-              </Menubar>
-              <div className="flex">
-                <Search className="m-2 text-white" />
-                <input
-                  type="text"
-                  className="border-transparent bg-transparent text-white"
-                  placeholder="Search"
-                />
-              </div>
-            </div>
-            {/* MENU FIM */}
-
             {/* ESCRITAS DO BANNER COMEÇO */}
             <div className="h-auto">
               <div className="sticky h-[800px] w-screen justify-items-center">
                 <div className="h-[800px] w-screen content-center">
                   <div className="mx-3">
-                    <p className="m-4 mx-4 text-3xl text-[#F6F7F8]">
+                    <h1 className="m-4 ms-[150px] text-7xl font-bold text-[#F6F7F8]">
+                      Nuvix
+                    </h1>
+                    <p className="m-4 ms-12 text-2xl text-[#F6F7F8]">
                       O melhor serviço de jogos na nuvem
                     </p>
-                    <h1 className="m-4 text-7xl font-bold text-[#F6F7F8]">
-                      Cloud Game
-                    </h1>
                     <p className="m-4 mx-4 w-[500px] text-justify text-xl text-[#F6F7F8]">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                      Quam, temporibus. Eos doloribus nisi, atque alias
-                      blanditiis recusandae delectus magni aut beatae.
-                      Doloribus, quo ad nisi soluta error esse beatae placeat!
+                      Experimente a revolução dos jogos na nuvem: jogue os
+                      títulos mais recentes e de alta qualidade sem precisar de
+                      um PC poderoso ou console. Com a tecnologia de nuvem, você
+                      acessa seus jogos favoritos de qualquer dispositivo, a
+                      qualquer hora e em qualquer lugar, sem longas esperas para
+                      downloads ou atualizações. A diversão está ao alcance de
+                      um clique!
                     </p>
                     <div className="mx-[140px]">
-                      <button className="h-[55px] w-[230px] rounded-br-3xl rounded-tl-3xl bg-[#019EC2] text-3xl font-bold text-[#F6F7F8]">
-                        Jogue agora
-                      </button>
+                      <Link href="/jogo">
+                        <button className="h-[55px] w-[230px] rounded-br-3xl rounded-tl-3xl bg-[#019EC2] text-3xl font-bold text-[#F6F7F8] hover:bg-[#198097]">
+                          Jogue agora
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -173,7 +177,7 @@ const Home = () => {
 
           {/* CATALOGO COMEÇO */}
           <div>
-            <div className="h-[650px]">
+            <div className="mt-[70px] h-[650px]">
               <div className="mt-8 h-[200px] content-center justify-items-center">
                 <h1 className="text-6xl font-bold text-[#F6F7F8]">
                   Explorar catalogo
@@ -181,7 +185,12 @@ const Home = () => {
               </div>
               <div className="justify-items-center">
                 <div className="w-[1800px]">
-                  <Carousel>
+                  <Carousel
+                    opts={{
+                      align: "start",
+                      loop: true,
+                    }}
+                  >
                     <CarouselContent>
                       <CarouselItem className="mx-3 md:basis-1/6">
                         <Card01></Card01>
@@ -227,23 +236,23 @@ const Home = () => {
                         Red Dead Redemption 2
                       </h1>
                       <p className="my-3 w-[400px] text-left text-xl text-[#F6F7F8]">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Quo tempore debitis labore et, iure veritatis vel
-                        quasi officiis eos. Ullam nam laborum reiciendis tenetur
-                        itaque exercitationem, architecto impedit commodi
-                        facilis!
+                        Red Dead Redemption 2, a épica aventura de mundo aberto
+                        da Rockstar Games aclamada pela crítica e o jogo mais
+                        bem avaliado desta geração de consoles, agora chega
+                        aprimorado para PC com conteúdos inéditos no Modo
+                        História, melhorias visuais e muito mais.
                       </p>
-                      <button className="mx-[100px] h-[55px] w-[230px] rounded-bl-3xl rounded-tr-3xl bg-[#019EC2] text-3xl font-bold text-[#F6F7F8]">
+                      <button className="mx-[100px] h-[55px] w-[230px] rounded-bl-3xl rounded-tr-3xl bg-[#019EC2] text-3xl font-bold text-[#F6F7F8] hover:bg-[#198097]">
                         Jogue agora
                       </button>
                     </div>
                   </div>
                 </div>
                 <div className="h-[450px] w-[500px] justify-center p-8">
-                  <button className="mx-[100px] my-[30px] mt-[250px] h-[55px] w-[230px] rounded-bl-3xl rounded-tr-3xl bg-[#019EC2] text-3xl font-bold text-[#F6F7F8]">
+                  <button className="mx-[100px] my-[30px] mt-[250px] h-[55px] w-[230px] rounded-bl-3xl rounded-tr-3xl bg-[#019EC2] text-3xl font-bold text-[#F6F7F8] hover:bg-[#198097]">
                     Semelhantes
                   </button>
-                  <button className="mx-[100px] h-[55px] w-[230px] rounded-bl-3xl rounded-tr-3xl bg-[#019EC2] text-3xl font-bold text-[#F6F7F8]">
+                  <button className="mx-[100px] h-[55px] w-[230px] rounded-bl-3xl rounded-tr-3xl bg-[#019EC2] text-3xl font-bold text-[#F6F7F8] hover:bg-[#198097]">
                     Catalogo
                   </button>
                 </div>
@@ -257,8 +266,8 @@ const Home = () => {
           <div className="m-3 text-center text-[45px] font-bold text-[#F6F7F8]">
             <h1>Maximize sua diversão com a Nuvix</h1>
           </div>
-          <div className="justify-items-center">
-            <div className="w-[1700px] justify-center p-6">
+          <div className="mt-14 justify-items-center">
+            <div className="w-[1300px] justify-center p-6">
               <Carousel
                 opts={{
                   align: "center",
@@ -277,15 +286,6 @@ const Home = () => {
                   </CarouselItem>
                   <CarouselItem className="lg:basis-3/6">
                     <Cardquatro></Cardquatro>
-                  </CarouselItem>
-                  <CarouselItem className="lg:basis-3/6">
-                    <Cardquatro></Cardquatro>
-                  </CarouselItem>
-                  <CarouselItem className="lg:basis-3/6">
-                    <Cardquatro></Cardquatro>
-                  </CarouselItem>
-                  <CarouselItem className="lg:basis-3/6">
-                    <CardDois></CardDois>
                   </CarouselItem>
                 </CarouselContent>
                 <CarouselPrevious />
@@ -316,11 +316,14 @@ const Home = () => {
             <div className="mb-6 flex w-full max-w-[600px] justify-center space-x-7">
               {/* Plano Mensal */}
               <div className="mb-4 flex-1 rounded-lg bg-white p-6 shadow">
-                <h1 className="mb-7 text-center text-xl font-bold">Mensal</h1>
+                <h1 className="text-center text-xl font-bold">
+                  Plano Essencial
+                </h1>
+                <p className="mb-4 text-center font-light">Pagamento Mensal</p>
                 <p className="mb-5 text-center text-lg font-semibold">
-                  R$ 00,00
+                  R$ 50,00
                 </p>
-                <p className="mb-2 text-center">Benefícios</p>
+                <p className="mb-2 text-center">Preferencia Na Fila</p>
                 <p className="mb-2 text-center">Benefícios</p>
                 <p className="mb-2 text-center">Benefícios</p>
                 <Link href="/login">
@@ -332,11 +335,12 @@ const Home = () => {
 
               {/* Plano Anual */}
               <div className="mb-4 flex-1 rounded-lg bg-white p-6 shadow">
-                <h1 className="mb-7 text-center text-xl font-bold">Anual</h1>
+                <h1 className="text-center text-xl font-bold">Nuvix Plus</h1>
+                <p className="mb-4 text-center font-light">Pagamento Semanal</p>
                 <p className="mb-5 text-center text-lg font-semibold">
-                  R$ 00,00
+                  R$ 500,00
                 </p>
-                <p className="mb-2 text-center">Benefícios</p>
+                <p className="mb-2 text-center">Preferencia Na Fila</p>
                 <p className="mb-2 text-center">Benefícios</p>
                 <p className="mb-2 text-center">Benefícios</p>
                 <Link href="/login">

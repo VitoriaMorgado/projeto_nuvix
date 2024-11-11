@@ -23,18 +23,18 @@ const BotaoFav = () => {
       >
         {/* Exibe o ícone de coração cheio ou quebrado, dependendo do estado */}
         {isFavorite ? (
-          <div className="flex h-[55px] w-[220px] content-center rounded-md bg-red-600">
+          <div className="flex h-[57px] w-[220px] content-center rounded-md bg-red-600">
             <h1 className="mx-3 content-center font-mono text-3xl font-bold text-white">
               Favoritar
             </h1>
-            <Heart className="mt-2" color="white" size={40} />
+            <Heart className="mt-2.5" color="white" size={40} />
           </div>
         ) : (
-          <div className="flex h-[55px] w-[220px] content-center rounded-md bg-[#019EC2]">
+          <div className="flex h-[57px] w-[220px] content-center rounded-md bg-[#019EC2]">
             <h1 className="mx-3 content-center font-mono text-3xl font-bold text-white">
               Favoritar
             </h1>
-            <HeartOff className="mt-2" color="white" size={40} />
+            <HeartOff className="mt-2.5" color="white" size={40} />
           </div>
         )}
       </button>

@@ -18,9 +18,9 @@ const CardTres = () => {
           <p className={estilo.azulzin}>Aproveite nossos plano</p>
           <h1 className={estilo.titulo}>Aproveite nossas promoções</h1>
           <p className={estilo.paragrafo}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
-            dignissimos, assumenda laboriosam, repellendus eos numquam
-            doloremque.
+            Assine o Nuvix Plus para pular as filas e obter acesso antecipado
+            aos jogos do momento! Aumente ainda mais sua diversão com Nuvix
+            Plus!
           </p>
           <Link href="/saiba">
             <button className={estilo.botao}>SAIBA MAIS</button>

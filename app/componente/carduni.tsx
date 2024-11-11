@@ -1,6 +1,6 @@
 import Image from "next/image";
 import estilo from "./card.module.css";
-import jogos from "@/public/crash.jpg";
+import crash from "@/public/crash.jpg";
 import Link from "next/link";
 
 const Carduni = () => {
@@ -9,19 +9,19 @@ const Carduni = () => {
       <div className={estilo.cardi}>
         <Image
           className="rounded-t-xl"
-          src={jogos}
+          src={crash}
           width={600}
           height={500}
-          alt="imagem de controle"
+          alt="imagem do jogo Crash"
         />
         <div className="m-10">
           <p className={estilo.azulzin}>A maior varidade de jogos</p>
           <h1 className={estilo.titulo}>Explore</h1>
           <p className={estilo.paragrafo}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
-            ipsa? Similique odio fugit veniam autem cupiditate quas quod! Et
-            maxime asperiores maiores voluptate illum odit, corporis numquam
-            expedita laboriosam quo.
+            Nuvix oferece uma vasta variedade de jogos para todos os gostos,
+            desde títulos AAA até indie inovadores. Com acesso instantâneo, você
+            pode explorar diferentes gêneros e experiências, sem limitações de
+            plataforma.
           </p>
           <Link href="/saiba">
             <button className={estilo.botao}>SAIBA MAIS</button>

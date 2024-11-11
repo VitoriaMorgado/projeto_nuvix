@@ -1,6 +1,6 @@
 import Image from "next/image";
 import estilo from "./card.module.css";
-import jogos from "@/public/play.png";
+import jogos from "@/public/coop.jpg";
 import Link from "next/link";
 
 const CardTres = () => {
@@ -18,9 +18,10 @@ const CardTres = () => {
           <p className={estilo.azulzin}>Jogos com os amigos</p>
           <h1 className={estilo.titulo}>Explore o catalogo co-op</h1>
           <p className={estilo.paragrafo}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
-            dignissimos, assumenda laboriosam, repellendus eos numquam
-            doloremque, neque rem deserunt molestias laborum odit maiores?
+            Junte-se aos amigos e viva a emoção dos jogos co-op na nuvem! Na
+            Nuvix, você pode explorar mundos, enfrentar desafios e se divertir
+            em equipe, tudo em tempo real. A diversão é garantida, onde quer que
+            você esteja!
           </p>
           <Link href="/saiba">
             <button className={estilo.botao}>SAIBA MAIS</button>

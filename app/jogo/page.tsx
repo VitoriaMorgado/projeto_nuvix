@@ -3,6 +3,14 @@
 import Image from "next/image";
 import logo from "@/public/logo.png";
 import {
+  Menubar,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarTrigger,
+} from "@/components/ui/menubar";
+
+import {
   Carousel,
   CarouselContent,
   CarouselItem,
@@ -15,45 +23,62 @@ import Card1 from "../componente/card1";
 import Card2 from "../componente/card2";
 import Card3 from "../componente/card3";
 import Card4 from "../componente/card4";
+import Link from "next/link";
 
 const JogoPage = () => {
   return (
     <>
-      <div className="m-0 h-screen w-screen flex-col justify-center bg-gradient-to-b from-[#0a2235] to-[#154B74] p-0">
+      <div className="m-0 h-full w-screen flex-col justify-center bg-gradient-to-b from-[#0a2235] to-[#154B74] p-0">
         {/* NAVBAR INCIO */}
         <div className="flex bg-black">
           <Image
             className="mx-4"
             src={logo}
-            width={300}
+            width={150}
             height={500}
             alt="logo"
           />
           <div className="flex">
-            <button className="mx-5 content-center text-3xl font-bold text-[#F6F7F8]">
-              LOJA
+            <Link
+              href="/"
+              className="mx-5 content-center text-2xl font-bold text-[#F6F7F8]"
+            >
+              <button>HOME</button>
+            </Link>
+            <Link
+              href="/favorito"
+              className="mx-5 content-center text-2xl font-bold text-[#F6F7F8]"
+            >
+              <button>FAVORITOS</button>
+            </Link>
+            <button className="mx-5 content-center text-2xl font-bold text-[#F6F7F8]">
+              ASSINATURA
             </button>
-            <button className="mx-5 content-center text-3xl font-bold text-[#F6F7F8]">
-              COMUNIDADE
-            </button>
-            <button className="mx-5 content-center text-3xl font-bold text-[#F6F7F8]">
-              SOBRE
-            </button>
-            <button className="mx-5 content-center text-3xl font-bold text-[#F6F7F8]">
-              SUPORTE
+            <button className="w-[210px] content-center text-2xl font-bold text-[#F6F7F8]">
+              FALE CONOSCO
             </button>
           </div>
           <div className="w-screen justify-items-end">
             <div className="flex">
               <button className="mx-5 h-[35px] w-[180px] bg-[#019EC2] text-center text-2xl text-white">
-                instale o nuvix
+                Assine o nuvix
               </button>
               <div className="h-[40px] w-[4px] bg-white"></div>
               <button className="mx-5 text-2xl text-white">
                 Iniciar sessão
               </button>
               <div className="h-[40px] w-[4px] bg-white"></div>
-              <button className="mx-5 text-2xl text-white">idioma</button>
+              <Menubar className="border-transparent bg-transparent">
+                <MenubarMenu>
+                  <MenubarTrigger className="mx-5 bg-transparent text-2xl text-white">
+                    Idioma
+                  </MenubarTrigger>
+                  <MenubarContent>
+                    <MenubarItem className="bg-transparent">Ingles</MenubarItem>
+                    <MenubarItem>Portugues</MenubarItem>
+                  </MenubarContent>
+                </MenubarMenu>
+              </Menubar>
             </div>
           </div>
         </div>
@@ -61,14 +86,15 @@ const JogoPage = () => {
         {/* NAVBAR FIM */}
 
         {/* COISA DE JOGO INICIO */}
-
-        <div className="m-9 flex">
-          <h1 className="ml-[50px] font-mono text-5xl text-white">
-            God of War Ragnarök
-          </h1>
-          <div className="w-[1235px] content-center">
-            <div className="justify-self-end">
-              <BotaoFav />
+        <div className="justify-self-center">
+          <div className="my-9 flex">
+            <h1 className="font-mono text-5xl text-white">
+              God of War Ragnarök
+            </h1>
+            <div className="w-[1235px] content-center">
+              <div className="justify-self-end">
+                <BotaoFav />
+              </div>
             </div>
           </div>
         </div>
@@ -85,7 +111,12 @@ const JogoPage = () => {
                 ></video>
               </div>
               <div className="h-[140px] w-[900px] justify-items-center">
-                <Carousel>
+                <Carousel
+                  opts={{
+                    align: "start",
+                    loop: true,
+                  }}
+                >
                   <CarouselContent>
                     <CarouselItem className="mt-3 md:basis-1/4">
                       <Image
@@ -141,11 +172,12 @@ const JogoPage = () => {
                 alt="imagem de controle"
               />
               <p className="mt-5 w-[700px] font-mono text-2xl text-[#F6F7F8]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                non ratione placeat aliquam exercitationem cum natus architecto
-                alias deserunt eligendi vel ad omnis facilis consequuntur, odio
-                repellat modi? Est, nisi. Lorem ipsum dolor sit amet consectetur
-                adipisicing elit.
+                God of War Ragnarök segue Kratos e seu filho Atreus enquanto se
+                preparam para o iminente fim do mundo, o Ragnarok. Com a ameaça
+                dos deuses e criaturas mitológicas, os dois embarcam em uma
+                jornada por nove reinos para enfrentar seu destino. Kratos lida
+                com seu passado, enquanto Atreus busca entender seu papel como
+                Loki.
               </p>
               <div className="justify-self-center">
                 <button className="m-4 mx-[100px] h-[55px] w-[230px] rounded-bl-3xl rounded-tr-3xl bg-[#019EC2] text-3xl font-bold text-[#F6F7F8]">
@@ -161,7 +193,12 @@ const JogoPage = () => {
         <div className="justify-self-center">
           <div className="h-[510px] w-[1740px] rounded-md bg-[#000101a8]">
             <div className="w-[1580px] justify-self-center py-[75px]">
-              <Carousel>
+              <Carousel
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+              >
                 <CarouselContent>
                   <CarouselItem className="md:basis-2/5">
                     <Cardin></Cardin>
@@ -184,6 +221,7 @@ const JogoPage = () => {
               </Carousel>
             </div>
           </div>
+          <div className="h-[100px]"></div>
         </div>
       </div>
     </>
