@@ -22,7 +22,7 @@ const CardTres = () => {
             aos jogos do momento! Aumente ainda mais sua diversão com Nuvix
             Plus!
           </p>
-          <Link href="/saiba">
+          <Link href="/SaibaMais">
             <button className={estilo.botao}>SAIBA MAIS</button>
           </Link>
         </div>

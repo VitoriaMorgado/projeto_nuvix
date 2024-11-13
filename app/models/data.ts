@@ -1,4 +1,5 @@
 import imgod1 from "@/public/god.jpg";
+import imgod2 from "@/public/god2.jpg";
 
 const jogos = [
   {
@@ -8,6 +9,7 @@ const jogos = [
       "God of War Ragnarök segue Kratos e seu filho Atreus enquanto se preparam para o iminente fim do mundo, o Ragnarok. Com a ameaça dos deuses e criaturas mitológicas, os dois embarcam em uma jornada por nove reinos para enfrentar seu destino. Kratos lida com seu passado, enquanto Atreus busca entender seu papel como Loki.",
     video: "",
     imagemum: imgod1,
+    imagemdois: imgod2,
   },
   {
     id: "2",

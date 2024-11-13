@@ -53,11 +53,17 @@ const Home = () => {
                   Destaques
                 </MenubarTrigger>
                 <MenubarContent>
-                  <MenubarItem>Catalogo</MenubarItem>
+                  <Link href="/catalogo">
+                    <MenubarItem>Catalogo</MenubarItem>
+                  </Link>
                   <MenubarSeparator />
-                  <MenubarItem>Jogos Em Destaque</MenubarItem>
+                  <Link href="/catalogo">
+                    <MenubarItem>Jogos Em Destaque</MenubarItem>
+                  </Link>
                   <MenubarSeparator />
-                  <MenubarItem>Novidades</MenubarItem>
+                  <Link href="/catalogo">
+                    <MenubarItem>Novidades</MenubarItem>
+                  </Link>
                 </MenubarContent>
               </MenubarMenu>
               <MenubarMenu>
@@ -65,9 +71,13 @@ const Home = () => {
                   Jogos
                 </MenubarTrigger>
                 <MenubarContent>
-                  <MenubarItem>Catalogo</MenubarItem>
-                  <MenubarSeparator />
-                  <MenubarItem>Destaque</MenubarItem>
+                  <Link href="/catalogo">
+                    <MenubarItem>Catalogo</MenubarItem>
+                    <MenubarSeparator />
+                  </Link>
+                  <Link href="/catalogo">
+                    <MenubarItem>Destaque</MenubarItem>
+                  </Link>
                   <MenubarSeparator />
                 </MenubarContent>
               </MenubarMenu>
@@ -76,9 +86,13 @@ const Home = () => {
                   Assinatura
                 </MenubarTrigger>
                 <MenubarContent>
-                  <MenubarItem>Nuvix Plus</MenubarItem>
+                  <Link href="/planos">
+                    <MenubarItem>Nuvix Plus</MenubarItem>
+                  </Link>
                   <MenubarSeparator />
-                  <MenubarItem>Pacote Essencial</MenubarItem>
+                  <Link href="/catalogo">
+                    <MenubarItem>Pacote Essencial</MenubarItem>
+                  </Link>
                 </MenubarContent>
               </MenubarMenu>
               <MenubarMenu>
@@ -157,7 +171,7 @@ const Home = () => {
                       um clique!
                     </p>
                     <div className="mx-[140px]">
-                      <Link href="/jogo">
+                      <Link href="/">
                         <button className="h-[55px] w-[230px] rounded-br-3xl rounded-tl-3xl bg-[#019EC2] text-3xl font-bold text-[#F6F7F8] hover:bg-[#198097]">
                           Jogue agora
                         </button>
@@ -243,19 +257,25 @@ const Home = () => {
                         aprimorado para PC com conteúdos inéditos no Modo
                         História, melhorias visuais e muito mais.
                       </p>
-                      <button className="mx-[100px] h-[55px] w-[230px] rounded-bl-3xl rounded-tr-3xl bg-[#019EC2] text-3xl font-bold text-[#F6F7F8] hover:bg-[#198097]">
-                        Jogue agora
-                      </button>
+                      <Link href="/login">
+                        <button className="mx-[100px] h-[55px] w-[230px] rounded-bl-3xl rounded-tr-3xl bg-[#019EC2] text-3xl font-bold text-[#F6F7F8] hover:bg-[#198097]">
+                          Jogue agora
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
                 <div className="h-[450px] w-[500px] justify-center p-8">
-                  <button className="mx-[100px] my-[30px] mt-[250px] h-[55px] w-[230px] rounded-bl-3xl rounded-tr-3xl bg-[#019EC2] text-3xl font-bold text-[#F6F7F8] hover:bg-[#198097]">
-                    Semelhantes
-                  </button>
-                  <button className="mx-[100px] h-[55px] w-[230px] rounded-bl-3xl rounded-tr-3xl bg-[#019EC2] text-3xl font-bold text-[#F6F7F8] hover:bg-[#198097]">
-                    Catalogo
-                  </button>
+                  <Link href="/catalogo">
+                    <button className="mx-[100px] my-[30px] mt-[250px] h-[55px] w-[230px] rounded-bl-3xl rounded-tr-3xl bg-[#019EC2] text-3xl font-bold text-[#F6F7F8] hover:bg-[#198097]">
+                      Semelhantes
+                    </button>
+                  </Link>
+                  <Link href="/catalogo">
+                    <button className="mx-[100px] h-[55px] w-[230px] rounded-bl-3xl rounded-tr-3xl bg-[#019EC2] text-3xl font-bold text-[#F6F7F8] hover:bg-[#198097]">
+                      Catalogo
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

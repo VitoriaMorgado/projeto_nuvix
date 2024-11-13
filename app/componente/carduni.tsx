@@ -23,7 +23,7 @@ const Carduni = () => {
             pode explorar diferentes gêneros e experiências, sem limitações de
             plataforma.
           </p>
-          <Link href="/saiba">
+          <Link href="/SaibaMais">
             <button className={estilo.botao}>SAIBA MAIS</button>
           </Link>
         </div>

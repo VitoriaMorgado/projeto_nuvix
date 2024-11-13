@@ -23,7 +23,7 @@ const CardDois = () => {
             downloads pesados. É nostalgia na ponta dos dedos, com qualidade e
             praticidade!
           </p>
-          <Link href="/saiba">
+          <Link href="/SaibaMais">
             <button className={estilo.botao}>SAIBA MAIS</button>
           </Link>
         </div>

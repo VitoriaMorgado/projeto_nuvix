@@ -23,7 +23,7 @@ const CardTres = () => {
             em equipe, tudo em tempo real. A diversão é garantida, onde quer que
             você esteja!
           </p>
-          <Link href="/saiba">
+          <Link href="/SaibaMais">
             <button className={estilo.botao}>SAIBA MAIS</button>
           </Link>
         </div>
