@@ -24,6 +24,7 @@ import Card2 from "../componente/card2";
 import Card3 from "../componente/card3";
 import Card4 from "../componente/card4";
 import Link from "next/link";
+import jogos from "@/app/models/data";
 
 const JogoPage = () => {
   return (
@@ -88,9 +89,7 @@ const JogoPage = () => {
         {/* COISA DE JOGO INICIO */}
         <div className="justify-self-center">
           <div className="my-9 flex">
-            <h1 className="font-mono text-5xl text-white">
-              God of War Ragnarök
-            </h1>
+            <h1 className="font-mono text-5xl text-white">{jogos[0].nome}</h1>
             <div className="w-[1235px] content-center">
               <div className="justify-self-end">
                 <BotaoFav />
@@ -172,12 +171,7 @@ const JogoPage = () => {
                 alt="imagem de controle"
               />
               <p className="mt-5 w-[700px] font-mono text-2xl text-[#F6F7F8]">
-                God of War Ragnarök segue Kratos e seu filho Atreus enquanto se
-                preparam para o iminente fim do mundo, o Ragnarok. Com a ameaça
-                dos deuses e criaturas mitológicas, os dois embarcam em uma
-                jornada por nove reinos para enfrentar seu destino. Kratos lida
-                com seu passado, enquanto Atreus busca entender seu papel como
-                Loki.
+                {jogos[0].description}
               </p>
               <div className="justify-self-center">
                 <button className="m-4 mx-[100px] h-[55px] w-[230px] rounded-bl-3xl rounded-tr-3xl bg-[#019EC2] text-3xl font-bold text-[#F6F7F8]">

@@ -32,6 +32,7 @@ import Card04 from "./componente/cards/card04";
 import Card05 from "./componente/cards/card05";
 import Card06 from "./componente/cards/card06";
 import Card07 from "./componente/cards/card07";
+import Rodape from "@/components/ui/rodape";
 
 const Home = () => {
   return (
@@ -39,7 +40,7 @@ const Home = () => {
       <div className="m-0 h-full w-full flex-col justify-center p-0">
         {/* MENU COMEÇO */}
         <div>
-          <div className="flex h-[60px] bg-black">
+          <div className="sticky flex h-[60px] bg-black">
             <Menubar className="mt-2 w-full border-transparent bg-transparent">
               <MenubarMenu>
                 <Image
@@ -350,8 +351,6 @@ const Home = () => {
                 </Link>
               </div>
             </div>
-
-            {/* Rodapé (política de privacidade etc) */}
             <footer className="w-full py-4 text-white">
               <div className="container mx-auto text-center">
                 <p>
@@ -360,13 +359,13 @@ const Home = () => {
                 </p>
                 <div className="mt-2">
                   <Link
-                    href="/privacyterm"
+                    href="/politica"
                     className="mx-2 text-blue-400 hover:underline"
                   >
                     Política de Privacidade
                   </Link>
                   <Link
-                    href="/terms"
+                    href="/Termos"
                     className="mx-2 text-blue-400 hover:underline"
                   >
                     Termos de Uso
@@ -376,6 +375,9 @@ const Home = () => {
             </footer>
           </div>
           {/* PAGAMENTO FIM */}
+          <div className="mt-9 w-full p-0">
+            <Rodape />
+          </div>
         </div>
       </div>
     </>
