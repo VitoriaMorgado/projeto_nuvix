@@ -7,7 +7,7 @@ import Logo from "@/public/logo.png";
 import Link from "next/link";
 import router from "next/router";
 
-const Signup = () => {
+const Signupp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -92,7 +92,7 @@ const Signup = () => {
             placeholder="******"
           />
         </div>
-        <Link href="/login">
+        <Link href="/login2">
           <button
             type="submit"
             className="w-full rounded bg-blue-800 py-2 text-white hover:bg-blue-950"
@@ -112,4 +112,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Signupp;

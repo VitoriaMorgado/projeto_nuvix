@@ -145,9 +145,11 @@ const JogoPage = () => {
                 {jogoSelecionado.descricao}
               </p>
               <div className="justify-self-center">
-                <button className="m-4 mx-[100px] h-[55px] w-[230px] rounded-bl-3xl rounded-tr-3xl bg-[#019EC2] text-3xl font-bold text-[#F6F7F8]">
-                  Jogue agora
-                </button>
+                <Link href="login">
+                  <button className="m-4 mx-[100px] h-[55px] w-[230px] rounded-bl-3xl rounded-tr-3xl bg-[#019EC2] text-3xl font-bold text-[#F6F7F8]">
+                    Jogue agora
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

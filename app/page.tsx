@@ -124,9 +124,13 @@ const Home = () => {
                   </div>
                 </MenubarTrigger>
                 <MenubarContent>
-                  <MenubarItem>Cadastre-se</MenubarItem>
+                  <Link href="/cadastro2">
+                    <MenubarItem>Cadastre-se</MenubarItem>
+                  </Link>
                   <MenubarSeparator />
-                  <MenubarItem>Login</MenubarItem>
+                  <Link href="/login2">
+                    <MenubarItem>Login</MenubarItem>
+                  </Link>
                   <MenubarSeparator />
                 </MenubarContent>
               </MenubarMenu>
@@ -218,25 +222,39 @@ const Home = () => {
                   >
                     <CarouselContent>
                       <CarouselItem className="mx-3 md:basis-1/6">
-                        <Card01></Card01>
+                        <Link href="/catalogo">
+                          <Card01></Card01>
+                        </Link>
                       </CarouselItem>
                       <CarouselItem className="mx-3 md:basis-1/6">
-                        <Card02></Card02>
+                        <Link href="/catalogo">
+                          <Card02></Card02>
+                        </Link>
                       </CarouselItem>
                       <CarouselItem className="mx-3 md:basis-1/6">
-                        <Card03></Card03>
+                        <Link href="/catalogo">
+                          <Card03></Card03>
+                        </Link>
                       </CarouselItem>
                       <CarouselItem className="mx-3 md:basis-1/6">
-                        <Card04></Card04>
+                        <Link href="/catalogo">
+                          <Card04></Card04>
+                        </Link>
                       </CarouselItem>
                       <CarouselItem className="mx-3 md:basis-1/6">
-                        <Card05></Card05>
+                        <Link href="/catalogo">
+                          <Card05></Card05>
+                        </Link>
                       </CarouselItem>
                       <CarouselItem className="mx-3 md:basis-1/6">
-                        <Card06></Card06>
+                        <Link href="/catalogo">
+                          <Card06></Card06>
+                        </Link>
                       </CarouselItem>
                       <CarouselItem className="mx-3 md:basis-1/6">
-                        <Card07></Card07>
+                        <Link href="/catalogo">
+                          <Card07></Card07>
+                        </Link>
                       </CarouselItem>
                     </CarouselContent>
                     <CarouselPrevious />

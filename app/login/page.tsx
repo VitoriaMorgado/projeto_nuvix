@@ -30,7 +30,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex h-screen w-screen flex-col items-center justify-center bg-gradient-to-b from-blue-900 to-blue-950 p-6">
+    <div className="flex h-screen w-screen flex-col items-center justify-center bg-gradient-to-b from-[#0E304A] to-[#154B74] p-6">
       {/* LOGO NUVIX */}
       <Image
         src="/logo.png"

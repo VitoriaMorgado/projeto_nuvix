@@ -26,7 +26,7 @@ const Fila = () => {
     <div
       className="flex h-screen w-screen flex-col justify-between bg-gradient-to-b from-blue-900 to-blue-950 p-6 sm:p-9 md:p-9"
       style={{
-        backgroundImage: `url('/banner02.jpg')`,
+        backgroundImage: `url('/jogolodi.jpg')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

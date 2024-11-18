@@ -35,12 +35,14 @@ const Saiba = () => {
             <div className="sticky flex h-[60px] bg-black">
               <Menubar className="mt-2 w-full border-transparent bg-transparent">
                 <MenubarMenu>
-                  <Image
-                    src="/logo.png"
-                    width={150}
-                    height={100}
-                    alt="imagem do mine"
-                  />
+                  <Link href="/">
+                    <Image
+                      src="/logo.png"
+                      width={150}
+                      height={100}
+                      alt="imagem do mine"
+                    />
+                  </Link>
 
                   <MenubarTrigger className="h-[30px] w-[120px] justify-center text-xl font-bold text-[#F6F7F8]">
                     Destaques
@@ -77,9 +79,13 @@ const Saiba = () => {
                     Assinatura
                   </MenubarTrigger>
                   <MenubarContent>
-                    <MenubarItem>Nuvix Plus</MenubarItem>
+                    <Link href="/planos">
+                      <MenubarItem>Nuvix Plus</MenubarItem>
+                    </Link>
                     <MenubarSeparator />
-                    <MenubarItem>Pacote Essencial</MenubarItem>
+                    <Link href="/planos">
+                      <MenubarItem>Pacote Essencial</MenubarItem>
+                    </Link>
                   </MenubarContent>
                 </MenubarMenu>
                 <MenubarMenu>
@@ -90,11 +96,11 @@ const Saiba = () => {
                     </div>
                   </MenubarTrigger>
                   <MenubarContent>
-                    <Link href="/login">
+                    <Link href="/cadastro2">
                       <MenubarItem>Cadastre-se</MenubarItem>
                     </Link>
                     <MenubarSeparator />
-                    <Link href="/login">
+                    <Link href="/login2">
                       <MenubarItem>Login</MenubarItem>
                     </Link>
                     <MenubarSeparator />
@@ -227,32 +233,48 @@ const Saiba = () => {
 
           {/* Negocio preto */}
         </div>
-        <div className="flex h-[700px] w-full bg-slate-900">
+        <div className="flex h-full w-full bg-slate-900">
           <div className="w-[900px] ps-5 pt-[30px]">
             <h1 className="m-7 text-4xl font-bold text-white">SOBRE NÓS</h1>
             <p className="mx-7 my-5 text-left text-2xl text-white">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum
-              sapiente eaque saepe, reiciendis dignissimos mollitia nobis
-              tempore quas inventore quam. Voluptatum libero sequi labore?
-              Ratione excepturi ut mollitia nihil. Qui.
+              Bem-vindo à Nuvix, a sua plataforma de jogos na nuvem! Nossa
+              missão é transformar a maneira como você joga, oferecendo acesso
+              instantâneo a uma vasta biblioteca de jogos incríveis, sem a
+              necessidade de downloads ou instalações demoradas.
+            </p>
+            <h1 className="m-7 text-4xl font-bold text-white">QUEM SOMOS</h1>
+            <p className="mx-7 my-5 text-left text-2xl text-white">
+              Na Nuvix, acreditamos que jogar deve ser uma experiência simples e
+              acessível para todos. Fundada por um grupo de estudantes de
+              tecnologia, nossa plataforma foi criada para eliminar as barreiras
+              tradicionais dos jogos, permitindo que você jogue seus títulos
+              favoritos em qualquer dispositivo com conexão à internet..
+            </p>
+            <h1 className="m-7 text-4xl font-bold text-white">
+              O QUE OFERECEMOS
+            </h1>
+            <p className="mx-7 my-5 text-left text-2xl text-white">
+              Biblioteca Diversificada: Com uma coleção que abrange desde os
+              clássicos atemporais até os lançamentos mais recentes, temos algo
+              para todos os gostos. Compatibilidade Multiplataforma: Jogue em
+              seu PC, laptop, tablet ou smartphone. Nossa tecnologia de ponta
+              garante uma experiência de jogo suave e de alta qualidade em
+              qualquer dispositivo.
+            </p>
+            <h1 className="m-7 text-4xl font-bold text-white">
+              JUNTE-SE A NÓS
+            </h1>
+            <p className="mx-7 my-5 text-left text-2xl text-white">
+              Seja você um jogador casual ou um hardcore gamer, a Nuvix tem algo
+              especial para você. Cadastre-se hoje e descubra um novo mundo de
+              possibilidades no universo dos jogos na nuvem.
+            </p>
+            <h1 className="m-7 text-4xl font-bold text-white">CONTATO</h1>
+            <p className="mx-7 my-5 text-left text-2xl text-white">
+              nuvixprojeto@gmail.com
             </p>
             <p className="mx-7 my-5 text-left text-2xl text-white">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum
-              sapiente eaque saepe, reiciendis dignissimos mollitia nobis
-              tempore quas inventore quam. Voluptatum libero sequi labore?
-              Ratione excepturi ut mollitia nihil. Qui.
-            </p>
-            <p className="mx-7 my-5 text-left text-2xl text-white">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum
-              sapiente eaque saepe, reiciendis dignissimos mollitia nobis
-              tempore quas inventore quam. Voluptatum libero sequi labore?
-              Ratione excepturi ut mollitia nihil. Qui.
-            </p>
-            <p className="mx-7 my-5 text-left text-2xl text-white">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum
-              sapiente eaque saepe, reiciendis dignissimos mollitia nobis
-              tempore quas inventore quam. Voluptatum libero sequi labore?
-              Ratione excepturi ut mollitia nihil. Qui.
+              Obrigado por escolher a Nuvix.
             </p>
           </div>
           <div className="mt-20 w-[900px] justify-items-end">
