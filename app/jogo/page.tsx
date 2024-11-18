@@ -17,20 +17,23 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import Cardin from "../componente/ccard";
 import BotaoFav from "../componente/botaofav";
-import Card1 from "../componente/card1";
-import Card2 from "../componente/card2";
-import Card3 from "../componente/card3";
-import Card4 from "../componente/card4";
 import Link from "next/link";
+import { useState } from "react";
 import jogos from "@/app/models/data";
 
 const JogoPage = () => {
+  const [jogoSelecionado, setJogoSelecionado] = useState(jogos[0]);
+
+  const handleCardClick = (jogoId: number) => {
+    const jogo = jogos.find((j) => j.id === jogoId);
+    if (jogo) setJogoSelecionado(jogo);
+  };
+
   return (
     <>
       <div className="m-0 h-full w-screen flex-col justify-center bg-gradient-to-b from-[#0a2235] to-[#154B74] p-0">
-        {/* NAVBAR INCIO */}
+        {/* NAVBAR INÍCIO */}
         <div className="flex bg-black">
           <Image
             className="mx-4"
@@ -75,21 +78,22 @@ const JogoPage = () => {
                     Idioma
                   </MenubarTrigger>
                   <MenubarContent>
-                    <MenubarItem className="bg-transparent">Ingles</MenubarItem>
-                    <MenubarItem>Portugues</MenubarItem>
+                    <MenubarItem className="bg-transparent">Inglês</MenubarItem>
+                    <MenubarItem>Português</MenubarItem>
                   </MenubarContent>
                 </MenubarMenu>
               </Menubar>
             </div>
           </div>
         </div>
-
         {/* NAVBAR FIM */}
 
-        {/* COISA DE JOGO INICIO */}
+        {/* CONTEÚDO DO JOGO */}
         <div className="justify-self-center">
           <div className="my-9 flex">
-            <h1 className="font-mono text-5xl text-white">{jogos[0].nome}</h1>
+            <h1 className="font-mono text-5xl text-white">
+              {jogoSelecionado.nome}
+            </h1>
             <div className="w-[1235px] content-center">
               <div className="justify-self-end">
                 <BotaoFav />
@@ -102,7 +106,7 @@ const JogoPage = () => {
             <div className="p-8">
               <div className="mb-2">
                 <video
-                  src="/videogod.webm"
+                  src={jogoSelecionado.video}
                   className="w-[900px]"
                   controls
                   autoPlay
@@ -110,53 +114,18 @@ const JogoPage = () => {
                 ></video>
               </div>
               <div className="h-[140px] w-[900px] justify-items-center">
-                <Carousel
-                  opts={{
-                    align: "start",
-                    loop: true,
-                  }}
-                >
+                <Carousel opts={{ align: "start", loop: true }}>
                   <CarouselContent>
-                    <CarouselItem className="mt-3 md:basis-1/4">
-                      <Image
-                        src="/god.jpg"
-                        width={250}
-                        height={500}
-                        alt="imagem de controle"
-                      />
-                    </CarouselItem>
-                    <CarouselItem className="mt-3 md:basis-1/4">
-                      <Image
-                        src="/god4.jpg"
-                        width={250}
-                        height={500}
-                        alt="imagem de controle"
-                      />
-                    </CarouselItem>
-                    <CarouselItem className="mt-3 md:basis-1/4">
-                      <Image
-                        src="/god5.jpg"
-                        width={250}
-                        height={500}
-                        alt="imagem de controle"
-                      />
-                    </CarouselItem>
-                    <CarouselItem className="mt-3 md:basis-1/4">
-                      <Image
-                        src="/god6.jpg"
-                        width={250}
-                        height={500}
-                        alt="imagem de controle"
-                      />
-                    </CarouselItem>
-                    <CarouselItem className="mt-3 md:basis-1/4">
-                      <Image
-                        src="/god3.jpg"
-                        width={250}
-                        height={500}
-                        alt="imagem de controle"
-                      />
-                    </CarouselItem>
+                    {jogoSelecionado.imagens.map((imgSrc, index) => (
+                      <CarouselItem key={index} className="mt-3 md:basis-1/4">
+                        <Image
+                          src={imgSrc}
+                          width={250}
+                          height={500}
+                          alt={`Imagem ${index + 1} do jogo`}
+                        />
+                      </CarouselItem>
+                    ))}
                   </CarouselContent>
                   <CarouselPrevious className="ml-8" />
                   <CarouselNext className="mr-8" />
@@ -164,14 +133,16 @@ const JogoPage = () => {
               </div>
             </div>
             <div className="p-8">
+              {/* CAPA DO JOGO INICIO */}
               <Image
-                src="/god2.jpg"
+                src={jogoSelecionado.capa} // Alterado para usar o campo 'capa'
                 width={700}
                 height={500}
-                alt="imagem de controle"
+                alt="Capa do jogo"
               />
+              {/* CAPA DO JOGO FIM */}
               <p className="mt-5 w-[700px] font-mono text-2xl text-[#F6F7F8]">
-                {jogos[0].description}
+                {jogoSelecionado.descricao}
               </p>
               <div className="justify-self-center">
                 <button className="m-4 mx-[100px] h-[55px] w-[230px] rounded-bl-3xl rounded-tr-3xl bg-[#019EC2] text-3xl font-bold text-[#F6F7F8]">
@@ -181,42 +152,45 @@ const JogoPage = () => {
             </div>
           </div>
         </div>
-
-        {/* COISA DE JOGO FIM */}
-
+        {/* SEÇÃO DE JOGOS */}
+        {/* SEÇÃO DE JOGOS */}
         <div className="justify-self-center">
           <div className="h-[510px] w-[1740px] rounded-md bg-[#000101a8]">
             <div className="w-[1580px] justify-self-center py-[75px]">
-              <Carousel
-                opts={{
-                  align: "start",
-                  loop: true,
-                }}
-              >
+              <Carousel opts={{ align: "start", loop: true }}>
                 <CarouselContent>
-                  <CarouselItem className="md:basis-2/5">
-                    <Cardin></Cardin>
-                  </CarouselItem>
-                  <CarouselItem className="md:basis-2/5">
-                    <Card1></Card1>
-                  </CarouselItem>
-                  <CarouselItem className="md:basis-2/5">
-                    <Card2></Card2>
-                  </CarouselItem>
-                  <CarouselItem className="md:basis-2/5">
-                    <Card3></Card3>
-                  </CarouselItem>
-                  <CarouselItem className="md:basis-2/5">
-                    <Card4></Card4>
-                  </CarouselItem>
+                  {jogos.map((jogo) => (
+                    <CarouselItem
+                      key={jogo.id}
+                      onClick={() => handleCardClick(jogo.id)}
+                      className="cursor-pointer md:basis-2/5"
+                    >
+                      {/* NOVO CARD */}
+                      <div className="m-2 h-[340px] w-[550px] justify-center rounded-xl bg-[#000101] shadow-xl">
+                        <Image
+                          src={jogo.capa}
+                          width={550}
+                          height={500}
+                          alt={`Capa do jogo ${jogo.nome}`}
+                          className="rounded-t-xl"
+                        />
+                        <div className="h-[60px] w-full content-center justify-items-center">
+                          <p className="mt-2 text-center font-mono text-5xl text-[#F6F7F8]">
+                            {jogo.nome}
+                          </p>
+                        </div>
+                      </div>
+                      {/* NOVO CARD FIM */}
+                    </CarouselItem>
+                  ))}
                 </CarouselContent>
                 <CarouselPrevious />
                 <CarouselNext />
               </Carousel>
             </div>
           </div>
-          <div className="h-[100px]"></div>
         </div>
+        <div className="h-[100px] w-screen"></div>
       </div>
     </>
   );

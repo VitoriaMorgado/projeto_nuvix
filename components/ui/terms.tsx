@@ -1,11 +1,11 @@
 "use client";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { useRouter } from "next/router"; // Importando o hook useRouter para navegação
+import { useRouter } from "next/navigation"; // Correção: para navegação no Next.js
 
 const TermsCheckbox = () => {
   const [isChecked, setIsChecked] = useState(false);
-  const router = useRouter(); // Hook para navegação
+  const router = useRouter(); // Instância do router
 
   // Efeito para carregar o estado do localStorage ao montar o componente
   useEffect(() => {
@@ -19,12 +19,13 @@ const TermsCheckbox = () => {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    localStorage.setItem("termsAccepted", String(isChecked)); // Garantir que seja uma string "true" ou "false"
-    alert("Informação salva com sucesso!");
+    localStorage.setItem("termsAccepted", String(isChecked)); // Salva como "true" ou "false"
 
-    // Navegação para outra página após salvar
     if (isChecked) {
-      router.push("/next-page"); // Substitua "/next-page" pela URL que você deseja
+      alert("Informação salva com sucesso!");
+      router.push("/"); // Substitua "/next-page" pela URL que você deseja
+    } else {
+      alert("Você precisa aceitar os termos para continuar.");
     }
   };
 
@@ -37,7 +38,7 @@ const TermsCheckbox = () => {
           checked={isChecked}
           onChange={handleChange}
         />
-        Eu concordo com os termos e condições
+        <span className="ml-2">Eu concordo com os termos e condições</span>
       </label>
 
       <div className="mb-5 mt-5 flex justify-center rounded-full">
@@ -49,9 +50,9 @@ const TermsCheckbox = () => {
         </button>
       </div>
 
-      {/* Se você deseja adicionar um link de navegação, pode usá-lo aqui */}
+      {/* Link para termos e condições */}
       <div className="text-center">
-        <Link href="/terms">Leia os termos completos</Link>
+        <Link href="/terms"></Link>
       </div>
     </form>
   );

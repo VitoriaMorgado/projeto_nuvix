@@ -35,6 +35,12 @@ import Card07 from "./componente/cards/card07";
 import Rodape from "@/components/ui/rodape";
 
 const Home = () => {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <>
       <div className="m-0 h-full w-full flex-col justify-center p-0">
@@ -86,9 +92,9 @@ const Home = () => {
                   Assinatura
                 </MenubarTrigger>
                 <MenubarContent>
-                  <Link href="/planos">
+                  <button onClick={() => scrollToSection("plano")}>
                     <MenubarItem>Nuvix Plus</MenubarItem>
-                  </Link>
+                  </button>
                   <MenubarSeparator />
                   <Link href="/catalogo">
                     <MenubarItem>Pacote Essencial</MenubarItem>
@@ -100,9 +106,13 @@ const Home = () => {
                   Fale conosco
                 </MenubarTrigger>
                 <MenubarContent>
-                  <MenubarItem>Sobre Nós</MenubarItem>
+                  <Link href="cadastro">
+                    <MenubarItem>Sobre Nós</MenubarItem>
+                  </Link>
                   <MenubarSeparator />
-                  <MenubarItem>Nos Contate</MenubarItem>
+                  <Link href="login2">
+                    <MenubarItem>Nos Contate</MenubarItem>
+                  </Link>
                   <MenubarSeparator />
                 </MenubarContent>
               </MenubarMenu>
@@ -171,7 +181,7 @@ const Home = () => {
                       um clique!
                     </p>
                     <div className="mx-[140px]">
-                      <Link href="/">
+                      <Link href="/jogo">
                         <button className="h-[55px] w-[230px] rounded-br-3xl rounded-tl-3xl bg-[#019EC2] text-3xl font-bold text-[#F6F7F8] hover:bg-[#198097]">
                           Jogue agora
                         </button>
@@ -329,7 +339,10 @@ const Home = () => {
             />
 
             {/* TEXTO EMBAIXO DO LOGO */}
-            <h1 className="mb-4 text-center font-sans text-2xl font-bold text-[#F6F7F8]">
+            <h1
+              id="plano"
+              className="mb-4 text-center font-sans text-2xl font-bold text-[#F6F7F8]"
+            >
               Escolha seu Plano
             </h1>
 
@@ -347,7 +360,7 @@ const Home = () => {
                 <p className="mb-2 text-center">Preferencia Na Fila</p>
                 <p className="mb-2 text-center">Benefícios</p>
                 <p className="mb-2 text-center">Benefícios</p>
-                <Link href="/login">
+                <Link href="/login2">
                   <button className="mt-10 w-full rounded bg-[#019EC2] py-2 text-white hover:bg-[#198097]">
                     Assinar
                   </button>
@@ -364,7 +377,7 @@ const Home = () => {
                 <p className="mb-2 text-center">Preferencia Na Fila</p>
                 <p className="mb-2 text-center">Benefícios</p>
                 <p className="mb-2 text-center">Benefícios</p>
-                <Link href="/login">
+                <Link href="/login2">
                   <button className="mt-10 w-full rounded bg-[#019EC2] py-2 text-white hover:bg-[#198097]">
                     Assinar
                   </button>
