@@ -49,12 +49,11 @@ const JogoPage = () => {
             >
               <button>HOME</button>
             </Link>
-            <Link
-              href="/favorito"
-              className="mx-5 content-center text-2xl font-bold text-[#F6F7F8]"
-            >
-              <button>FAVORITOS</button>
-            </Link>
+
+            <button className="mx-5 content-center text-2xl font-bold text-[#F6F7F8]">
+              FAVORITOS
+            </button>
+
             <button className="mx-5 content-center text-2xl font-bold text-[#F6F7F8]">
               ASSINATURA
             </button>
