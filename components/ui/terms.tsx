@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation"; // Correção: para navegação no Next.js
 
@@ -48,11 +47,6 @@ const TermsCheckbox = () => {
         >
           Salvar
         </button>
-      </div>
-
-      {/* Link para termos e condições */}
-      <div className="text-center">
-        <Link href="/terms"></Link>
       </div>
     </form>
   );
