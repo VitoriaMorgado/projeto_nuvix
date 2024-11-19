@@ -376,7 +376,7 @@ const Home = () => {
                 <p className="mb-2 text-center"> prioridade na fila</p>
                 <p className="mb-2 text-center">24 horas de jogo</p>
                 <p className="mb-2 text-center"></p>
-                <Link href="/login2">
+                <Link href="/pagamento">
                   <button className="mt-[76px] w-full rounded bg-[#019EC2] py-2 text-white hover:bg-[#198097]">
                     Assinar
                   </button>
@@ -393,7 +393,7 @@ const Home = () => {
                 <p className="mb-2 text-center">730 horas de jogo</p>
                 <p className="mb-2 text-center">Sem fila</p>
                 <p className="mb-2 text-center">Sem anuncios</p>
-                <Link href="/login2">
+                <Link href="/pagamento">
                   <button className="mt-10 w-full rounded bg-[#019EC2] py-2 text-white hover:bg-[#198097]">
                     Assinar
                   </button>
