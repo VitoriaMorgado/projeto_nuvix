@@ -96,9 +96,9 @@ const Home = () => {
                     <MenubarItem>Nuvix Plus</MenubarItem>
                   </button>
                   <MenubarSeparator />
-                  <Link href="/catalogo">
-                    <MenubarItem>Pacote Essencial</MenubarItem>
-                  </Link>
+                  <button onClick={() => scrollToSection("plano")}>
+                    <MenubarItem>Plano Essencial</MenubarItem>
+                  </button>
                 </MenubarContent>
               </MenubarMenu>
               <MenubarMenu>
@@ -368,18 +368,16 @@ const Home = () => {
             <div className="mb-6 flex w-full max-w-[600px] justify-center space-x-7">
               {/* Plano Mensal */}
               <div className="mb-4 flex-1 rounded-lg bg-white p-6 shadow">
-                <h1 className="text-center text-xl font-bold">
-                  Plano Essencial
-                </h1>
-                <p className="mb-4 text-center font-light">Pagamento Mensal</p>
+                <h1 className="text-center text-xl font-bold">Nuvix Diario</h1>
+                <p className="mb-4 text-center font-light">Pagamento Diario</p>
                 <p className="mb-5 text-center text-lg font-semibold">
-                  R$ 50,00
+                  R$ 20,00
                 </p>
-                <p className="mb-2 text-center">Preferencia Na Fila</p>
-                <p className="mb-2 text-center">Benefícios</p>
-                <p className="mb-2 text-center">Benefícios</p>
+                <p className="mb-2 text-center"> prioridade na fila</p>
+                <p className="mb-2 text-center">24 horas de jogo</p>
+                <p className="mb-2 text-center"></p>
                 <Link href="/login2">
-                  <button className="mt-10 w-full rounded bg-[#019EC2] py-2 text-white hover:bg-[#198097]">
+                  <button className="mt-[76px] w-full rounded bg-[#019EC2] py-2 text-white hover:bg-[#198097]">
                     Assinar
                   </button>
                 </Link>
@@ -388,13 +386,13 @@ const Home = () => {
               {/* Plano Anual */}
               <div className="mb-4 flex-1 rounded-lg bg-white p-6 shadow">
                 <h1 className="text-center text-xl font-bold">Nuvix Plus</h1>
-                <p className="mb-4 text-center font-light">Pagamento Semanal</p>
+                <p className="mb-4 text-center font-light">Pagamento Mensal</p>
                 <p className="mb-5 text-center text-lg font-semibold">
-                  R$ 500,00
+                  R$ 60,00
                 </p>
-                <p className="mb-2 text-center">Preferencia Na Fila</p>
-                <p className="mb-2 text-center">Benefícios</p>
-                <p className="mb-2 text-center">Benefícios</p>
+                <p className="mb-2 text-center">730 horas de jogo</p>
+                <p className="mb-2 text-center">Sem fila</p>
+                <p className="mb-2 text-center">Sem anuncios</p>
                 <Link href="/login2">
                   <button className="mt-10 w-full rounded bg-[#019EC2] py-2 text-white hover:bg-[#198097]">
                     Assinar
