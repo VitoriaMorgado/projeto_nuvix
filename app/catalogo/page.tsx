@@ -136,6 +136,7 @@ const Card = () => {
             <CarouselNext className="text-black" />
           </Carousel>
         </div>
+        <div className="h-[100px] w-screen"></div>
       </div>
     </>
   );

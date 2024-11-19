@@ -95,7 +95,7 @@ const Signupp = () => {
         <Link href="/login2">
           <button
             type="submit"
-            className="w-full rounded bg-blue-800 py-2 text-white hover:bg-blue-950"
+            className="w-full rounded bg-[#019EC2] py-2 text-white hover:bg-[#075d70]"
           >
             Criar Conta
           </button>

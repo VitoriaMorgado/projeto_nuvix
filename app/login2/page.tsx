@@ -85,7 +85,7 @@ const Loginn = () => {
             <Link href="/">
               <button
                 type="submit"
-                className="my-4 w-full rounded bg-blue-800 py-2 text-white hover:bg-blue-950"
+                className="my-4 w-full rounded bg-[#019EC2] py-2 text-white hover:bg-blue-950"
               >
                 Entrar
               </button>
@@ -93,7 +93,7 @@ const Loginn = () => {
           ) : (
             <button
               type="submit"
-              className="my-4 w-full rounded bg-blue-800 py-2 text-white hover:bg-blue-950"
+              className="my-4 w-full rounded bg-[#019EC2] py-2 text-white hover:bg-[#075d70]"
             >
               Entrar
             </button>
