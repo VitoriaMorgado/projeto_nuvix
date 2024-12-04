@@ -3,7 +3,7 @@ import Rodape from "@/components/ui/rodape";
 
 const PrivacyPolicy = () => {
   return (
-    <div className="m-0 flex h-screen w-screen flex-col bg-gradient-to-b from-[#0E304A] to-[#154B74] p-0">
+    <div className="m-0 flex h-full w-screen flex-col bg-gradient-to-b from-[#0E304A] to-[#154B74] p-0">
       <div className="bg-[#0E304A] p-6 text-3xl font-bold text-white shadow-2xl">
         Politica de Privacidade
       </div>
