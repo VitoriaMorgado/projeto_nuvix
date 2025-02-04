@@ -151,9 +151,8 @@ const Home = () => {
         <div className="absolute w-screen">
           <Image
             src="/bannerp.jpg"
-            width={1000}
-            height={400}
-            layout="responsive"
+            width={3000}
+            height={500}
             objectFit="cover"
             alt="banner"
           />
@@ -161,7 +160,7 @@ const Home = () => {
 
         {/* FUNDO BANNER FIM */}
 
-        <div className="flex flex-col">
+        <div className="flex h-[850px] flex-col">
           <div>
             {/* ESCRITAS DO BANNER COMEÇO */}
             <div className="h-auto">
