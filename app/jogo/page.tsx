@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import logo from "@/public/logo.png";
 import {
   Menubar,
   MenubarContent,
@@ -37,7 +36,7 @@ const JogoPage = () => {
         <div className="flex bg-black">
           <Image
             className="mx-4"
-            src={logo}
+            src="/logo.png"
             width={150}
             height={500}
             alt="logo"
