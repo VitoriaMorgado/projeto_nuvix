@@ -1,6 +1,5 @@
 import Image from "next/image";
 import estilo from "./card.module.css";
-import jogos from "@/public/nuvix.png";
 import Link from "next/link";
 
 const CardTres = () => {
@@ -9,7 +8,7 @@ const CardTres = () => {
       <div className={estilo.cardi}>
         <Image
           className="rounded-t-xl"
-          src={jogos}
+          src="/nuvix.png"
           width={600}
           height={500}
           alt="imagem de controle"

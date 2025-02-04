@@ -1,6 +1,6 @@
 "use client";
 
-import Logo from "@/public/logo.png";
+import Logo from "@/app/public/logo"
 import Image from "next/image";
 import Link from "next/link";
 

@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import banner from "@/public/banner8.jpg";
 import {
   Menubar,
   MenubarContent,
@@ -22,8 +21,6 @@ import CardDois from "./componente/carddois";
 import CardTres from "./componente/cardtres";
 import Cardquatro from "./componente/cardquatro";
 import Link from "next/link";
-import logo from "@/public/logo.png";
-import Red from "@/public/red.png";
 import Carduni from "./componente/carduni";
 import Card02 from "./componente/cards/card02";
 import Card01 from "./componente/cards/card01";
@@ -50,7 +47,7 @@ const Home = () => {
             <Menubar className="mt-2 w-full border-transparent bg-transparent">
               <MenubarMenu>
                 <Image
-                  src={logo}
+                  src="/logo.png"
                   width={150}
                   height={100}
                   alt="imagem do mine"
@@ -153,7 +150,9 @@ const Home = () => {
 
         <div className="absolute w-screen">
           <Image
-            src={banner}
+            src="/bannerp.jpg"
+            width={1000}
+            height={400}
             layout="responsive"
             objectFit="cover"
             alt="banner"
@@ -269,7 +268,7 @@ const Home = () => {
                   <div className="flex">
                     <Image
                       className="mx-[35px]"
-                      src={Red}
+                      src="/red.png"
                       width={670}
                       height={500}
                       alt="imagem do red"
@@ -349,7 +348,7 @@ const Home = () => {
 
           <div className="h-[900px] content-center justify-items-center">
             <Image
-              src={logo}
+              src="/logo.png"
               alt="Logo"
               width={300}
               height={300}

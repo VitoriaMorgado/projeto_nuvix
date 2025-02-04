@@ -1,6 +1,5 @@
 import Image from "next/image";
 import estilo from "./card.module.css";
-import crash from "@/public/crash.jpg";
 import Link from "next/link";
 
 const Carduni = () => {
@@ -9,7 +8,7 @@ const Carduni = () => {
       <div className={estilo.cardi}>
         <Image
           className="rounded-t-xl"
-          src={crash}
+          src="/crash.jpg"
           width={600}
           height={500}
           alt="imagem do jogo Crash"

@@ -1,4 +1,3 @@
-import logo from "@/public/logo.png";
 import Image from "next/image";
 
 const Rodape = () => {
@@ -14,7 +13,7 @@ const Rodape = () => {
             {/* Logo */}
             <div className="flex-shrink-0">
               <Image
-                src={logo}
+                src="/logo.png"
                 width={200}
                 height={200}
                 alt="Logo"

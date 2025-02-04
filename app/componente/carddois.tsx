@@ -1,6 +1,5 @@
 import Image from "next/image";
 import estilo from "./card.module.css";
-import jogos from "@/public/classico.jpg";
 import Link from "next/link";
 
 const CardDois = () => {
@@ -9,7 +8,7 @@ const CardDois = () => {
       <div className={estilo.cardi}>
         <Image
           className="rounded-t-xl"
-          src={jogos}
+          src="/classico.png"
           width={600}
           height={500}
           alt="imagem de controle"
