@@ -1,5 +1,7 @@
 "use client";
 
+//Catalogo com problema
+
 import * as React from "react";
 
 import {
