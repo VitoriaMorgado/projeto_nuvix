@@ -8,7 +8,7 @@ const CardDois = () => {
       <div className={estilo.cardi}>
         <Image
           className="rounded-t-xl"
-          src="/classico.png"
+          src="/classico.jpg"
           width={600}
           height={500}
           alt="imagem de controle"

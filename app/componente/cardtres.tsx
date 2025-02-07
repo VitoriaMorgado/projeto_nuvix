@@ -8,7 +8,7 @@ const CardTres = () => {
       <div className={estilo.cardi}>
         <Image
           className="rounded-t-xl"
-          src="/dois.png"
+          src="/dois.jpg"
           width={600}
           height={500}
           alt="imagem de controle"
