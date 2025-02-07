@@ -1,6 +1,5 @@
 "use client";
 
-import Logo from "@/app/public/logo"
 import Image from "next/image";
 import Link from "next/link";
 
@@ -9,7 +8,7 @@ const Home = () => {
     <div className="flex h-screen w-screen flex-col items-center justify-center bg-gradient-to-b from-blue-900 to-blue-950 p-6 sm:p-8 md:p-9">
       {/* LOGO NUVIX */}
       <Image
-        src={Logo}
+        src="/logo.png"
         alt="Logo"
         width={200}
         height={200}
