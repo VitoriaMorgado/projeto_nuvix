@@ -1,29 +1,29 @@
 export interface Cata {
   id: number;
   nome: string;
-  imagens: string[];
+  imagens: string;
 }
 
 const jogosc: Cata[] = [
   {
     id: 1,
     nome: "Cuphead",
-    imagens: ["/card.cop.png"],
+    imagens: "/resi1.jpg",
   },
   {
     id: 2,
     nome: "Red Dead",
-    imagens: ["/card.acao.png"],
+    imagens: "/ittwo1.jpg",
   },
   {
     id: 3,
     nome: "Cyberpunk",
-    imagens: ["/card.futu.jpg"],
+    imagens: "/buck1.jpg",
   },
   {
     id: 4,
     nome: "Resident Evil",
-    imagens: ["/hero_capsule(2).jpg"],
+    imagens: "/hori1.jpg",
   },
 ];
  
