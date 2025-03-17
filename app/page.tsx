@@ -61,11 +61,11 @@ const Home = () => {
                   </Link>
                   <MenubarSeparator />
                   <Link href="/catalogo">
-                    <MenubarItem>Jogos Em Destaque</MenubarItem>
+                    <MenubarItem>Jogos Lixos Em Destaque</MenubarItem>
                   </Link>
                   <MenubarSeparator />
                   <Link href="/catalogo">
-                    <MenubarItem>Novidades</MenubarItem>
+                    <MenubarItem>Novidades AAA >>> Indie</MenubarItem>
                   </Link>
                 </MenubarContent>
               </MenubarMenu>
