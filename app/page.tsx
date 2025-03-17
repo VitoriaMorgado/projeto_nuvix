@@ -174,7 +174,7 @@ const Home = () => {
                       O melhor serviço de jogos na nuvem
                     </p>
                     <p className="m-4 mx-4 w-[500px] text-justify text-xl text-[#F6F7F8]">
-                      Experimente a revolução dos jogos na nuvem: jogue os
+                      xperimente a revolução dos jogos na nuvem: jogue os
                       títulos mais recentes e de alta qualidade sem precisar de
                       um PC poderoso ou console. Com a tecnologia de nuvem, você
                       acessa seus jogos favoritos de qualquer dispositivo, a
