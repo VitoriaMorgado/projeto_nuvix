@@ -7,6 +7,12 @@ import {
 } from "@/components/ui/carousel";
 
 const CatalogoNovo = () => {
+  // const [jogoSelecionado, setJogoSelecionado] = useState(jogos[0]);
+
+  // const handleCardClick = (jogoId: number) => {
+  //   const jogo = jogos.find((j) => j.id === jogoId);
+  //   if (jogo) setJogoSelecionado(jogo);
+  // };
   return (
     <>
       <div className="h-screen w-screen bg-[#0E304A] p-0 text-3xl font-bold text-white shadow-2xl">
@@ -25,7 +31,24 @@ const CatalogoNovo = () => {
               }}
             >
               <CarouselContent>
-                <CarouselItem>...</CarouselItem>
+                {/* {jogos.map((jogo) => (
+                  <CarouselItem
+                    key={jogo.id}
+                    onClick={() => handleCardClick(jogo.id)}
+                    className="cursor-pointer md:basis-2/5"
+                  >
+                    {/* NOVO CARD */}
+                {/* <div className="m-2 h-[340px] w-[550px] justify-center rounded-xl bg-[#000101] shadow-xl">
+                      
+                      <div className="h-[60px] w-full content-center justify-items-center">
+                        <p className="mt-2 text-center font-mono text-5xl text-[#F6F7F8]">
+                          {jogo.nome}
+                        </p>
+                      </div>
+                    </div> */}
+                {/* NOVO CARD FIM */}
+                {/* </CarouselItem>
+                // ))} */}
                 <CarouselItem>...</CarouselItem>
                 <CarouselItem>...</CarouselItem>
               </CarouselContent>

@@ -50,7 +50,7 @@ const JogoPage = () => {
             </Link>
 
             <button className="mx-5 content-center text-2xl font-bold text-[#F6F7F8]">
-              FAVORITOS V
+              FAVORITOS
             </button>
 
             <button className="mx-5 content-center text-2xl font-bold text-[#F6F7F8]">
