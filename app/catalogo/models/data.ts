@@ -26,5 +26,5 @@ const jogosc: Cata[] = [
     imagens: ["/hero_capsule(2).jpg"],
   },
 ];
- 
+
 export default jogosc;
