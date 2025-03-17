@@ -26,5 +26,5 @@ const jogosc: Cata[] = [
     imagens: "/hori1.jpg",
   },
 ];
- 
+
 export default jogosc;
