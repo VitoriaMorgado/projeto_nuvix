@@ -1,3 +1,4 @@
+"use client";
 import {
   Carousel,
   CarouselContent,
@@ -5,8 +6,13 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import jogosc from "./models/data";
+import { useState } from "react";
+import CardV from "./cardv/cardv";
 
 const CatalogoNovo = () => {
+  const [, setJogoSelecionado] = useState(jogosc[0].id);
+
   return (
     <>
       <div className="h-screen w-screen bg-[#0E304A] p-0 text-3xl font-bold text-white shadow-2xl">
@@ -18,16 +24,17 @@ const CatalogoNovo = () => {
             <p className="text-4xl text-white">Ação</p>
           </div>
           <div className="ms-[100px] w-[1700px] py-4">
-            <Carousel
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-            >
+            <Carousel opts={{ align: "start", loop: true }}>
               <CarouselContent>
-                <CarouselItem>...</CarouselItem>
-                <CarouselItem>...</CarouselItem>
-                <CarouselItem>...</CarouselItem>
+                {jogosc.map((Cata) => (
+                  <CarouselItem
+                    key={Cata.id}
+                    onClick={() => setJogoSelecionado(Cata.id)}
+                    className="cursor-pointer md:basis-2/5"
+                  >
+                    <CardV jogoId={Cata.id} />
+                  </CarouselItem>
+                ))}
               </CarouselContent>
               <CarouselPrevious />
               <CarouselNext />
