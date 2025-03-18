@@ -1,50 +1,50 @@
 export interface Cata {
   id: number;
-  nome: string;
-  imagens: string;
+  nomejogo: string;
+  capajogo: string;
 }
 
-const jogosc: Cata[] = [
+const jogoscata: Cata[] = [
   {
     id: 1,
-    nome: "Read Dead",
-    imagens: "./card.acao.png",
+    nomejogo: "Read Dead",
+    capajogo: "/card.acao.png",
   },
   {
     id: 2,
-    nome: "Stardew Valley",
-    imagens: "./card.casual.jpg",
+    nomejogo: "Stardew Valley",
+    capajogo: "/card.casual.jpg",
   },
   {
     id: 3,
-    nome: "Cuphead",
-    imagens: "./card.cop.png",
+    nomejogo: "Cuphead",
+    capajogo: "/card.cop.png",
   },
   {
     id: 4,
-    nome: "Cyberpunk",
-    imagens: "./card.futu.jpg",
+    nomejogo: "Cyberpunk",
+    capajogo: "/card.futu.jpg",
   },
   {
     id: 5,
-    nome: "Devil May Cry",
-    imagens: "./card.luta.jpg",
+    nomejogo: "Devil May Cry",
+    capajogo: "/card.luta.jpg",
   },
   {
     id: 6,
-    nome: "Honkai Star Rail",
-    imagens: "./card.rpg.png",
+    nomejogo: "Honkai Star Rail",
+    capajogo: "/card.rpg.png",
   },
   {
     id: 7,
-    nome: "Resident Evil 4",
-    imagens: "./hero_capsule(2).jpg",
+    nomejogo: "Incryption",
+    capajogo: "/hero_capsule (4).jpg",
   },
   {
-    id: 8,
-    nome: "The Sims 4",
-    imagens: "./hero_capsule(3).jpg",
+    id: 7,
+    nomejogo: "Resident Evil",
+    capajogo: "/card.terror.jpg",
   },
 ];
 
-export default jogosc;
+export default jogoscata;
