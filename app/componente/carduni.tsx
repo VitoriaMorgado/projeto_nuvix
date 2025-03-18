@@ -13,17 +13,14 @@ const Carduni = () => {
           height={500}
           alt="imagem do jogo Crash"
         />
-        <div className="m-10">
-          <p className={estilo.azulzin}>A maior varidade de jogos</p>
-          <h1 className={estilo.titulo}>Explore</h1>
+        <div className="m-10 justify-center">
+          <p className= {estilo.azulzin}>Jogos Feitos Para Você</p>
+          <h1 className={estilo.titulo}>Explore o Catálogo</h1>
           <p className={estilo.paragrafo}>
-            Nuvix oferece uma vasta variedade de jogos para todos os gostos,
-            desde títulos AAA até indie inovadores. Com acesso instantâneo, você
-            pode explorar diferentes gêneros e experiências, sem limitações de
-            plataforma.
+          Descubra o catálogo da Nuvix, repleto de jogos incríveis, desde lançamentos AAA até indies inovadores. Jogue instantaneamente, sem downloads ou limitações de hardware.
           </p>
-          <Link href="/SaibaMais">
-            <button className={estilo.botao}>SAIBA MAIS</button>
+          <Link href="/saibamais">
+            <button className="w-full sm:w-[50%] h-[30px] mt-3 rounded-bl-3xl rounded-tr-3xl bg-[#019EC2] text-xl sm:text-2xl font-bold text-[#F6F7F8] hover:bg-[#198097] transition-colors">SAIBA MAIS</button>
           </Link>
         </div>
       </div>

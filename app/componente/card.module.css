@@ -1,5 +1,5 @@
 .cardi{
-    background-color: white;
+    background-color: rgb(238, 238, 238);
     width: 600px;
     height: 700px;
     border-radius: 10px;
@@ -10,7 +10,7 @@
     padding-right: 15px;
     padding-left: 15px;
     width: max-content;
-    color: #F6F7F8;
+    color: #ffffff;
     font-size: 20px;
     font-weight: bold;
 }
