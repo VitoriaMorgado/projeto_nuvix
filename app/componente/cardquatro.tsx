@@ -21,8 +21,8 @@ const CardTres = () => {
             aos jogos do momento! Aumente ainda mais sua diversão com Nuvix
             Plus!
           </p>
-          <Link href="/SaibaMais">
-            <button className={estilo.botao}>SAIBA MAIS</button>
+          <Link href="/saibamais">
+            <button className="w-full sm:w-[50%] h-[30px] mt-3 rounded-bl-3xl rounded-tr-3xl bg-[#019EC2] text-xl sm:text-2xl font-bold text-[#F6F7F8] hover:bg-[#198097] transition-colors">SAIBA MAIS</button>
           </Link>
         </div>
       </div>
