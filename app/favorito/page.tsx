@@ -5,92 +5,112 @@ import {
   MenubarItem,
   MenubarMenu,
   MenubarSeparator,
-  MenubarShortcut,
   MenubarTrigger,
 } from "@/components/ui/menubar";
-import { Search } from "lucide-react";
+import { CircleUser, Search } from "lucide-react";
+import Link from "next/link";
 
 const Favorito = () => {
   return (
     <>
       <div className="m-0 h-screen w-screen flex-col justify-center bg-gradient-to-b from-[#0a2235] to-[#154B74] p-0">
         {/* MENUBAR INICIO */}
-        <div className="sticky flex bg-black">
-          <Menubar className="w-full border-transparent bg-transparent">
-            <MenubarMenu>
-              <Image
-                src="/logo.png"
-                width={100}
-                height={100}
-                alt="imagem do mine"
+        <div>
+          <div className="sticky flex h-[60px] bg-black">
+            <Menubar className="mt-2 w-full border-transparent bg-transparent">
+              <MenubarMenu>
+                <Image
+                  src="/logo.png"
+                  width={150}
+                  height={100}
+                  alt="imagem do mine"
+                />
+                <MenubarTrigger className="h-[30px] w-[120px] justify-center text-xl font-bold text-[#F6F7F8]">
+                  Destaques
+                </MenubarTrigger>
+                <MenubarContent>
+                  <Link href="/catalogo">
+                    <MenubarItem>Catalogo</MenubarItem>
+                  </Link>
+                  <MenubarSeparator />
+                  <Link href="/catalogo">
+                    <MenubarItem>Jogos Em Destaque</MenubarItem>
+                  </Link>
+                  <MenubarSeparator />
+                  <Link href="/catalogo">
+                    <MenubarItem>Novidades</MenubarItem>
+                  </Link>
+                </MenubarContent>
+              </MenubarMenu>
+              <MenubarMenu>
+                <MenubarTrigger className="h-[30px] w-[80px] justify-center text-xl font-bold text-[#F6F7F8]">
+                  Jogos
+                </MenubarTrigger>
+                <MenubarContent>
+                  <Link href="/catalogo">
+                    <MenubarItem>Catalogo</MenubarItem>
+                    <MenubarSeparator />
+                  </Link>
+                  <Link href="/catalogo">
+                    <MenubarItem>Destaque</MenubarItem>
+                  </Link>
+                  <MenubarSeparator />
+                </MenubarContent>
+              </MenubarMenu>
+              <MenubarMenu>
+                <MenubarTrigger className="h-[30px] w-[120px] justify-center text-xl font-bold text-[#F6F7F8]">
+                  Assinatura
+                </MenubarTrigger>
+                <MenubarContent>
+                  <MenubarItem>Nuvix Plus</MenubarItem>
+
+                  <MenubarSeparator />
+
+                  <MenubarItem>Plano Essencial</MenubarItem>
+                </MenubarContent>
+              </MenubarMenu>
+              <MenubarMenu>
+                <MenubarTrigger className="h-[30px] w-[150px] justify-center text-xl font-bold text-[#F6F7F8]">
+                  Fale conosco
+                </MenubarTrigger>
+                <MenubarContent>
+                  <Link href="cadastro">
+                    <MenubarItem>Sobre Nós</MenubarItem>
+                  </Link>
+                  <MenubarSeparator />
+                  <Link href="login2">
+                    <MenubarItem>Nos Contate</MenubarItem>
+                  </Link>
+                  <MenubarSeparator />
+                </MenubarContent>
+              </MenubarMenu>
+              <MenubarMenu>
+                <MenubarTrigger className="h-[30px] w-[110px] text-xl font-bold text-[#F6F7F8]">
+                  <div className="flex">
+                    <CircleUser className="me-2 mt-0.5" />
+                    <p>Conta</p>
+                  </div>
+                </MenubarTrigger>
+                <MenubarContent>
+                  <Link href="/cadastro2">
+                    <MenubarItem>Cadastre-se</MenubarItem>
+                  </Link>
+                  <MenubarSeparator />
+                  <Link href="/login2">
+                    <MenubarItem>Login</MenubarItem>
+                  </Link>
+                  <MenubarSeparator />
+                </MenubarContent>
+              </MenubarMenu>
+            </Menubar>
+            <div className="flex">
+              <Search className="mx-2 mt-4 text-white" />
+              <input
+                type="text"
+                className="bg-transparent text-xl text-white"
+                placeholder="Search"
               />
-              <MenubarTrigger className="h-[30px] w-[80px] justify-center text-xl font-bold text-[#F6F7F8]">
-                File
-              </MenubarTrigger>
-              <MenubarContent>
-                <MenubarItem>
-                  New Tab <MenubarShortcut>⌘T</MenubarShortcut>
-                </MenubarItem>
-                <MenubarItem>New Window</MenubarItem>
-                <MenubarSeparator />
-                <MenubarItem>Share</MenubarItem>
-                <MenubarSeparator />
-                <MenubarItem>Print</MenubarItem>
-              </MenubarContent>
-            </MenubarMenu>
-            <MenubarMenu>
-              <MenubarTrigger className="h-[30px] w-[80px] justify-center text-xl font-bold text-[#F6F7F8]">
-                File
-              </MenubarTrigger>
-              <MenubarContent>
-                <MenubarItem>
-                  New Tab <MenubarShortcut>⌘T</MenubarShortcut>
-                </MenubarItem>
-                <MenubarItem>New Window</MenubarItem>
-                <MenubarSeparator />
-                <MenubarItem>Share</MenubarItem>
-                <MenubarSeparator />
-                <MenubarItem>Print</MenubarItem>
-              </MenubarContent>
-            </MenubarMenu>
-            <MenubarMenu>
-              <MenubarTrigger className="h-[30px] w-[80px] justify-center text-xl font-bold text-[#F6F7F8]">
-                File
-              </MenubarTrigger>
-              <MenubarContent>
-                <MenubarItem>
-                  New Tab <MenubarShortcut>⌘T</MenubarShortcut>
-                </MenubarItem>
-                <MenubarItem>New Window</MenubarItem>
-                <MenubarSeparator />
-                <MenubarItem>Share</MenubarItem>
-                <MenubarSeparator />
-                <MenubarItem>Print</MenubarItem>
-              </MenubarContent>
-            </MenubarMenu>
-            <MenubarMenu>
-              <MenubarTrigger className="h-[30px] w-[80px] justify-center text-xl font-bold text-[#F6F7F8]">
-                File
-              </MenubarTrigger>
-              <MenubarContent>
-                <MenubarItem>
-                  New Tab <MenubarShortcut>⌘T</MenubarShortcut>
-                </MenubarItem>
-                <MenubarItem>New Window</MenubarItem>
-                <MenubarSeparator />
-                <MenubarItem>Share</MenubarItem>
-                <MenubarSeparator />
-                <MenubarItem>Print</MenubarItem>
-              </MenubarContent>
-            </MenubarMenu>
-          </Menubar>
-          <div className="flex">
-            <Search className="m-2 text-white" />
-            <input
-              type="text"
-              className="border-transparent bg-transparent text-white"
-              placeholder="Search"
-            />
+            </div>
           </div>
         </div>
         {/* MENUBAR FIM */}
