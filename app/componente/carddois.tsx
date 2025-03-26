@@ -22,8 +22,10 @@ const CardDois = () => {
             downloads pesados. É nostalgia na ponta dos dedos, com qualidade e
             praticidade!
           </p>
-          <Link href="/saibamais">
-            <button className="w-full sm:w-[50%] h-[30px] mt-3 rounded-bl-3xl rounded-tr-3xl bg-[#019EC2] text-xl sm:text-2xl font-bold text-[#F6F7F8] hover:bg-[#198097] transition-colors">SAIBA MAIS</button>
+          <Link href="/SaibaMais">
+            <button className="mt-3 h-[30px] w-full rounded-bl-3xl rounded-tr-3xl bg-[#019EC2] text-xl font-bold text-[#F6F7F8] transition-colors hover:bg-[#198097] sm:w-[50%] sm:text-2xl">
+              SAIBA MAIS
+            </button>
           </Link>
         </div>
       </div>

@@ -17,13 +17,14 @@ const CardTres = () => {
           <p className={estilo.azulzin}>Jogue Com Amigos</p>
           <h1 className={estilo.titulo}>Sessão CO-OP</h1>
           <p className={estilo.paragrafo}>
-            Junte-se aos amigos e viva a emoção dos jogos co-op! Na
-            Nuvix, você pode explorar mundos, enfrentar desafios e se divertir
-            em equipe. A diversão é garantida, onde quer que
-            você esteja!
+            Junte-se aos amigos e viva a emoção dos jogos co-op! Na Nuvix, você
+            pode explorar mundos, enfrentar desafios e se divertir em equipe. A
+            diversão é garantida, onde quer que você esteja!
           </p>
-          <Link href="/saibamais">
-            <button className="w-full sm:w-[50%] h-[30px] mt-3 rounded-bl-3xl rounded-tr-3xl bg-[#019EC2] text-xl sm:text-2xl font-bold text-[#F6F7F8] hover:bg-[#198097] transition-colors">SAIBA MAIS</button>
+          <Link href="/SaibaMais">
+            <button className="mt-3 h-[30px] w-full rounded-bl-3xl rounded-tr-3xl bg-[#019EC2] text-xl font-bold text-[#F6F7F8] transition-colors hover:bg-[#198097] sm:w-[50%] sm:text-2xl">
+              SAIBA MAIS
+            </button>
           </Link>
         </div>
       </div>
