@@ -9,13 +9,14 @@ import {
 } from "@/components/ui/menubar";
 import { CircleUser, Search } from "lucide-react";
 import Link from "next/link";
+import CataUsa from "../catalogo/cataloguin";
 
 const Favorito = () => {
   return (
     <>
-      <div className="m-0 h-screen w-screen flex-col justify-center bg-gradient-to-b from-[#0a2235] to-[#154B74] p-0">
-        {/* MENUBAR INICIO */}
+      <div className="m-0 h-[1100px] w-full flex-col justify-center bg-gradient-to-b from-[#0a2235] to-[#154B74] p-0">
         <div>
+          {/* MENUBAR INICIO */}
           <div className="sticky flex h-[60px] bg-black">
             <Menubar className="mt-2 w-full border-transparent bg-transparent">
               <MenubarMenu>
@@ -115,11 +116,24 @@ const Favorito = () => {
         </div>
         {/* MENUBAR FIM */}
 
-        <div className="my-5 justify-items-center">
-          <h1 className="text-7xl text-white">Favoritos</h1>
+        <div className="my-5 ml-[60px]">
+          <div className="flex">
+            <p className="text-4xl text-white">Favoritos</p>
+            <div className="ml-3 mt-2 h-[3px] w-[1000px] self-center bg-gradient-to-r from-[#c8d3f5] to-[#0a2235]"></div>
+          </div>
         </div>
 
-        <div className="h-[1000px] w-[1800px] justify-self-center bg-[#000101b4]"></div>
+        <div className="my-3 ml-[60px] flex">
+          <p className="text-xl text-white">Ordenar por:</p>
+          <select className="ml-2 rounded bg-[#019EC2] p-1 text-center font-bold text-white">
+            <option value="a-z">A-Z</option>
+            <option value="data">Data de adição</option>
+          </select>
+        </div>
+
+        <div className="mb-10 h-[900px] w-[1800px] justify-self-center bg-[#000101b4]">
+          <CataUsa />
+        </div>
       </div>
     </>
   );
