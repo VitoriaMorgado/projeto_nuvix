@@ -152,42 +152,6 @@ const Home = () => {
 
       <main className="flex-grow">
         {/* BANNER COMEÇO */}
-<div className="relative w-full h-[500px] sm:h-[600px] md:h-[700px] lg:h-[850px]">
-  <Image
-    src="/bannerp.jpg"
-    fill
-    style={{ objectFit: "cover" }}
-    alt="banner"
-    priority
-    className="absolute inset-0"
-  />
-  
-  {/* ESCRITAS DO BANNER */}
-  <div className="relative h-full z-10 flex flex-col justify-center items-center sm:items-start">
-    <div className="px-6 sm:px-10 md:px-14 lg:px-20 text-center sm:text-left">
-      <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#F6F7F8] mb-4 drop-shadow-lg">
-        Nuvix
-      </h1>
-      <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-[#F6F7F8] font-medium mb-4">
-        O melhor serviço de jogos na nuvem
-      </p>
-      <p className="w-full sm:w-[400px] md:w-[450px] lg:w-[500px] text-base sm:text-lg md:text-xl text-[#F6F7F8] leading-relaxed mb-6">
-        Experimente a revolução dos jogos na nuvem: jogue os títulos mais recentes e de alta qualidade sem precisar de um PC poderoso ou console.
-        Com a tecnologia de nuvem, você acessa seus jogos favoritos de qualquer dispositivo, a qualquer hora e em qualquer lugar, sem longas esperas para downloads ou atualizações.
-        A diversão está ao alcance de um clique!
-      </p>
-      <div className="flex justify-center sm:justify-start">
-        <Link href="/jogo">
-          <button className="h-[50px] sm:h-[55px] md:h-[60px] w-[190px] sm:w-[210px] md:w-[240px] rounded-br-3xl rounded-tl-3xl bg-[#019EC2] text-lg sm:text-xl md:text-2xl font-bold text-[#F6F7F8] shadow-lg hover:bg-[#198097] transition-all duration-300 ease-in-out transform hover:scale-105">
-            Jogue agora
-          </button>
-        </Link>
-      </div>
-    </div>
-  </div>
-</div>
-{/* BANNER FINAL */}
-
 
         {/* FUNDO BANNER COMEÇO */}
 
@@ -217,7 +181,7 @@ const Home = () => {
                       O melhor serviço de jogos na nuvem
                     </p>
                     <p className="m-4 mx-4 w-[500px] text-justify text-xl text-[#F6F7F8]">
-                      Experimente a revolução dos jogos na nuvem: jogue os
+                      xperimente a revolução dos jogos na nuvem: jogue os
                       títulos mais recentes e de alta qualidade sem precisar de
                       um PC poderoso ou console. Com a tecnologia de nuvem, você
                       acessa seus jogos favoritos de qualquer dispositivo, a
@@ -242,9 +206,6 @@ const Home = () => {
         {/* BANNER FINAL */}
 
         {/* FUNDO */}
-
-        {/* CONTEÚDO PRINCIPAL */}
-
         <div className="bg-gradient-to-b from-[#02030a] to-[#0E304A]">
           {/* CATALOGO COMEÇO */}
           <div className="py-12 sm:py-16 md:py-20">
