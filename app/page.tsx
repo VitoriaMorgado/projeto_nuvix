@@ -31,7 +31,7 @@ import Card05 from "./componente/cards/card05";
 import Card06 from "./componente/cards/card06";
 import Card07 from "./componente/cards/card07";
 import Rodape from "@/components/ui/rodape";
-import CardMuda from "./comp/cardmuda";
+import CardMuda from "./comp/carromuda";
 
 const Home = () => {
   const scrollToSection = (id: string) => {
