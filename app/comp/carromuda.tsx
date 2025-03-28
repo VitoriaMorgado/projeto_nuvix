@@ -2,6 +2,7 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselNext,
 } from "@/components/ui/carousel";
 import Link from "next/link";
 import destaque from "./models/muda";
@@ -20,19 +21,25 @@ const CarroMuda = () => {
       <div className="px-4 py-8 sm:py-12">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col overflow-hidden rounded bg-[#000101] lg:flex-row">
-            <Carousel opts={{ align: "start", loop: true }}>
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+            >
               <div className="flex h-[500px] w-[1300px]">
                 <div className="flex">
                   <CarouselContent>
                     {destaque.map((change) => (
                       <CarouselItem
                         key={change.id}
-                        onClick={() => MudarCarro(change.id)}
+                        onChange={() => MudarCarro(change.id)}
                       >
                         <CardMuda change={change} />
                       </CarouselItem>
                     ))}
                   </CarouselContent>
+                  <CarouselNext />
                 </div>
               </div>
             </Carousel>
