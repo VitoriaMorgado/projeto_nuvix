@@ -43,8 +43,8 @@ const TermsCheckbox = () => {
       <div className="mb-5 mt-5 flex justify-center rounded-full">
         <button
           type="submit"
-          className="w-full rounded-br-3xl rounded-tl-3xl bg-[#019EC2] py-2 text-[#F6F7F8] hover:bg-[#198097]"
-        >
+          className="h-[55px] w-[230px] rounded-br-3xl rounded-tl-3xl bg-[#019EC2] text-3xl font-bold text-[#F6F7F8] hover:bg-[#198097]">
+        
           Salvar
         </button>
       </div>
