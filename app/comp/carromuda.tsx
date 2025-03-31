@@ -2,7 +2,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
 } from "@/components/ui/carousel";
 import Link from "next/link";
 import destaque from "./models/muda";
@@ -39,7 +38,6 @@ const CarroMuda = () => {
                       </CarouselItem>
                     ))}
                   </CarouselContent>
-                  <CarouselNext />
                 </div>
               </div>
             </Carousel>
