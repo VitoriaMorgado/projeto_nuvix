@@ -31,6 +31,7 @@ import Card05 from "./componente/cards/card05";
 import Card06 from "./componente/cards/card06";
 import Card07 from "./componente/cards/card07";
 import Rodape from "@/components/ui/rodape";
+import CardMuda from "./comp/carromuda";
 
 const Home = () => {
   const scrollToSection = (id: string) => {
@@ -39,13 +40,13 @@ const Home = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
-  
+
   return (
     //========INDICE MENU========//
-    <div className="bg-black min-h-screen w-full flex flex-col">
+    <div className="flex min-h-screen w-full flex-col bg-black">
       {/* //========NAVBAR========// */}
       <div className="sticky top-0 z-50 w-full">
-        <div className="flex h-[60px] bg-black items-center">
+        <div className="flex h-[60px] items-center bg-black">
           <Menubar className="w-full border-transparent bg-transparent">
             <MenubarMenu>
               <Link href="/">
@@ -57,7 +58,7 @@ const Home = () => {
                   className="max-w-[100px] md:max-w-[150px]"
                 />
               </Link>
-              <MenubarTrigger className="h-[30px] w-[120px] justify-center text-xl font-bold text-[#F6F7F8] hidden md:flex">
+              <MenubarTrigger className="hidden h-[30px] w-[120px] justify-center text-xl font-bold text-[#F6F7F8] md:flex">
                 Destaques
               </MenubarTrigger>
               <MenubarContent>
@@ -76,7 +77,7 @@ const Home = () => {
             </MenubarMenu>
 
             <MenubarMenu>
-              <MenubarTrigger className="h-[30px] w-[80px] justify-center text-xl font-bold text-[#F6F7F8] hidden md:flex">
+              <MenubarTrigger className="hidden h-[30px] w-[80px] justify-center text-xl font-bold text-[#F6F7F8] md:flex">
                 Jogos
               </MenubarTrigger>
               <MenubarContent>
@@ -138,11 +139,11 @@ const Home = () => {
               </MenubarContent>
             </MenubarMenu>
           </Menubar>
-          <div className="flex items-center mr-4">
-            <Search className="text-white mr-2" />
+          <div className="mr-4 flex items-center">
+            <Search className="mr-2 text-white" />
             <input
               type="text"
-              className="bg-transparent text-white w-24 md:w-auto"
+              className="w-24 bg-transparent text-white md:w-auto"
               placeholder="Search"
             />
           </div>
@@ -210,12 +211,12 @@ const Home = () => {
           {/* CATALOGO COMEÇO */}
           <div className="py-12 sm:py-16 md:py-20">
             <div className="mb-10 md:mb-12">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#F6F7F8] text-center">
+              <h1 className="text-center text-3xl font-bold text-[#F6F7F8] sm:text-4xl md:text-5xl lg:text-6xl">
                 Explorar catálogo
               </h1>
             </div>
-            
-            <div className="px-4 max-w-[1800px] mx-auto">
+
+            <div className="mx-auto max-w-[1800px] px-4">
               <Carousel
                 opts={{
                   align: "start",
@@ -223,37 +224,37 @@ const Home = () => {
                 }}
               >
                 <CarouselContent>
-                  <CarouselItem className="mx-2 sm:mx-3 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/6">
+                  <CarouselItem className="mx-2 basis-1/2 sm:mx-3 sm:basis-1/3 md:basis-1/4 lg:basis-1/6">
                     <Link href="/catalogo">
                       <Card01></Card01>
                     </Link>
                   </CarouselItem>
-                  <CarouselItem className="mx-2 sm:mx-3 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/6">
+                  <CarouselItem className="mx-2 basis-1/2 sm:mx-3 sm:basis-1/3 md:basis-1/4 lg:basis-1/6">
                     <Link href="/catalogo">
                       <Card02></Card02>
                     </Link>
                   </CarouselItem>
-                  <CarouselItem className="mx-2 sm:mx-3 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/6">
+                  <CarouselItem className="mx-2 basis-1/2 sm:mx-3 sm:basis-1/3 md:basis-1/4 lg:basis-1/6">
                     <Link href="/catalogo">
                       <Card03></Card03>
                     </Link>
                   </CarouselItem>
-                  <CarouselItem className="mx-2 sm:mx-3 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/6">
+                  <CarouselItem className="mx-2 basis-1/2 sm:mx-3 sm:basis-1/3 md:basis-1/4 lg:basis-1/6">
                     <Link href="/catalogo">
                       <Card04></Card04>
                     </Link>
                   </CarouselItem>
-                  <CarouselItem className="mx-2 sm:mx-3 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/6">
+                  <CarouselItem className="mx-2 basis-1/2 sm:mx-3 sm:basis-1/3 md:basis-1/4 lg:basis-1/6">
                     <Link href="/catalogo">
                       <Card05></Card05>
                     </Link>
                   </CarouselItem>
-                  <CarouselItem className="mx-2 sm:mx-3 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/6">
+                  <CarouselItem className="mx-2 basis-1/2 sm:mx-3 sm:basis-1/3 md:basis-1/4 lg:basis-1/6">
                     <Link href="/catalogo">
                       <Card06></Card06>
                     </Link>
                   </CarouselItem>
-                  <CarouselItem className="mx-2 sm:mx-3 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/6">
+                  <CarouselItem className="mx-2 basis-1/2 sm:mx-3 sm:basis-1/3 md:basis-1/4 lg:basis-1/6">
                     <Link href="/catalogo">
                       <Card07></Card07>
                     </Link>
@@ -266,64 +267,15 @@ const Home = () => {
           </div>
 
           {/* JOGO EM DESTAQUE */}
-          <div className="py-8 sm:py-12 px-4">
-            <div className="max-w-7xl mx-auto">
-              <div className="flex flex-col lg:flex-row bg-[#000101] rounded overflow-hidden">
-                <div className="lg:w-2/3">
-                  <Image
-                    className="w-full h-auto object-cover"
-                    src="/red-dead.jpg"
-                    width={670}
-                    height={500}
-                    alt="imagem do red"
-                  />
-                </div>
-                <div className="p-6 lg:p-8 flex flex-col justify-between lg:w-1/3">
-                  <div>
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#F6F7F8] mb-4">
-                      Red Dead Redemption 2
-                    </h1>
-                    <p className="text-lg text-[#F6F7F8] mb-6">
-                      Red Dead Redemption 2, a épica aventura de mundo aberto
-                      da Rockstar Games aclamada pela crítica e o jogo mais
-                      bem avaliado desta geração de consoles, agora chega
-                      aprimorado para PC com conteúdos inéditos no Modo
-                      História, melhorias visuais e muito mais.
-                    </p>
-                  </div>
-                  <div className="mt-4">
-                    <Link href="/login">
-                      <button className="w-full h-[55px] rounded-bl-3xl rounded-tr-3xl bg-[#019EC2] text-2xl md:text-3xl font-bold text-[#F6F7F8] hover:bg-[#198097] transition-colors">
-                        Jogue agora
-                      </button>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="mt-6 flex flex-col sm:flex-row justify-center gap-4">
-                <Link href="/catalogo">
-                  <button className="w-full sm:w-[230px] h-[50px] rounded-bl-3xl rounded-tr-3xl bg-[#019EC2] text-xl sm:text-2xl font-bold text-[#F6F7F8] hover:bg-[#198097] transition-colors">
-                    Semelhantes
-                  </button>
-                </Link>
-                <Link href="/catalogo">
-                  <button className="w-full sm:w-[230px] h-[50px] rounded-bl-3xl rounded-tr-3xl bg-[#019EC2] text-xl sm:text-2xl font-bold text-[#F6F7F8] hover:bg-[#198097] transition-colors">
-                    Catálogo
-                  </button>
-                </Link>
-              </div>
-            </div>
-          </div>
-
+          <CardMuda />
 
           {/* CAROUSEL INICIO */}
 
-          <div className="m-3 text-center text-2xl sm:text-3xl md:text-4xl lg:text-[45px] font-bold text-[#F6F7F8]">
+          <div className="m-3 text-center text-2xl font-bold text-[#F6F7F8] sm:text-3xl md:text-4xl lg:text-[45px]">
             <h1>Maximize sua diversão com a Nuvix</h1>
           </div>
-          <div className="mt-8 sm:mt-10 md:mt-12 lg:mt-14 justify-items-center">
-            <div className="w-full sm:w-[90%] md:w-[95%] lg:w-[1300px] mx-auto justify-center p-4 sm:p-5 md:p-6">
+          <div className="mt-8 justify-items-center sm:mt-10 md:mt-12 lg:mt-14">
+            <div className="mx-auto w-full justify-center p-4 sm:w-[90%] sm:p-5 md:w-[95%] md:p-6 lg:w-[1300px]">
               <Carousel
                 opts={{
                   align: "center",
@@ -354,7 +306,7 @@ const Home = () => {
 
           {/* PLANOS */}
           <div id="plano" className="py-16 sm:py-20">
-            <div className="text-center mb-10">
+            <div className="mb-10 text-center">
               <Image
                 src="/logo.png"
                 alt="Logo"
@@ -362,28 +314,34 @@ const Home = () => {
                 height={200}
                 className="mx-auto mb-6"
               />
-              <h1 className="text-2xl sm:text-3xl font-bold text-[#F6F7F8] mb-8">
+              <h1 className="mb-8 text-2xl font-bold text-[#F6F7F8] sm:text-3xl">
                 Escolha seu Plano
               </h1>
             </div>
 
-            <div className="max-w-4xl mx-auto px-4">
-              <div className="flex flex-col md:flex-row gap-6 justify-center">
+            <div className="mx-auto max-w-4xl px-4">
+              <div className="flex flex-col justify-center gap-6 md:flex-row">
                 {/* Plano Diário */}
-                <div className="flex-1 bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow transform hover:-translate-y-1">
+                <div className="flex-1 transform overflow-hidden rounded-lg bg-white shadow-lg transition-shadow hover:-translate-y-1 hover:shadow-xl">
                   <div className="p-6">
-                    <h2 className="text-center text-2xl font-bold mb-2">Nuvix Diário</h2>
-                    <p className="text-center text-gray-600 mb-4">Pagamento Diário</p>
-                    <p className="text-center text-3xl font-semibold mb-6">R$ 20,00</p>
-                    
-                    <div className="space-y-3 mb-8">
+                    <h2 className="mb-2 text-center text-2xl font-bold">
+                      Nuvix Diário
+                    </h2>
+                    <p className="mb-4 text-center text-gray-600">
+                      Pagamento Diário
+                    </p>
+                    <p className="mb-6 text-center text-3xl font-semibold">
+                      R$ 20,00
+                    </p>
+
+                    <div className="mb-8 space-y-3">
                       <p className="text-center">✓ Prioridade na fila</p>
                       <p className="text-center">✓ 24 horas de jogo</p>
-                      <p className="text-center h-6"></p>
+                      <p className="h-6 text-center"></p>
                     </div>
-                    
+
                     <Link href="/pagamento">
-                      <button className="w-full rounded-md bg-[#019EC2] py-3 text-white font-bold hover:bg-[#198097] transition-colors">
+                      <button className="w-full rounded-md bg-[#019EC2] py-3 font-bold text-white transition-colors hover:bg-[#198097]">
                         Assinar
                       </button>
                     </Link>
@@ -391,20 +349,26 @@ const Home = () => {
                 </div>
 
                 {/* Plano Mensal */}
-                <div className="flex-1 bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow transform hover:-translate-y-1">
+                <div className="flex-1 transform overflow-hidden rounded-lg bg-white shadow-lg transition-shadow hover:-translate-y-1 hover:shadow-xl">
                   <div className="p-6">
-                    <h2 className="text-center text-2xl font-bold mb-2">Nuvix Plus</h2>
-                    <p className="text-center text-gray-600 mb-4">Pagamento Mensal</p>
-                    <p className="text-center text-3xl font-semibold mb-6">R$ 60,00</p>
-                    
-                    <div className="space-y-3 mb-8">
+                    <h2 className="mb-2 text-center text-2xl font-bold">
+                      Nuvix Plus
+                    </h2>
+                    <p className="mb-4 text-center text-gray-600">
+                      Pagamento Mensal
+                    </p>
+                    <p className="mb-6 text-center text-3xl font-semibold">
+                      R$ 60,00
+                    </p>
+
+                    <div className="mb-8 space-y-3">
                       <p className="text-center">✓ 730 horas de jogo</p>
                       <p className="text-center">✓ Sem fila</p>
                       <p className="text-center">✓ Sem anúncios</p>
                     </div>
-                    
+
                     <Link href="/pagamento">
-                      <button className="w-full rounded-md bg-[#019EC2] py-3 text-white font-bold hover:bg-[#198097] transition-colors">
+                      <button className="w-full rounded-md bg-[#019EC2] py-3 font-bold text-white transition-colors hover:bg-[#198097]">
                         Assinar
                       </button>
                     </Link>
@@ -414,12 +378,21 @@ const Home = () => {
             </div>
 
             <div className="mt-20 text-center text-white">
-              <p>&copy; {new Date().getFullYear()} Nuvix. Todos os direitos reservados.</p>
+              <p>
+                &copy; {new Date().getFullYear()} Nuvix. Todos os direitos
+                reservados.
+              </p>
               <div className="mt-3 flex flex-wrap justify-center gap-4">
-                <Link href="/poiliticadeprivacidade" className="text-blue-400 hover:underline">
+                <Link
+                  href="/poiliticadeprivacidade"
+                  className="text-blue-400 hover:underline"
+                >
                   Política de Privacidade
                 </Link>
-                <Link href="/termosecondicoes" className="text-blue-400 hover:underline">
+                <Link
+                  href="/termosecondicoes"
+                  className="text-blue-400 hover:underline"
+                >
                   Termos de Uso
                 </Link>
               </div>

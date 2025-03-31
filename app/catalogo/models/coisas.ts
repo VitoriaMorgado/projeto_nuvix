@@ -32,7 +32,7 @@ const jogoscata: Cata[] = [
   },
   {
     id: 6,
-    nomejogo: "Honkai Star Rail",
+    nomejogo: "Honkai",
     capajogo: "/card.rpg.png",
   },
   {
