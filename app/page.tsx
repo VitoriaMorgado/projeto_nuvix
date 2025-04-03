@@ -3,15 +3,6 @@
 //========IMPORTE DE COMPONENTES========//
 import Image from "next/image";
 import {
-  Menubar,
-  MenubarContent,
-  MenubarItem,
-  MenubarMenu,
-  MenubarSeparator,
-  MenubarTrigger,
-} from "@/components/ui/menubar";
-import { CircleUser, Search } from "lucide-react";
-import {
   Carousel,
   CarouselContent,
   CarouselItem,
@@ -23,138 +14,23 @@ import CardTres from "./componente/cardtres";
 import Cardquatro from "./componente/cardquatro";
 import Link from "next/link";
 import Carduni from "./componente/carduni";
-import Card02 from "./componente/cards/card02";
-import Card01 from "./componente/cards/card01";
-import Card03 from "./componente/cards/card03";
-import Card04 from "./componente/cards/card04";
-import Card05 from "./componente/cards/card05";
-import Card06 from "./componente/cards/card06";
-import Card07 from "./componente/cards/card07";
 import Rodape from "@/components/ui/rodape";
 import CardMuda from "./comp/carromuda";
+import NavBarp from "./comp/navbar/navbar";
+import CataCarro from "./comp/carrosselcatalogo/catacarro";
 
 const Home = () => {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  
 
   return (
     //========INDICE MENU========//
     <div className="flex min-h-screen w-full flex-col bg-black">
       {/* //========NAVBAR========// */}
-      <div className="sticky top-0 z-50 w-full">
-        <div className="flex h-[60px] items-center bg-black">
-          <Menubar className="w-full border-transparent bg-transparent">
-            <MenubarMenu>
-              <Link href="/">
-                <Image
-                  src="/logo.png"
-                  width={150}
-                  height={100}
-                  alt="imagem do mine"
-                  className="max-w-[100px] md:max-w-[150px]"
-                />
-              </Link>
-              <MenubarTrigger className="hidden h-[30px] w-[120px] justify-center text-xl font-bold text-[#F6F7F8] md:flex">
-                Destaques
-              </MenubarTrigger>
-              <MenubarContent>
-                <Link href="/catalogo">
-                  <MenubarItem>Catalogo</MenubarItem>
-                </Link>
-                <MenubarSeparator />
-                <Link href="/catalogo">
-                  <MenubarItem>Jogos Em Destaque</MenubarItem>
-                </Link>
-                <MenubarSeparator />
-                <Link href="/catalogo">
-                  <MenubarItem>Novidades</MenubarItem>
-                </Link>
-              </MenubarContent>
-            </MenubarMenu>
-
-            <MenubarMenu>
-              <MenubarTrigger className="hidden h-[30px] w-[80px] justify-center text-xl font-bold text-[#F6F7F8] md:flex">
-                Jogos
-              </MenubarTrigger>
-              <MenubarContent>
-                <Link href="/catalogo">
-                  <MenubarItem>Catalogo</MenubarItem>
-                  <MenubarSeparator />
-                </Link>
-                <Link href="/catalogo">
-                  <MenubarItem>Destaque</MenubarItem>
-                </Link>
-                <MenubarSeparator />
-              </MenubarContent>
-            </MenubarMenu>
-            <MenubarMenu>
-              <MenubarTrigger className="h-[30px] w-[120px] justify-center text-xl font-bold text-[#F6F7F8]">
-                Assinatura
-              </MenubarTrigger>
-              <MenubarContent>
-                <button onClick={() => scrollToSection("plano")}>
-                  <MenubarItem>Nuvix Plus</MenubarItem>
-                </button>
-                <MenubarSeparator />
-                <button onClick={() => scrollToSection("plano")}>
-                  <MenubarItem>Plano Essencial</MenubarItem>
-                </button>
-              </MenubarContent>
-            </MenubarMenu>
-            <MenubarMenu>
-              <MenubarTrigger className="h-[30px] w-[150px] justify-center text-xl font-bold text-[#F6F7F8]">
-                Fale conosco
-              </MenubarTrigger>
-              <MenubarContent>
-                <Link href="cadastro">
-                  <MenubarItem>Sobre Nós</MenubarItem>
-                </Link>
-                <MenubarSeparator />
-                <Link href="login2">
-                  <MenubarItem>Nos Contate</MenubarItem>
-                </Link>
-                <MenubarSeparator />
-              </MenubarContent>
-            </MenubarMenu>
-            <MenubarMenu>
-              <MenubarTrigger className="h-[30px] w-[110px] text-xl font-bold text-[#F6F7F8]">
-                <div className="flex items-center">
-                  <CircleUser className="mr-2" />
-                  <p>Conta</p>
-                </div>
-              </MenubarTrigger>
-              <MenubarContent>
-                <Link href="/cadastro2">
-                  <MenubarItem>Cadastre-se</MenubarItem>
-                </Link>
-                <MenubarSeparator />
-                <Link href="/login2">
-                  <MenubarItem>Login</MenubarItem>
-                </Link>
-                <MenubarSeparator />
-              </MenubarContent>
-            </MenubarMenu>
-          </Menubar>
-          <div className="mr-4 flex items-center">
-            <Search className="mr-2 text-white" />
-            <input
-              type="text"
-              className="w-24 bg-transparent text-white md:w-auto"
-              placeholder="Search"
-            />
-          </div>
-        </div>
-      </div>
-      {/* MENU FIM */}
+      <NavBarp />
+      {/* //========NAVBAR========// */}
 
       <main className="flex-grow">
         {/* BANNER COMEÇO */}
-
-        {/* FUNDO BANNER COMEÇO */}
 
         <div className="absolute w-screen">
           <Image
@@ -209,62 +85,8 @@ const Home = () => {
         {/* FUNDO */}
         <div className="bg-gradient-to-b from-[#02030a] to-[#0E304A]">
           {/* CATALOGO COMEÇO */}
-          <div className="py-12 sm:py-16 md:py-20">
-            <div className="mb-10 md:mb-12">
-              <h1 className="text-center text-3xl font-bold text-[#F6F7F8] sm:text-4xl md:text-5xl lg:text-6xl">
-                Explorar catálogo
-              </h1>
-            </div>
-
-            <div className="mx-auto max-w-[1800px] px-4">
-              <Carousel
-                opts={{
-                  align: "start",
-                  loop: true,
-                }}
-              >
-                <CarouselContent>
-                  <CarouselItem className="mx-2 basis-1/2 sm:mx-3 sm:basis-1/3 md:basis-1/4 lg:basis-1/6">
-                    <Link href="/catalogo">
-                      <Card01></Card01>
-                    </Link>
-                  </CarouselItem>
-                  <CarouselItem className="mx-2 basis-1/2 sm:mx-3 sm:basis-1/3 md:basis-1/4 lg:basis-1/6">
-                    <Link href="/catalogo">
-                      <Card02></Card02>
-                    </Link>
-                  </CarouselItem>
-                  <CarouselItem className="mx-2 basis-1/2 sm:mx-3 sm:basis-1/3 md:basis-1/4 lg:basis-1/6">
-                    <Link href="/catalogo">
-                      <Card03></Card03>
-                    </Link>
-                  </CarouselItem>
-                  <CarouselItem className="mx-2 basis-1/2 sm:mx-3 sm:basis-1/3 md:basis-1/4 lg:basis-1/6">
-                    <Link href="/catalogo">
-                      <Card04></Card04>
-                    </Link>
-                  </CarouselItem>
-                  <CarouselItem className="mx-2 basis-1/2 sm:mx-3 sm:basis-1/3 md:basis-1/4 lg:basis-1/6">
-                    <Link href="/catalogo">
-                      <Card05></Card05>
-                    </Link>
-                  </CarouselItem>
-                  <CarouselItem className="mx-2 basis-1/2 sm:mx-3 sm:basis-1/3 md:basis-1/4 lg:basis-1/6">
-                    <Link href="/catalogo">
-                      <Card06></Card06>
-                    </Link>
-                  </CarouselItem>
-                  <CarouselItem className="mx-2 basis-1/2 sm:mx-3 sm:basis-1/3 md:basis-1/4 lg:basis-1/6">
-                    <Link href="/catalogo">
-                      <Card07></Card07>
-                    </Link>
-                  </CarouselItem>
-                </CarouselContent>
-                <CarouselPrevious className="hidden sm:flex" />
-                <CarouselNext className="hidden sm:flex" />
-              </Carousel>
-            </div>
-          </div>
+          <CataCarro/>
+          {/* CATALOGO FIM */}
 
           {/* JOGO EM DESTAQUE */}
           <CardMuda />
