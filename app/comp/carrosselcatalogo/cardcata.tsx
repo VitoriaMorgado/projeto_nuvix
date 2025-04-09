@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 
 interface CardVProps {
@@ -8,13 +7,13 @@ interface CardVProps {
   jogodestaque?: string;
 }
 
-const CardCataa = ({ cate }: { cate: CardVProps }) => {
+const CardCataa = ({ cat }: { cat: CardVProps }) => {
   return (
     <>
       <div className="overflow-hidden rounded-lg bg-gray-900 shadow-lg transition-all hover:scale-105">
-        <div key={cate.id} className="relative h-[230px] w-full">
+        <div key={cat.id} className="relative h-[230px] w-full">
           <Image
-            src={cate.capacate || "/default-image.jpg"}
+            src={cat.capacate || "/default-image.jpg"}
             alt=""
             layout="fill"
             objectFit="cover"
@@ -22,10 +21,10 @@ const CardCataa = ({ cate }: { cate: CardVProps }) => {
         </div>
         <div className="p-3">
           <span className="mb-2 inline-block rounded-md bg-[#019EC2] px-2 py-1 text-xs font-semibold text-white">
-            {cate.genre || "Nome do Jogo"}
+            {cat.genre || "Nome do Jogo"}
           </span>
           <h3 className="text-lg font-semibold text-white">
-            {cate.jogodestaque || "Nome do Jogo"}
+            {cat.jogodestaque || "Nome do Jogo"}
           </h3>
         </div>
       </div>
