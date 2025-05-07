@@ -15,6 +15,7 @@ const CarroMuda = () => {
     const muda = destaque.find((j) => j.id === mudaId);
     if (muda) setJogoMuda(muda);
   };
+
   return (
     <>
       <div className="px-4 py-8 sm:py-12">
