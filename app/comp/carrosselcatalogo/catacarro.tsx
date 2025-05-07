@@ -1,3 +1,4 @@
+"use client";
 import {
   Carousel,
   CarouselContent,
@@ -27,18 +28,13 @@ const CataCarro = () => {
         </div>
 
         <div className="mx-auto max-w-[1800px] px-4">
-          <Carousel
-            opts={{
-              loop: true,
-              align: "start",
-            }}
-          >
+          <Carousel opts={{ align: "start", loop: true }}>
             <CarouselContent>
               {jogoscategoria.map((cat) => (
                 <CarouselItem
                   key={cat.id}
-                  className="md:basis-1/6"
                   onClick={() => clicaParaMudar(cat.id)}
+                  className="md:basis-1/6"
                 >
                   <Link href="/catalogo">
                     <CardCataa cat={cat} />
