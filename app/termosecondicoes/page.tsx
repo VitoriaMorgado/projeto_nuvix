@@ -8,7 +8,7 @@ const Privacy = () => {
 <div className="bg-[#02030a p-4 md:p-6 text-xl md:text-3xl font-bold text-white shadow-2xl">
           Termos de uso
 </div>
-        <div className="relative mx-auto mb-6 mt-6 max-w-4xl text-white bg-gray-700 p-5 text-xs shadow-md">
+        <div className="relative mx-auto mb-6 mt-6 max-w-4xl text-white bg-gray-700 p-5 text-xs shadow-md ">
           <div className="absolute inset-x-0 top-0 h-1 bg-blue-200"></div>
           <h1 className="mb-8 ml-5 mt-8 text-2xl">Termos de uso</h1>
 
