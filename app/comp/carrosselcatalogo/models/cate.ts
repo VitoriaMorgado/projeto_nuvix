@@ -15,7 +15,7 @@ const jogoscategoria: Cate[] = [
   {
     id: 2,
     genre: "TERROR",
-    jogodestaque: "Terror",
+    jogodestaque: "Resident Evil 4",
     capacate: "/card.terror.jpg",
   },
   {

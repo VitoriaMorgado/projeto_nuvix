@@ -21,7 +21,6 @@ const CataCarro = () => {
   return (
     <>
       <div className="py-12 sm:py-16 md:py-20">
-
         <div className="mx-auto max-w-[1800px] px-4">
           <Carousel opts={{ align: "start", loop: true }}>
             <CarouselContent>
