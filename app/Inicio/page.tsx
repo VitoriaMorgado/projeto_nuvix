@@ -1,578 +1,359 @@
 "use client";
 
+//========IMPORTE DE COMPONENTES========//
 import Image from "next/image";
-import Link from "next/link";
-import { CircleUser, Search } from "lucide-react";
-import {
-  Menubar,
-  MenubarContent,
-  MenubarItem,
-  MenubarMenu,
-  MenubarSeparator,
-  MenubarTrigger,
-} from "@/components/ui/menubar";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
+}  from "@/components/ui/carousel";
+import CardDois from "../componente/carddois";
+import CardTres from "../componente/cardtres";
+import Cardquatro from "../componente/cardquatro";
+import Link from "next/link";
+import Carduni from "../componente/carduni";
+import CardMuda from "../comp/carromuda";
+import NavBarp from "../comp/navbar/navbar";
+import CataCarro from "../comp/carrosselcatalogo/catacarro";
 
-const Inicio = () => {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  // Dados dos jogos em destaque
-  const featuredGames = [
-    { id: 1, title: "Cyberpunk 2077", image: "/api/placeholder/300/400", category: "RPG" },
-    { id: 2, title: "Assassin's Creed Valhalla", image: "/api/placeholder/300/400", category: "Ação" },
-    { id: 3, title: "FIFA 2025", image: "/api/placeholder/300/400", category: "Esporte" },
-    { id: 4, title: "Call of Duty", image: "/api/placeholder/300/400", category: "FPS" },
-    { id: 5, title: "The Witcher 3", image: "/api/placeholder/300/400", category: "RPG" },
-    { id: 6, title: "GTA VI", image: "/api/placeholder/300/400", category: "Ação" },
-    { id: 7, title: "Red Dead Redemption 2", image: "/api/placeholder/300/400", category: "Ação" },
-  ];
-
-  // Benefícios do serviço
-  const benefits = [
-    {
-      id: 1,
-      title: "Jogue em Qualquer Dispositivo",
-      description: "Acesse nossos jogos de smartphones, tablets, PCs ou Smart TVs.",
-      image: "/api/placeholder/400/300"
-    },
-    {
-      id: 2,
-      title: "Sem Downloads",
-      description: "Jogue instantaneamente sem precisar baixar arquivos pesados.",
-      image: "/api/placeholder/400/300"
-    },
-    {
-      id: 3,
-      title: "Catálogo Premium",
-      description: "Acesso a centenas de jogos AAA e indies em constante atualização.",
-      image: "/api/placeholder/400/300"
-    },
-    {
-      id: 4,
-      title: "Alta Performance",
-      description: "Jogue em 4K com 60fps, independente do seu hardware.",
-      image: "/api/placeholder/400/300"
-    }
-  ];
-
+const Home = () => {
   return (
+    //========INDICE MENU========//
     <div className="flex min-h-screen w-full flex-col bg-black">
-      {/* Navbar */}
-      <div className="sticky top-0 z-50 w-full">
-        <div className="flex h-[60px] items-center bg-black">
-          <Menubar className="w-full border-transparent bg-transparent">
-            <MenubarMenu>
-              <Link href="/">
-                <Image
-                  src="/logo.png"
-                  width={150}
-                  height={100}
-                  alt="Logo Nuvix"
-                  className="max-w-[100px] md:max-w-[150px]"
-                />
-              </Link>
-              <MenubarTrigger className="hidden h-[30px] w-[120px] justify-center text-xl font-bold text-[#F6F7F8] md:flex">
-                Destaques
-              </MenubarTrigger>
-              <MenubarContent>
-                <Link href="/catalogo">
-                  <MenubarItem>Catálogo</MenubarItem>
-                </Link>
-                <MenubarSeparator />
-                <Link href="/destaque">
-                  <MenubarItem>Jogos Em Destaque</MenubarItem>
-                </Link>
-                <MenubarSeparator />
-                <Link href="/novidades">
-                  <MenubarItem>Novidades</MenubarItem>
-                </Link>
-              </MenubarContent>
-            </MenubarMenu>
+      {/* //========NAVBAR========// */}
+      <NavBarp />
+      {/* //========NAVBAR========// */}
 
-            <MenubarMenu>
-              <MenubarTrigger className="hidden h-[30px] w-[80px] justify-center text-xl font-bold text-[#F6F7F8] md:flex">
-                Jogos
-              </MenubarTrigger>
-              <MenubarContent>
-                <Link href="/catalogo">
-                  <MenubarItem>Catálogo</MenubarItem>
-                </Link>
-                <MenubarSeparator />
-                <Link href="/generos">
-                  <MenubarItem>Gêneros</MenubarItem>
-                </Link>
-                <MenubarSeparator />
-                <Link href="/lancamentos">
-                  <MenubarItem>Lançamentos</MenubarItem>
-                </Link>
-              </MenubarContent>
-            </MenubarMenu>
-            
-            <MenubarMenu>
-              <MenubarTrigger className="h-[30px] w-[120px] justify-center text-xl font-bold text-[#F6F7F8]">
-                Assinatura
-              </MenubarTrigger>
-              <MenubarContent>
-                <button onClick={() => scrollToSection("planos")}>
-                  <MenubarItem>GameCloud Pro</MenubarItem>
-                </button>
-                <MenubarSeparator />
-                <button onClick={() => scrollToSection("planos")}>
-                  <MenubarItem>Plano Básico</MenubarItem>
-                </button>
-              </MenubarContent>
-            </MenubarMenu>
-            
-            <MenubarMenu>
-              <MenubarTrigger className="h-[30px] w-[150px] justify-center text-xl font-bold text-[#F6F7F8]">
-                Fale conosco
-              </MenubarTrigger>
-              <MenubarContent>
-                <Link href="/sobre">
-                  <MenubarItem>Sobre Nós</MenubarItem>
-                </Link>
-                <MenubarSeparator />
-                <Link href="/contato">
-                  <MenubarItem>Nos Contate</MenubarItem>
-                </Link>
-                <MenubarSeparator />
-                <Link href="/suporte">
-                  <MenubarItem>Suporte</MenubarItem>
-                </Link>
-              </MenubarContent>
-            </MenubarMenu>
-            
-            <MenubarMenu>
-              <MenubarTrigger className="h-[30px] w-[110px] text-xl font-bold text-[#F6F7F8]">
-                <div className="flex items-center">
-                  <CircleUser className="mr-2" />
-                  <p>Conta</p>
-                </div>
-              </MenubarTrigger>
-              <MenubarContent>
-                <Link href="/cadastro">
-                  <MenubarItem>Cadastre-se</MenubarItem>
-                </Link>
-                <MenubarSeparator />
-                <Link href="/login">
-                  <MenubarItem>Login</MenubarItem>
-                </Link>
-                <MenubarSeparator />
-                <Link href="/perfil">
-                  <MenubarItem>Meu Perfil</MenubarItem>
-                </Link>
-              </MenubarContent>
-            </MenubarMenu>
-          </Menubar>
-          <div className="mr-4 flex items-center">
-            <Search className="mr-2 text-white" />
-            <input
-              type="text"
-              className="w-24 bg-transparent text-white md:w-auto"
-              placeholder="Buscar jogos..."
+      <div className="flex-grow">
+        {/* Content inside main */}
+      
+        {/* BANNER COMEÇO */}
+        <div className="relative h-screen w-full overflow-hidden">
+          {/* Overlay gradient for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent z-10"></div>
+          
+          <div className="absolute w-screen">
+            <Image
+              src="/bannerp.jpg"
+              width={3000}
+              height={500}
+              className="object-cover"
+              alt="banner"
             />
           </div>
-        </div>
-      </div>
 
-      <main className="flex-grow">
-        {/* Banner */}
-        <div className="relative h-[850px]">
-          {/* Imagem de fundo */}
-          <div className="absolute inset-0 w-full h-full">
-            <div className="w-full h-full relative">
-              <Image
-                src="/bannerp.jpg"
-                alt="Banner principal"
-                layout="fill"
-                objectFit="cover"
-                className="brightness-50"
-              />
-            </div>
-          </div>
-
-          {/* Conteúdo do banner */}
-          <div className="relative h-full z-10">
-            <div className="flex flex-col justify-center h-full max-w-screen-xl mx-auto px-4">
-              <div className="max-w-lg">
-                <h1 className="text-6xl md:text-7xl font-bold text-[#F6F7F8] mb-4">
-                  GameCloud
+          {/* ESCRITAS DO BANNER */}
+          <div className="relative z-20 flex h-full items-center">
+            <div className="container mx-auto px-6">
+              <div className="max-w-xl">
+                <h1 className="text-6xl md:text-8xl font-bold text-white mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#F6F7F8] to-[#019EC2]">
+                  Nuvix
                 </h1>
-                <p className="text-xl md:text-2xl text-[#F6F7F8] mb-4">
-                  A revolução dos jogos na nuvem
+                <p className="text-3xl text-[#F6F7F8] mb-6 font-light">
+                  O melhor serviço de jogos na nuvem
                 </p>
-                <p className="text-lg text-[#F6F7F8] mb-8 max-w-[500px]">
-                  Experimente a nova era dos jogos: acesse centenas de títulos AAA sem precisar de hardware potente. 
-                  Jogue em qualquer dispositivo, a qualquer hora, em qualquer lugar. 
-                  Esqueça downloads e atualizações - comece a jogar instantaneamente!
+                <p className="text-lg text-[#F6F7F8]/90 mb-8 leading-relaxed">
+                  Experimente a revolução dos jogos na nuvem: jogue os
+                  títulos mais recentes e de alta qualidade sem precisar de
+                  um PC poderoso ou console. Com a tecnologia de nuvem, você
+                  acessa seus jogos favoritos de qualquer dispositivo, a
+                  qualquer hora e em qualquer lugar.
                 </p>
                 <Link href="/jogo">
-                  <button className="h-[55px] w-[230px] rounded-br-3xl rounded-tl-3xl bg-[#019EC2] text-3xl font-bold text-[#F6F7F8] hover:bg-[#198097] transition-colors">
+                  <button className="px-8 py-4 rounded-lg bg-[#019EC2] text-2xl font-bold text-white hover:bg-[#198097] shadow-lg shadow-[#019EC2]/30 flex items-center gap-2">
                     Jogue agora
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
                   </button>
                 </Link>
               </div>
             </div>
           </div>
         </div>
+        {/* BANNER FINAL */}
 
-        {/* Corpo do site */}
+        {/* FUNDO */}
         <div className="bg-gradient-to-b from-[#02030a] to-[#0E304A]">
-          {/* Catalogo */}
-          <div className="py-12 sm:py-16 md:py-20">
-            <div className="mb-10 md:mb-12">
-              <h1 className="text-center text-3xl font-bold text-[#F6F7F8] sm:text-4xl md:text-5xl lg:text-6xl">
-                Explorar catálogo
-              </h1>
+          {/* CATALOGO COMEÇO */}
+          <div className="py-20">
+            <div className="container mx-auto px-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center">
+                Nosso Catálogo <span className="text-[#019EC2]">Premium</span>
+              </h2>
+              <CataCarro/>
             </div>
+          </div>
+          {/* CATALOGO FIM */}
 
-            <div className="mx-auto max-w-[1800px] px-4">
-              <Carousel
-                opts={{
-                  align: "start",
-                  loop: true,
-                }}
-              >
-                <CarouselContent>
-                  {featuredGames.map((game) => (
-                    <CarouselItem key={game.id} className="mx-2 basis-1/2 sm:mx-3 sm:basis-1/3 md:basis-1/4 lg:basis-1/6">
-                      <Link href={`/jogo/${game.id}`}>
-                        <div className="overflow-hidden rounded-lg bg-gray-900 shadow-lg transition-all hover:scale-105">
-                          <div className="relative h-[230px] w-full">
-                            <Image
-                              src={game.image}
-                              alt={game.title}
-                              layout="fill"
-                              objectFit="cover"
-                            />
-                          </div>
-                          <div className="p-3">
-                            <span className="inline-block px-2 py-1 text-xs font-semibold bg-[#019EC2] text-white rounded-md mb-2">
-                              {game.category}
-                            </span>
-                            <h3 className="text-lg font-semibold text-white">{game.title}</h3>
-                          </div>
-                        </div>
-                      </Link>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselPrevious className="hidden sm:flex" />
-                <CarouselNext className="hidden sm:flex" />
-              </Carousel>
+          {/* JOGO EM DESTAQUE */}
+          <div className="py-16 bg-black/30">
+            <div className="container mx-auto px-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center">
+                <span className="text-[#019EC2]">Destaque</span> da Semana
+              </h2>
+              <CardMuda />
             </div>
           </div>
 
-          {/* Jogo em destaque */}
-          <div className="py-12 px-4">
-            <div className="max-w-screen-xl mx-auto">
-              <div className="flex flex-col md:flex-row bg-gray-900 rounded-lg overflow-hidden">
-                <div className="md:w-1/2">
-                  <div className="relative h-[300px] md:h-full">
-                    <Image
-                      src="/red-dead.jpg"
-                      alt="Jogo em destaque"
-                      layout="fill"
-                      objectFit="cover"
-                    />
-                  </div>
-                </div>
-                <div className="md:w-1/2 p-6 md:p-8 flex flex-col justify-center">
-                  <span className="inline-block px-3 py-1 bg-[#019EC2] text-white text-sm font-semibold rounded-md mb-4">
-                    Em destaque
-                  </span>
-                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                    Red Dead Redemption 2
-                  </h2>
-                  <p className="text-gray-300 mb-6">
-                    Explore a nova expansão do aclamado RPG de ação. Novas áreas, chefes desafiadores 
-                    e uma história cativante esperam por você neste incrivel jogo.
-                  </p>
-                  <div className="flex flex-wrap gap-4">
-                    <Link href="./catalogo-teste">
-                    <button className="px-6 py-3 bg-[#019EC2] text-white font-bold rounded-md hover:bg-[#198097] transition-colors">
-                      Jogar agora
-                    </button>
-                    </Link>
-                    <Link href="./saibamais">
-                    <button className="px-6 py-3 bg-transparent border border-white text-white font-bold rounded-md hover:bg-white/10 transition-colors">
-                      Saber mais
-                    </button>
-                    </Link>
-                    
-                  </div>
+          {/* CAROUSEL INICIO */}
+          <div className="py-20">
+            <div className="container mx-auto px-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center">
+                Maximize sua <span className="text-[#019EC2]">diversão</span> com a Nuvix
+              </h2>
+              
+              <div className="mt-8 justify-items-center sm:mt-10 md:mt-12 lg:mt-14">
+                <div className="mx-auto w-full justify-center p-4 sm:w-[90%] sm:p-5 md:w-[95%] md:p-6 lg:w-[1300px]">
+                  <Carousel
+                    opts={{
+                      align: "center",
+                      loop: true,
+                    }}
+                  >
+                    <CarouselContent className="gap-6">
+                      <CarouselItem className="lg:basis-3/6">
+                        <div className="transform transition-all hover:scale-105">
+                          <Carduni />
+                        </div>
+                      </CarouselItem>
+                      <CarouselItem className="lg:basis-3/6">
+                        <div className="transform transition-all hover:scale-105">
+                          <CardDois />
+                        </div>
+                      </CarouselItem>
+                      <CarouselItem className="lg:basis-3/6">
+                        <div className="transform transition-all hover:scale-105">
+                          <CardTres />
+                        </div>
+                      </CarouselItem>
+                      <CarouselItem className="lg:basis-3/6">
+                        <div className="transform transition-all hover:scale-105">
+                          <Cardquatro />
+                        </div>
+                      </CarouselItem>
+                    </CarouselContent>
+                    <CarouselPrevious className="bg-white/10 hover:bg-white/20 border-none text-white" />
+                    <CarouselNext className="bg-white/10 hover:bg-white/20 border-none text-white" />
+                  </Carousel>
                 </div>
               </div>
             </div>
           </div>
+          {/* CAROUSEL FIM */}
 
-          {/* Vantagens */}
-          <div className="py-16">
-            <div className="mb-12 text-center">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[45px] font-bold text-[#F6F7F8]">
-                Maximize sua diversão com a Nuvix
-              </h2>
-            </div>
-            
-            <div className="mx-auto max-w-screen-xl px-4">
-              <Carousel
-                opts={{
-                  align: "center",
-                  loop: true,
-                }}
-              >
-                <CarouselContent className="gap-6">
-                  {benefits.map((benefit) => (
-                    <CarouselItem key={benefit.id} className="basis-full sm:basis-1/2 lg:basis-1/4">
-                      <div className="h-full bg-gray-900 rounded-lg overflow-hidden shadow-lg">
-                        <div className="relative h-[200px]">
-                          <Image
-                            src={benefit.image}
-                            alt={benefit.title}
-                            layout="fill"
-                            objectFit="cover"
-                          />
-                        </div>
-                        <div className="p-5">
-                          <h3 className="text-xl font-bold text-white mb-3">{benefit.title}</h3>
-                          <p className="text-gray-300">{benefit.description}</p>
-                        </div>
-                      </div>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
-              </Carousel>
-            </div>
-          </div>
-
-          {/* Planos */}
-          <div id="planos" className="py-16 sm:py-20">
+          {/* PLANOS */}
+          <div id="plano" className="py-16 sm:py-20">
             <div className="mb-10 text-center">
               <Image
                 src="/logo.png"
                 alt="Logo"
                 width={200}
                 height={200}
-                className="mx-auto mb-6"
+                className="mx-auto mb-6 drop-shadow-xl"
               />
-              <h2 className="mb-8 text-2xl font-bold text-[#F6F7F8] sm:text-3xl">
-                Escolha seu Plano
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                Escolha seu <span className="text-[#019EC2]">Plano</span>
               </h2>
+              <p className="text-xl text-white/80 max-w-2xl mx-auto">
+                Selecione a opção que melhor se adapta às suas necessidades de jogo
+              </p>
             </div>
 
-            <div className="mx-auto max-w-4xl px-4">
-              <div className="flex flex-col justify-center gap-6 md:flex-row">
-                {/* Plano Diário */}
-                <div className="flex-1 transform overflow-hidden rounded-lg bg-white shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl">
-                  <div className="p-6">
-                    <h3 className="mb-2 text-center text-2xl font-bold">
-                      Nuvix Básico
-                    </h3>
-                    <p className="mb-4 text-center text-gray-600">
-                      Pagamento Diário
-                    </p>
-                    <p className="mb-6 text-center text-3xl font-semibold">
-                      R$ 15,00
-                    </p>
+              <div className="mx-auto max-w-4xl px-4">
+                <div className="flex flex-col justify-center gap-6 md:flex-row">
+                  {/* Plano Diário */}
+                  <div className="flex-1 transform overflow-hidden rounded-lg bg-white shadow-lg transition-shadow hover:-translate-y-1 hover:shadow-xl">
+                    <div className="p-6">
+                      <div className="bg-gradient-to-r from-[#019EC2]/20 to-transparent p-4 rounded-lg mb-4">
+                        <h2 className="mb-2 text-center text-2xl font-bold">
+                          Nuvix Diário
+                        </h2>
+                        <p className="mb-2 text-center text-gray-600">
+                          Pagamento Diário
+                        </p>
+                      </div>
+                      
+                      <p className="mb-6 text-center text-3xl font-semibold">
+                        R$ 20,00
+                      </p>
 
-                    <div className="mb-8 space-y-3">
-                      <p className="text-center">✓ Acesso por 24 horas</p>
-                      <p className="text-center">✓ Resolução 1080p</p>
-                      <p className="text-center">✓ Catálogo básico</p>
+                      <div className="mb-8 space-y-3">
+                        <p className="text-center flex items-center justify-center gap-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#019EC2]" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                          Prioridade na fila
+                        </p>
+                        <p className="text-center flex items-center justify-center gap-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#019EC2]" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                          Resolução 1080p
+                        </p>
+                        <p className="text-center flex items-center justify-center gap-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#019EC2]" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                          4 horas de jogo
+                        </p>
+                      </div>
+
+                      <div className="text-center">
+                        <Link href="/pagamento/diario">
+                          <button className="w-full rounded-lg bg-[#019EC2] py-3 font-semibold text-white shadow-md transition-colors hover:bg-[#198097]">
+                            Assinar agora
+                          </button>
+                        </Link>
+                      </div>
                     </div>
-
-                    <Link href="/pagamento">
-                      <button className="w-full rounded-md bg-[#019EC2] py-3 font-bold text-white transition-colors hover:bg-[#198097]">
-                        Assinar
-                      </button>
-                    </Link>
                   </div>
-                </div>
 
-                {/* Plano Mensal */}
-                <div className="flex-1 transform overflow-hidden rounded-lg bg-white shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl">
-                  <div className="relative p-6">
-                    <div className="absolute -right-12 top-4 rotate-45 bg-[#019EC2] px-12 py-1 text-sm font-bold text-white">
-                      Popular
+                  {/* Plano Mensal */}
+                  <div className="flex-1 transform overflow-hidden rounded-lg bg-white shadow-lg transition-shadow hover:-translate-y-1 hover:shadow-xl">
+                    <div className="p-6">
+                      <div className="bg-gradient-to-r from-[#019EC2]/20 to-transparent p-4 rounded-lg mb-4">
+                        <div className="absolute -right-1 -top-1 rounded-bl-lg bg-[#019EC2] px-3 py-1 text-sm font-medium text-white">
+                          Popular
+                        </div>
+                        <h2 className="mb-2 text-center text-2xl font-bold">
+                          Nuvix Mensal
+                        </h2>
+                        <p className="mb-2 text-center text-gray-600">
+                          Pagamento Mensal
+                        </p>
+                      </div>
+                      
+                      <p className="mb-6 text-center text-3xl font-semibold">
+                        R$ 99,90
+                      </p>
+
+                      <div className="mb-8 space-y-3">
+                        <p className="text-center flex items-center justify-center gap-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#019EC2]" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                          Prioridade na fila
+                        </p>
+                        <p className="text-center flex items-center justify-center gap-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#019EC2]" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                          Resolução 4K
+                        </p>
+                        <p className="text-center flex items-center justify-center gap-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#019EC2]" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                          Acesso ilimitado
+                        </p>
+                        <p className="text-center flex items-center justify-center gap-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#019EC2]" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                          Jogos exclusivos
+                        </p>
+                      </div>
+
+                      <div className="text-center">
+                        <Link href="/pagamento/mensal">
+                          <button className="w-full rounded-lg bg-[#019EC2] py-3 font-semibold text-white shadow-md transition-colors hover:bg-[#198097]">
+                            Assinar agora
+                          </button>
+                        </Link>
+                      </div>
                     </div>
-                    <h3 className="mb-2 text-center text-2xl font-bold">
-                      Nuvix Pro
-                    </h3>
-                    <p className="mb-4 text-center text-gray-600">
-                      Pagamento Mensal
-                    </p>
-                    <p className="mb-6 text-center text-3xl font-semibold">
-                      R$ 59,90
-                    </p>
+                  </div>
 
-                    <div className="mb-8 space-y-3">
-                      <p className="text-center">✓ Acesso ilimitado</p>
-                      <p className="text-center">✓ Resolução 4K</p>
-                      <p className="text-center">✓ Catálogo completo</p>
-                      <p className="text-center">✓ Sem filas</p>
-                      <p className="text-center">✓ Acesso antecipado</p>
+                  {/* Plano Anual */}
+                  <div className="flex-1 transform overflow-hidden rounded-lg bg-white shadow-lg transition-shadow hover:-translate-y-1 hover:shadow-xl">
+                    <div className="p-6">
+                      <div className="bg-gradient-to-r from-[#019EC2]/20 to-transparent p-4 rounded-lg mb-4">
+                        <h2 className="mb-2 text-center text-2xl font-bold">
+                          Nuvix Anual
+                        </h2>
+                        <p className="mb-2 text-center text-gray-600">
+                          Pagamento Anual
+                        </p>
+                      </div>
+                      
+                      <p className="mb-6 text-center text-3xl font-semibold">
+                        R$ 899,90
+                      </p>
+
+                      <div className="mb-8 space-y-3">
+                        <p className="text-center flex items-center justify-center gap-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#019EC2]" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                          Prioridade máxima na fila
+                        </p>
+                        <p className="text-center flex items-center justify-center gap-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#019EC2]" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                          Resolução 4K
+                        </p>
+                        <p className="text-center flex items-center justify-center gap-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#019EC2]" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                          Acesso ilimitado
+                        </p>
+                        <p className="text-center flex items-center justify-center gap-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#019EC2]" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                          Jogos exclusivos
+                        </p>
+                        <p className="text-center flex items-center justify-center gap-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#019EC2]" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                          2 meses grátis
+                        </p>
+                      </div>
+
+                      <div className="text-center">
+                        <Link href="/pagamento/anual">
+                          <button className="w-full rounded-lg bg-[#019EC2] py-3 font-semibold text-white shadow-md transition-colors hover:bg-[#198097]">
+                            Assinar agora
+                          </button>
+                        </Link>
+                      </div>
                     </div>
-
-                    <Link href="/pagamento">
-                      <button className="w-full rounded-md bg-[#019EC2] py-3 font-bold text-white transition-colors hover:bg-[#198097]">
-                        Assinar
-                      </button>
-                    </Link>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          
-          {/* Footer info */}
-          <div className="pb-10 text-center text-white">
-            <p>
-              &copy; {new Date().getFullYear()} Nuvix. Todos os direitos
-              reservados.
-            </p>
-            <div className="mt-3 flex flex-wrap justify-center gap-4">
-              <Link
-                href="/privacidade"
-                className="text-blue-400 hover:underline"
-              >
-                Política de Privacidade
-              </Link>
-              <Link
-                href="/termos"
-                className="text-blue-400 hover:underline"
-              >
-                Termos de Uso
-              </Link>
-              <Link
-                href="/cookies"
-                className="text-blue-400 hover:underline"
-              >
-                Política de Cookies
-              </Link>
-            </div>
-          </div>
-        </div>
-      </main>
 
-      {/* Rodapé completo */}
-      <footer className="bg-gray-900 py-10">
-        <div className="max-w-screen-xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-xl font-bold text-white mb-4">GameCloud</h3>
-              <p className="text-gray-400 mb-4">
-                Transformando o futuro dos games com tecnologia em nuvem avançada.
-              </p>
-              <div className="flex space-x-4">
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd"></path>
-                  </svg>
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
-                  </svg>
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd"></path>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-bold text-white mb-4">Links Rápidos</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link href="/jogos" className="text-gray-400 hover:text-white transition-colors">
-                    Catálogo de Jogos
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/planos" className="text-gray-400 hover:text-white transition-colors">
-                    Planos e Preços
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/dispositivos" className="text-gray-400 hover:text-white transition-colors">
-                    Dispositivos Compatíveis
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/download" className="text-gray-400 hover:text-white transition-colors">
-                    Baixar Aplicativo
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-bold text-white mb-4">Suporte</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link href="/faq" className="text-gray-400 hover:text-white transition-colors">
-                    FAQ
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contato" className="text-gray-400 hover:text-white transition-colors">
-                    Contato
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/tutoriais" className="text-gray-400 hover:text-white transition-colors">
-                    Tutoriais
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/requisitos" className="text-gray-400 hover:text-white transition-colors">
-                    Requisitos de Sistema
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-bold text-white mb-4">Newsletter</h3>
-              <p className="text-gray-400 mb-4">
-                Inscreva-se para receber novidades e ofertas exclusivas
-              </p>
-              <form>
-                <div className="flex flex-col sm:flex-row gap-2">
-                  <input
-                    type="email"
-                    placeholder="Seu email"
-                    className="px-4 py-2 bg-gray-800 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-[#019EC2]"
-                  />
-                  <button
-                    type="submit"
-                    className="px-4 py-2 bg-[#019EC2] text-white rounded-md hover:bg-[#198097] transition-colors"
+              <div className="mt-20 text-center text-white">
+                <p className="text-white/70">
+                  &copy; {new Date().getFullYear()} Nuvix. Todos os direitos
+                  reservados.
+                </p>
+                <div className="mt-3 flex flex-wrap justify-center gap-4">
+                  <Link
+                    href="/poiliticadeprivacidade"
+                    className="text-[#019EC2] hover:text-[#198097] hover:underline"
                   >
-                    Enviar
-                  </button>
+                    Política de Privacidade
+                  </Link>
+                  <Link
+                    href="/termosecondicoes"
+                    className="text-[#019EC2] hover:text-[#198097] hover:underline"
+                  >
+                    Termos de Uso
+                  </Link>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>
-      </footer>
-    </div>
+          </div>
+     
   );
 };
 
-export default Inicio;
+export default Home;

@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Logo from "@/public/logo.png";
 
 import Link from "next/link";
 import router from "next/router";
@@ -32,7 +31,7 @@ const Signup = () => {
   return (
     <div className="flex h-screen w-screen flex-col items-center justify-center bg-gradient-to-b from-[#0E304A] to-[#154B74] p-9">
       {/* LOGO NUVIX */}
-      <Image src={Logo} alt="Logo" width={300} height={300} className="mb-1" />
+      <Image src="/logo_nuvix.png" alt="Logo" width={300} height={300} className="mb-1" />
 
       {/* TÍTULO */}
       <h1 className="mb-4 text-center font-sans text-2xl font-bold text-white">
