@@ -78,19 +78,19 @@ const Home = () => {
           {/* CATALOGO COMEÇO */}
           <div className="py-20">
             <div className="container mx-auto px-6">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center">
-                Nosso Catálogo <span className="text-[#019EC2]">Premium</span>
+              <h2 className="text-5xl md:text-6xl font-bold text-white mb-12 text-center">
+                Explorar <span className="text-[#019EC2]">Catálogo</span>
               </h2>
               <CataCarro/>
             </div>
           </div>
           {/* CATALOGO FIM */}
-          
+
           {/* JOGO EM DESTAQUE */}
           <div className="py-16 bg-black/30">
             <div className="container mx-auto px-6">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center">
-                <span className="text-[#019EC2]">Destaque</span> da Semana
+                <span className="text-[#019EC2]">Destaque</span> da Nuvix
               </h2>
               <CardMuda />
             </div>
@@ -141,103 +141,9 @@ const Home = () => {
             </div>
           </div>
           {/* CAROUSEL FIM */}
-
-          {/* PLANOS */}
-          <div id="plano" className="py-16 sm:py-20">
-            <div className="mb-10 text-center">
-              <Image
-                src="/logo.png"
-                alt="Logo"
-                width={200}
-                height={200}
-                className="mx-auto mb-6"
-              />
-              <h1 className="mb-8 text-2xl font-bold text-[#F6F7F8] sm:text-3xl">
-                Escolha seu Plano
-              </h1>
-            </div>
-
-            <div className="mx-auto max-w-4xl px-4">
-              <div className="flex flex-col justify-center gap-6 md:flex-row">
-                {/* Plano Diário */}
-                <div className="flex-1 transform overflow-hidden rounded-lg bg-white shadow-lg transition-shadow hover:-translate-y-1 hover:shadow-xl">
-                  <div className="p-6">
-                    <h2 className="mb-2 text-center text-2xl font-bold">
-                      Nuvix Diário
-                    </h2>
-                    <p className="mb-4 text-center text-gray-600">
-                      Pagamento Diário
-                    </p>
-                    <p className="mb-6 text-center text-3xl font-semibold">
-                      R$ 20,00
-                    </p>
-
-                    <div className="mb-8 space-y-3">
-                      <p className="text-center">✓ Prioridade na fila</p>
-                      <p className="text-center">✓ 24 horas de jogo</p>
-                      <p className="h-6 text-center"></p>
-                    </div>
-
-                    <Link href="/pagamento">
-                      <button className="w-full rounded-md bg-[#019EC2] py-3 font-bold text-white transition-colors hover:bg-[#198097]">
-                        Assinar
-                      </button>
-                    </Link>
-                  </div>
-                </div>
-
-                {/* Plano Mensal */}
-                <div className="flex-1 transform overflow-hidden rounded-lg bg-white shadow-lg transition-shadow hover:-translate-y-1 hover:shadow-xl">
-                  <div className="p-6">
-                    <h2 className="mb-2 text-center text-2xl font-bold">
-                      Nuvix Plus
-                    </h2>
-                    <p className="mb-4 text-center text-gray-600">
-                      Pagamento Mensal
-                    </p>
-                    <p className="mb-6 text-center text-3xl font-semibold">
-                      R$ 60,00
-                    </p>
-
-                    <div className="mb-8 space-y-3">
-                      <p className="text-center">✓ 730 horas de jogo</p>
-                      <p className="text-center">✓ Sem fila</p>
-                      <p className="text-center">✓ Sem anúncios</p>
-                    </div>
-
-                    <Link href="/pagamento">
-                      <button className="w-full rounded-md bg-[#019EC2] py-3 font-bold text-white transition-colors hover:bg-[#198097]">
-                        Assinar
-                      </button>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-20 text-center text-white">
-              <p>
-                &copy; {new Date().getFullYear()} Nuvix. Todos os direitos
-                reservados.
-              </p>
-              <div className="mt-3 flex flex-wrap justify-center gap-4">
-                <Link
-                  href="/poiliticadeprivacidade"
-                  className="text-blue-400 hover:underline"
-                >
-                  Política de Privacidade
-                </Link>
-                <Link
-                  href="/termosecondicoes"
-                  className="text-blue-400 hover:underline"
-                >
-                  Termos de Uso
-                </Link>
-              </div>
-            </div>
           </div>
         </div>
-      </div>
+      
       {/* FUNDO */}
 
       {/* RODAPÉ */}
