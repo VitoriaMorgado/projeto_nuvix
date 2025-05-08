@@ -21,10 +21,10 @@ const Favorito = () => {
             <Menubar className="mt-2 w-full border-transparent bg-transparent">
               <MenubarMenu>
                 <Image
-                  src="/logo.png"
+                  src="/logo_nuvix.png"
                   width={150}
                   height={100}
-                  alt="imagem do mine"
+                  alt="logo"
                 />
                 <MenubarTrigger className="h-[30px] w-[120px] justify-center text-xl font-bold text-[#F6F7F8]">
                   Destaques
