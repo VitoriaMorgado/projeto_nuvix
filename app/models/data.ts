@@ -13,7 +13,7 @@ const jogos: Jogo[] = [
     nome: "God of War Ragnarök",
     descricao:
       "God of War Ragnarök segue Kratos e seu filho Atreus enquanto se preparam para o iminente fim do mundo, o Ragnarok. Com a ameaça dos deuses e criaturas mitológicas, os dois embarcam em uma jornada por nove reinos para enfrentar seu destino. Kratos lida com seu passado, enquanto Atreus busca entender seu papel como Loki.",
-    video: "/videogod.webm",
+    video: "/video_promo_godofwar.webm",
     imagens: ["/god.jpg", "/god6.jpg", "/god3.jpg", "/god4.jpg", "/god5.jpg"],
     capa: "/god2.jpg",
   },
@@ -22,7 +22,7 @@ const jogos: Jogo[] = [
     nome: "Ale E Tale",
     descricao:
       "Ale e Tale é um jogo de aventura e exploração, onde os jogadores controlam Ale e Tale, dois personagens com habilidades diferentes, enquanto desvendam mistérios em um mundo mágico.",
-    video: "/videotale.webm",
+    video: "/videoaletaletavern.webm",
     imagens: [
       "/tale1.jpg",
       "/tale2.jpg",
