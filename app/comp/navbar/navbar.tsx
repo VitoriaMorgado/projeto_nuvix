@@ -18,7 +18,7 @@ const NavBarp = () => {
             <Menubar className="mt-2 w-full border-transparent bg-transparent">
               <MenubarMenu>
                 <Image
-                  src="/logo.png"
+                  src="/logo_nuvix.png"
                   width={150}
                   height={100}
                   alt="imagem do mine"
@@ -27,15 +27,15 @@ const NavBarp = () => {
                   Destaques
                 </MenubarTrigger>
                 <MenubarContent>
-                  <Link href="/catalogo">
+                  <Link href="/catalogo-teste">
                     <MenubarItem>Catalogo</MenubarItem>
                   </Link>
                   <MenubarSeparator />
-                  <Link href="/catalogo">
+                  <Link href="/catalogo-teste">
                     <MenubarItem>Jogos Em Destaque</MenubarItem>
                   </Link>
                   <MenubarSeparator />
-                  <Link href="/catalogo">
+                  <Link href="/catalogo-teste">
                     <MenubarItem>Novidades</MenubarItem>
                   </Link>
                 </MenubarContent>
@@ -45,26 +45,14 @@ const NavBarp = () => {
                   Jogos
                 </MenubarTrigger>
                 <MenubarContent>
-                  <Link href="/catalogo">
+                  <Link href="/catalogo-teste">
                     <MenubarItem>Catalogo</MenubarItem>
                     <MenubarSeparator />
                   </Link>
-                  <Link href="/catalogo">
+                  <Link href="/catalogo-teste">
                     <MenubarItem>Destaque</MenubarItem>
                   </Link>
                   <MenubarSeparator />
-                </MenubarContent>
-              </MenubarMenu>
-              <MenubarMenu>
-                <MenubarTrigger className="h-[30px] w-[120px] justify-center text-xl font-bold text-[#F6F7F8]">
-                  Assinatura
-                </MenubarTrigger>
-                <MenubarContent>
-                  <MenubarItem>Nuvix Plus</MenubarItem>
-
-                  <MenubarSeparator />
-
-                  <MenubarItem>Plano Essencial</MenubarItem>
                 </MenubarContent>
               </MenubarMenu>
               <MenubarMenu>
@@ -76,7 +64,7 @@ const NavBarp = () => {
                     <MenubarItem>Sobre Nós</MenubarItem>
                   </Link>
                   <MenubarSeparator />
-                  <Link href="login2">
+                  <Link href="/login">
                     <MenubarItem>Nos Contate</MenubarItem>
                   </Link>
                   <MenubarSeparator />
@@ -90,11 +78,11 @@ const NavBarp = () => {
                   </div>
                 </MenubarTrigger>
                 <MenubarContent>
-                  <Link href="/cadastro2">
+                  <Link href="/cadastro">
                     <MenubarItem>Cadastre-se</MenubarItem>
                   </Link>
                   <MenubarSeparator />
-                  <Link href="/login2">
+                  <Link href="/login">
                     <MenubarItem>Login</MenubarItem>
                   </Link>
                   <MenubarSeparator />
