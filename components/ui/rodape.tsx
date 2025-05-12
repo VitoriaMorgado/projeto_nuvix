@@ -43,7 +43,7 @@ const Rodape = () => {
               </li>
               <li>
                 <a href="/assinatura" className="text-gray-300 transition-colors hover:text-blue-400">
-                  Planos de Assinatura
+                  Saiba Mais
                 </a>
               </li>
               <li>
@@ -94,7 +94,7 @@ const Rodape = () => {
             <a href="/sobrenos" className="transition-colors hover:text-blue-400">
               Sobre Nós
             </a>
-            <a href="/" className="transition-colors hover:text-blue-400">
+            <a href="/suporte" className="transition-colors hover:text-blue-400">
               Contate-nos
             </a>
             <a href="/poiliticadeprivacidade" className="transition-colors hover:text-blue-400">
