@@ -17,12 +17,14 @@ const NavBarp = () => {
           <div className="sticky flex h-[60px] bg-black">
             <Menubar className="mt-2 w-full border-transparent bg-transparent">
               <MenubarMenu>
+                <Link href="/.">
                 <Image
                   src="/logo_nuvix.png"
                   width={150}
                   height={100}
                   alt="imagem do mine"
                 />
+                </Link>
                 <MenubarTrigger className="h-[30px] w-[120px] justify-center text-xl font-bold text-[#F6F7F8]">
                   Destaques
                 </MenubarTrigger>
@@ -60,11 +62,11 @@ const NavBarp = () => {
                   Fale conosco
                 </MenubarTrigger>
                 <MenubarContent>
-                  <Link href="cadastro">
+                  <Link href="saibamais">
                     <MenubarItem>Sobre Nós</MenubarItem>
                   </Link>
                   <MenubarSeparator />
-                  <Link href="/login">
+                  <Link href="/">
                     <MenubarItem>Nos Contate</MenubarItem>
                   </Link>
                   <MenubarSeparator />
