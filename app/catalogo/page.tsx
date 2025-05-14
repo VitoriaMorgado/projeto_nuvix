@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import gameCatalog from "./models/jogos";
 import Image from "next/image";
 import NavBarp from "../comp/navbar/navbar";
+import Botaocora from "../catalogo2/botaocora";
 
 interface CatalogoProps {
   id: string;
@@ -423,6 +424,7 @@ const Catalogo = () => {
                     <button className="rounded-lg bg-blue-500 px-3 py-1 text-sm text-white transition-colors duration-200 hover:bg-blue-600">
                       Detalhes
                     </button>
+                    <Botaocora />
                   </div>
                 </div>
               </div>

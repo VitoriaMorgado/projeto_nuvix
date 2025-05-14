@@ -23,11 +23,11 @@ const BotaoCora = () => {
       >
         {/* Exibe o ícone de coração cheio ou quebrado, dependendo do estado */}
         {isFavorite ? (
-          <div className="rounded-md bg-[#ff2525]">
+          <div className="rounded-md">
             <Heart className="mt-2.5 p-0.5 text-red-800" size={25} />
           </div>
         ) : (
-          <div className="rounded-md bg-[#7c7b7b]">
+          <div className="rounded-md">
             <Heart className="mt-2.5 p-0.5 text-slate-700" size={25} />
           </div>
         )}
