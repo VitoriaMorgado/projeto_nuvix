@@ -31,7 +31,9 @@ const Favorito = () => {
                 </MenubarTrigger>
                 <MenubarContent>
                   <Link href="/catalogo">
-                    <MenubarItem>Catalogo</MenubarItem>
+                    <div className="bg-yellow-500 p-2 hover:bg-red-700">
+                      <h2 className="text-[14px]">Catalogo</h2>
+                    </div>
                   </Link>
                   <MenubarSeparator />
                   <Link href="/catalogo">
