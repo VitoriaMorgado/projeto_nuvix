@@ -170,13 +170,13 @@ const Saiba = () => {
               </div>
             </div>
             <div className="text-center mt-10">
-  <Link href="/catalogo">
-    <div className="inline-flex items-center text-lg text-[#019EC2] hover:text-[#198097] transition-colors">
-      <span className="underline">Ver Catálogo</span> 
-      <ChevronRight className="ml-1" />
-    </div>
-  </Link>
-</div>
+            <Link href="/catalogo">
+            <div className="inline-flex items-center text-lg text-[#019EC2] hover:text-[#198097] transition-colors">
+            <span className="underline">Ver Catálogo</span> 
+            <ChevronRight className="ml-1" />
+          </div>
+          </Link>
+            </div>
 
             
 
@@ -228,8 +228,7 @@ const Saiba = () => {
                   <span className="text-[#019EC2]">SOBRE</span> NÓS?
                 </h2>
                 <p className="mb-6 text-lg leading-relaxed text-[#F6F7F8]/90">
-                  Bem-vindo à Nuvix, o seu portal de chaves digitais para jogos!
-Nossa missão é facilitar o acesso aos seus títulos favoritos, oferecendo entrega instantânea, segurança e praticidade em cada compra..
+                  Bem-vindo à Nuvix, o seu portal de chaves digitais para jogos! Nossa missão é facilitar o acesso aos seus títulos favoritos, oferecendo entrega instantânea, segurança e praticidade em cada compra..
                 </p>
                 
                 <h2 className="text-4xl font-bold text-white mt-10 mb-8">
@@ -280,7 +279,7 @@ Nossa missão é facilitar o acesso aos seus títulos favoritos, oferecendo entr
         </div>
         <div>
             <Rodape></Rodape>
-          </div>
+        </div>
       </div>
     </>
   );
