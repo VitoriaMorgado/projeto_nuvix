@@ -49,11 +49,8 @@ const Home = () => {
           <div className="relative z-20 flex h-full items-center">
             <div className="container mx-auto px-6">
               <div className="max-w-xl">
-<<<<<<< HEAD
+
                 <h1 className="text-6xl md:text-8xl font-bold text-white mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#F6F7F8] to-[#198097]">
-=======
-                <h1 className="mb-4 bg-gradient-to-r from-[#F6F7F8] to-[#019EC2] bg-clip-text text-6xl font-bold text-transparent text-white md:text-8xl">
->>>>>>> fbc462be276d62b5a88430916d02a7d8dc95464c
                   Nuvix
                 </h1>
                 <p className="mb-6 text-3xl font-light text-[#F6F7F8]">
@@ -146,11 +143,6 @@ const Home = () => {
             </div>
           </div>
           {/* CAROUSEL FIM */}
-<<<<<<< HEAD
-
-          </div>
-=======
->>>>>>> fbc462be276d62b5a88430916d02a7d8dc95464c
         </div>
       </div>
 
