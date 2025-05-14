@@ -7,6 +7,7 @@ import Link from "next/link";
 import destaque from "./models/muda";
 import { useState } from "react";
 import CardMuda from "./cardmuda";
+import Autoplay from "embla-carousel-autoplay";
 
 const CarroMuda = () => {
   const [, setJogoMuda] = useState(destaque[0]);
@@ -22,6 +23,11 @@ const CarroMuda = () => {
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col overflow-hidden rounded bg-[#000101] lg:flex-row">
             <Carousel
+              plugins={[
+                Autoplay({
+                  delay: 4000,
+                }),
+              ]}
               opts={{
                 align: "start",
                 loop: true,
