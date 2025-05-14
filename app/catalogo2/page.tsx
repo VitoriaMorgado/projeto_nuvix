@@ -9,31 +9,29 @@ import {
 } from "@/components/ui/menubar";
 import { CircleUser, Search } from "lucide-react";
 import Link from "next/link";
-import CataUsa from "../catalogo2/cataloguin";
+import CataUsa from "./cataloguin";
 
-const Favorito = () => {
+const CatalogoNovo = () => {
   return (
     <>
-      <div className="m-0 h-[1100px] w-full flex-col justify-center bg-gradient-to-b from-[#0a2235] to-[#154B74] p-0">
+      <div className="h-full w-full bg-[#0E304A] p-0 text-3xl font-bold text-white shadow-2xl">
         <div>
           {/* MENUBAR INICIO */}
           <div className="sticky flex h-[60px] bg-black">
             <Menubar className="mt-2 w-full border-transparent bg-transparent">
               <MenubarMenu>
                 <Image
-                  src="/logo_nuvix.png"
+                  src="/logo.png"
                   width={150}
                   height={100}
-                  alt="logo"
+                  alt="imagem do mine"
                 />
                 <MenubarTrigger className="h-[30px] w-[120px] justify-center text-xl font-bold text-[#F6F7F8]">
                   Destaques
                 </MenubarTrigger>
                 <MenubarContent>
                   <Link href="/catalogo">
-                    <div className="bg-yellow-500 p-2 hover:bg-red-700">
-                      <h2 className="text-[14px]">Catalogo</h2>
-                    </div>
+                    <MenubarItem>Catalogo</MenubarItem>
                   </Link>
                   <MenubarSeparator />
                   <Link href="/catalogo">
@@ -117,23 +115,25 @@ const Favorito = () => {
           </div>
         </div>
         {/* MENUBAR FIM */}
-
-        <div className="my-5 ml-[60px]">
-          <div className="flex">
-            <p className="text-4xl text-white">Favoritos</p>
-            <div className="ml-3 mt-2 h-[3px] w-[1000px] self-center bg-gradient-to-r from-[#c8d3f5] to-[#0a2235]"></div>
+        <div className="bg-[#0E304A] p-6 text-5xl font-bold text-white shadow-2xl">
+          <h1 className="py-4 pl-4 text-white">Catálogo de Jogos</h1>
+        </div>
+        <div>
+          <div className="bg-[#0E304A] p-6 text-5xl font-bold text-white shadow-2xl">
+            <p className="text-4xl text-white">Ação</p>
           </div>
+          <CataUsa />
         </div>
-
-        <div className="my-3 ml-[60px] flex">
-          <p className="text-xl text-white">Ordenar por:</p>
-          <select className="ml-2 rounded bg-[#019EC2] p-1 text-center font-bold text-white">
-            <option value="a-z">A-Z</option>
-            <option value="data">Data de adição</option>
-          </select>
+        <div>
+          <div className="bg-[#0E304A] p-6 text-5xl font-bold text-white shadow-2xl">
+            <p className="text-4xl text-white">Simulação</p>
+          </div>
+          <CataUsa />
         </div>
-
-        <div className="mb-10 h-[900px] w-[1800px] justify-self-center bg-[#000101b4]">
+        <div>
+          <div className="bg-[#0E304A] p-6 text-5xl font-bold text-white shadow-2xl">
+            <p className="text-4xl text-white">Terror</p>
+          </div>
           <CataUsa />
         </div>
       </div>
@@ -141,4 +141,4 @@ const Favorito = () => {
   );
 };
 
-export default Favorito;
+export default CatalogoNovo;
