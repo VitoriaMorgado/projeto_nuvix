@@ -49,7 +49,12 @@ const Home = () => {
           <div className="relative z-20 flex h-full items-center">
             <div className="container mx-auto px-6">
               <div className="max-w-xl">
+<<<<<<< HEAD
+
+                <h1 className="text-6xl md:text-8xl font-bold text-white mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#F6F7F8] to-[#198097]">
+=======
                 <h1 className="mb-4 bg-gradient-to-r from-[#F6F7F8] to-[#198097] bg-clip-text text-6xl font-bold text-transparent text-white md:text-8xl">
+>>>>>>> b12b1d0fdc21658cc2b2935be9fa32f7449b5217
                   Nuvix
                 </h1>
                 <p className="mb-6 text-3xl font-light text-[#F6F7F8]">
