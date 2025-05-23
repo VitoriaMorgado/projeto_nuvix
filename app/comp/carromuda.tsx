@@ -61,6 +61,7 @@ const CarroMuda = () => {
                 Catálogo
               </button>
             </Link>
+            <button>Qualquer</button>
           </div>
         </div>
       </div>
