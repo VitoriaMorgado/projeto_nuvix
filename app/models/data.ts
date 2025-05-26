@@ -5,6 +5,7 @@ export interface Jogo {
   imagens: string[];
   descricao: string;
   capa: string;
+  rating: number;
 }
 
 const jogos: Jogo[] = [
@@ -22,6 +23,7 @@ const jogos: Jogo[] = [
       "/demo_5_godofwar.jpg",
     ],
     capa: "/capa_jogo_godofwar.jpg",
+    rating: 4.8,
   },
   {
     id: 2,
@@ -37,6 +39,7 @@ const jogos: Jogo[] = [
       "/demo_5_aleetaletavern.jpg",
     ],
     capa: "/capa_jogo_aleetaletavern.jpg",
+    rating: 4.8,
   },
   {
     id: 3,
@@ -52,6 +55,7 @@ const jogos: Jogo[] = [
       "/demo_5_residentevil4.jpg",
     ],
     capa: "/capa_jogo_residentevil4.jpg",
+    rating: 4.8,
   },
   {
     id: 4,
@@ -67,6 +71,7 @@ const jogos: Jogo[] = [
       "/demo_5_ittakestwo.jpg",
     ],
     capa: "/capa_jogo_ittakestwo.jpg",
+    rating: 4.8,
   },
   {
     id: 5,
@@ -82,6 +87,7 @@ const jogos: Jogo[] = [
       "/demo_5_buckshot.jpg",
     ],
     capa: "/capa_jogo_buckshot.jpg",
+    rating: 4.8,
   },
   {
     id: 6,
@@ -97,6 +103,7 @@ const jogos: Jogo[] = [
       "/demo_5_horizonzerodawn.jpg",
     ],
     capa: "/capa_jogo_horizonzerodawn.jpg",
+    rating: 4.8,
   },
 ];
 
