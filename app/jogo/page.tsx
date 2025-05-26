@@ -1,14 +1,19 @@
 "use client";
 
-import Image from "next/image";
+import React, { useState } from "react";
 import {
-  Menubar,
-  MenubarContent,
-  MenubarItem,
-  MenubarMenu,
-  MenubarTrigger,
-} from "@/components/ui/menubar";
-
+  Play,
+  Star,
+  Download,
+  Calendar,
+  Users,
+  Zap,
+  Target,
+  Award,
+} from "lucide-react";
+import Image from "next/image";
+import NavBarp from "../comp/navbar/navbar";
+import jogos from "@/app/models/data";
 import {
   Carousel,
   CarouselContent,
@@ -17,11 +22,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import BotaoFav from "../componente/botaofav";
-import Link from "next/link";
-import { useState } from "react";
-import jogos from "@/app/models/data";
 
-const JogoPage = () => {
+const GameShowcasePage = () => {
   const [jogoSelecionado, setJogoSelecionado] = useState(jogos[0]);
 
   const handleCardClick = (jogoId: number) => {
@@ -30,172 +32,208 @@ const JogoPage = () => {
   };
 
   return (
-    <>
-      <div className="m-0 h-full w-screen flex-col justify-center bg-gradient-to-b from-[#0a2235] to-[#154B74] p-0">
-        {/* NAVBAR INÍCIO */}
-        <div className="flex bg-black">
-          <Image
-            className="mx-4"
-            src="/logo.png"
-            width={150}
-            height={500}
-            alt="logo"
-          />
-          <div className="flex">
-            <Link
-              href="/"
-              className="mx-5 content-center text-2xl font-bold text-[#F6F7F8]"
-            >
-              <button>HOME</button>
-            </Link>
-            <Link
-              href="/favorito"
-              className="mx-5 content-center text-2xl font-bold text-[#F6F7F8]"
-            >
-              <button>FAVORITOS</button>
-            </Link>
+    <div className="min-h-screen bg-gradient-to-br from-[#02030a] to-[#0E304A] text-white">
+      {/* Particles Background Effect */}
+      <div className="pointer-events-none fixed inset-0 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]"></div>
+        {[...Array(50)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute h-1 w-1 animate-pulse rounded-full bg-cyan-400 opacity-30"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 2}s`,
+              animationDuration: `${2 + Math.random() * 3}s`,
+            }}
+          ></div>
+        ))}
+      </div>
 
-            <button className="mx-5 content-center text-2xl font-bold text-[#F6F7F8]">
-              ASSINATURA
-            </button>
-            <button className="w-[210px] content-center text-2xl font-bold text-[#F6F7F8]">
-              FALE CONOSCO
-            </button>
-          </div>
-          <div className="w-screen justify-items-end">
-            <div className="flex">
-              <button className="mx-5 h-[35px] w-[180px] bg-[#019EC2] text-center text-2xl text-white">
-                Assine o nuvix
-              </button>
-              <div className="h-[40px] w-[4px] bg-white"></div>
-              <button className="mx-5 text-2xl text-white">
-                Iniciar sessão
-              </button>
-              <div className="h-[40px] w-[4px] bg-white"></div>
-              <Menubar className="border-transparent bg-transparent">
-                <MenubarMenu>
-                  <MenubarTrigger className="mx-5 bg-transparent text-2xl text-white">
-                    Idioma
-                  </MenubarTrigger>
-                  <MenubarContent>
-                    <MenubarItem className="bg-transparent">Inglês</MenubarItem>
-                    <MenubarItem>Português</MenubarItem>
-                  </MenubarContent>
-                </MenubarMenu>
-              </Menubar>
+      {/* Hero Section */}
+      <div className="relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#02030a] to-[#0E304A]"></div>
+
+        {/* Navigation */}
+        <NavBarp />
+
+        {/* Game Title Section */}
+        <div className="relative z-10 px-6 py-12">
+          <div className="mx-auto max-w-7xl">
+            <div className="mb-4 flex items-center space-x-4">
+              <div className="flex items-center space-x-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star
+                    key={i}
+                    className={`h-5 w-5 ${i < Math.floor(jogoSelecionado.rating) ? "fill-current text-yellow-400" : "text-gray-400"}`}
+                  />
+                ))}
+                <span className="font-semibold text-yellow-400">
+                  {jogoSelecionado.rating}
+                </span>
+              </div>
+              <div className="rounded-full from-[#02030a] to-[#0E304A] px-3 py-1 text-sm font-semibold">
+                {/* {jogoSelecionado.genre} */}
+              </div>
             </div>
-          </div>
-        </div>
-        {/* NAVBAR FIM */}
 
-        {/* CONTEÚDO DO JOGO */}
-        <div className="justify-self-center">
-          <div className="my-9 flex">
-            <h1 className="font-mono text-5xl text-white">
+            <h1 className="mb-6 bg-gradient-to-r from-white via-cyan-200 to-purple-200 bg-clip-text text-6xl font-black leading-tight text-transparent">
               {jogoSelecionado.nome}
             </h1>
-            <div className="w-[1235px] content-center">
-              <div className="justify-self-end">
-                <BotaoFav />
+
+            <div className="flex flex-wrap items-center gap-6 text-gray-300">
+              <div className="flex items-center space-x-2">
+                <Users className="h-5 w-5 text-cyan-400" />
+                {/* <span>{jogoSelecionado.players}</span> */}
               </div>
+              <div className="flex items-center space-x-2">
+                <Calendar className="h-5 w-5 text-cyan-400" />
+                {/* <span>{jogoSelecionado.releaseDate}</span> */}
+              </div>
+              <div className="flex items-center space-x-2">
+                <Download className="h-5 w-5 text-cyan-400" />
+                {/* <span>{jogoSelecionado.size}</span> */}
+              </div>
+            </div>
+            <div className="mt-5">
+              <BotaoFav />
             </div>
           </div>
         </div>
-        <div className="m-8 h-[700px] w-[1740px] justify-self-center rounded-md bg-[#000101a8]">
-          <div className="flex">
-            <div className="p-8">
-              <div className="mb-2">
-                <video
-                  src={jogoSelecionado.video}
-                  className="w-[900px]"
-                  controls
-                  autoPlay
-                  loop
-                ></video>
+
+        {/* Main Content */}
+        <div className="relative z-10 mx-auto max-w-7xl px-6 pb-16">
+          <div className="grid gap-8 lg:grid-cols-3">
+            {/* Media Section */}
+            <div className="space-y-6 lg:col-span-2">
+              {/* Main Video/Image Display */}
+              <div className="group relative">
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#02030a] to-cyan-500 opacity-20 blur transition-opacity duration-300 group-hover:opacity-40"></div>
+                <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black/40 backdrop-blur-sm">
+                  <video
+                    src={jogoSelecionado.video}
+                    className="aspect-video w-full object-cover"
+                    controls
+                    autoPlay
+                  />
+                </div>
               </div>
-              <div className="h-[140px] w-[900px] justify-items-center">
+
+              {/* Thumbnail Gallery */}
+              <div className="relative">
                 <Carousel opts={{ align: "start", loop: true }}>
                   <CarouselContent>
                     {jogoSelecionado.imagens.map((imgSrc, index) => (
-                      <CarouselItem key={index} className="mt-3 md:basis-1/4">
+                      <CarouselItem key={index} className="md:basis-1/4">
                         <Image
                           src={imgSrc}
-                          width={250}
-                          height={500}
+                          width={220}
+                          height={140}
                           alt={`Imagem ${index + 1} do jogo`}
+                          className="rounded-md border border-[#232B3F]"
                         />
                       </CarouselItem>
                     ))}
                   </CarouselContent>
-                  <CarouselPrevious className="ml-8" />
-                  <CarouselNext className="mr-8" />
+                  <CarouselPrevious className="ml-2 text-black" />
+                  <CarouselNext className="mr-2 text-black" />
                 </Carousel>
               </div>
             </div>
-            <div className="p-8">
-              {/* CAPA DO JOGO INICIO */}
-              <Image
-                src={jogoSelecionado.capa} // Alterado para usar o campo 'capa'
-                width={700}
-                height={500}
-                alt="Capa do jogo"
-              />
-              {/* CAPA DO JOGO FIM */}
-              <p className="mt-5 w-[700px] font-mono text-2xl text-[#F6F7F8]">
-                {jogoSelecionado.descricao}
-              </p>
-              <div className="justify-self-center">
-                <Link href="login">
-                  <button className="m-4 mx-[100px] h-[55px] w-[230px] rounded-bl-3xl rounded-tr-3xl bg-[#019EC2] text-3xl font-bold text-[#F6F7F8]">
-                    Jogue agora
-                  </button>
-                </Link>
+
+            {/* Game Info Sidebar */}
+            <div className="space-y-6">
+              {/* Game Cover */}
+              <div className="group relative">
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#02030a] to-cyan-500 opacity-20 blur transition-opacity duration-300 group-hover:opacity-40"></div>
+                <div className="relative">
+                  <Image
+                    src={jogoSelecionado.capa}
+                    width={500}
+                    height={300}
+                    alt="Game Cover"
+                    className="w-full rounded-2xl border border-white/10 shadow-2xl"
+                  />
+                </div>
+              </div>
+
+              {/* Game Description */}
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+                <h3 className="mb-4 text-xl font-bold text-cyan-400">
+                  Sobre o Jogo
+                </h3>
+                <p className="mb-6 leading-relaxed text-gray-300">
+                  {jogoSelecionado.descricao}
+                </p>
+
+                {/* Game Features */}
+                <div className="mb-6 space-y-3">
+                  <div className="flex items-center space-x-3">
+                    <Zap className="h-5 w-5 text-yellow-400" />
+                    <span className="text-sm">Ação em tempo real</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Target className="h-5 w-5 text-green-400" />
+                    <span className="text-sm">Sistema de progressão</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Award className="h-5 w-5 text-purple-400" />
+                    <span className="text-sm">Conquistas desbloqueáveis</span>
+                  </div>
+                </div>
+
+                {/* Play Button */}
+                <button className="w-full transform rounded-xl bg-cyan-500 px-6 py-4 font-bold text-white transition-all duration-300 hover:scale-105">
+                  <div className="flex items-center justify-center space-x-2">
+                    <Play className="h-5 w-5" fill="currentColor" />
+                    <span>Jogar Agora</span>
+                  </div>
+                </button>
               </div>
             </div>
           </div>
         </div>
-        {/* SEÇÃO DE JOGOS */}
-        {/* SEÇÃO DE JOGOS */}
-        <div className="justify-self-center">
-          <div className="h-[510px] w-[1740px] rounded-md bg-[#000101a8]">
-            <div className="w-[1580px] justify-self-center py-[75px]">
-              <Carousel opts={{ align: "start", loop: true }}>
-                <CarouselContent>
-                  {jogos.map((jogo) => (
-                    <CarouselItem
-                      key={jogo.id}
-                      onClick={() => handleCardClick(jogo.id)}
-                      className="cursor-pointer md:basis-2/5"
-                    >
-                      {/* NOVO CARD */}
-                      <div className="m-2 h-[340px] w-[550px] justify-center rounded-xl bg-[#000101] shadow-xl">
-                        <Image
-                          src={jogo.capa}
-                          width={550}
-                          height={500}
-                          alt={`Capa do jogo ${jogo.nome}`}
-                          className="rounded-t-xl"
-                        />
-                        <div className="h-[60px] w-full content-center justify-items-center">
-                          <p className="mt-2 text-center font-mono text-5xl text-[#F6F7F8]">
-                            {jogo.nome}
-                          </p>
-                        </div>
-                      </div>
-                      {/* NOVO CARD FIM */}
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
-              </Carousel>
-            </div>
-          </div>
-        </div>
-        <div className="h-[100px] w-screen"></div>
       </div>
-    </>
+
+      {/* More Games Section */}
+      <div className="relative border-t border-white/10 bg-black/20 backdrop-blur-sm">
+        <div className="mx-auto max-w-7xl px-6 py-16">
+          <div className="mb-8 flex items-center justify-between">
+            <h2 className="bg-gradient-to-r from-white to-cyan-200 bg-clip-text text-3xl font-bold text-transparent">
+              Mais Jogos
+            </h2>
+          </div>
+
+          <Carousel opts={{ align: "start", loop: true }}>
+            <CarouselContent>
+              {jogos.map((jogo) => (
+                <CarouselItem
+                  key={jogo.id}
+                  onClick={() => handleCardClick(jogo.id)}
+                  className="cursor-pointer md:basis-1/3"
+                >
+                  <div className="m-2 flex h-[220px] w-[300px] flex-col items-center rounded-lg bg-[#141A26] shadow transition hover:ring-2 hover:ring-[#576CBC]">
+                    <Image
+                      src={jogo.capa}
+                      width={280}
+                      height={140}
+                      alt={`Capa do jogo ${jogo.nome}`}
+                      className="h-[140px] w-full rounded-t-lg object-cover"
+                    />
+                    <p className="mt-2 text-center font-mono text-xl text-[#E4E9F7]">
+                      {jogo.nome}
+                    </p>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="rounded-full bg-white/10 p-2 transition-all duration-300 hover:bg-white/20" />
+            <CarouselNext className="rounded-full bg-white/10 p-2 transition-all duration-300 hover:bg-white/20" />
+          </Carousel>
+        </div>
+      </div>
+    </div>
   );
 };
 
-export default JogoPage;
+export default GameShowcasePage;
