@@ -1,10 +1,16 @@
 "use client";
 
-import { Menubar, MenubarTrigger, MenubarContent, MenubarItem, MenubarSeparator } from "@/components/ui/menubar";
+import {
+  Menubar,
+  MenubarTrigger,
+  MenubarContent,
+  MenubarItem,
+  MenubarSeparator,
+} from "@/components/ui/menubar";
 import { MenubarMenu } from "@radix-ui/react-menubar";
 import Link from "next/link";
 import Image from "next/image";
-import React from "react"; 
+import React from "react";
 import { CircleUser, Search } from "lucide-react";
 
 const Home = () => {
@@ -16,16 +22,16 @@ const Home = () => {
   };
 
   return (
-    <div className="bg-black min-h-screen w-full flex flex-col">
+    <div className="flex min-h-screen w-full flex-col bg-black">
       {/* Navbar */}
-      <div className="bg-black min-h-screen w-full flex flex-col">
+      <div className="flex min-h-screen w-full flex-col bg-black">
         {/* //========NAVBAR========// */}
       </div>
       <div className="sticky top-0 z-50 w-full">
-        <div className="flex h-[60px] bg-black items-center">
+        <div className="flex h-[60px] items-center bg-black">
           <Menubar className="w-full border-transparent bg-transparent">
             <MenubarMenu>
-              <Link href="/">
+              <Link href="./">
                 <Image
                   src="/logo.png"
                   width={150}
@@ -34,7 +40,7 @@ const Home = () => {
                   className="max-w-[100px] md:max-w-[150px]"
                 />
               </Link>
-              <MenubarTrigger className="h-[30px] w-[120px] justify-center text-xl font-bold text-[#F6F7F8] hidden md:flex">
+              <MenubarTrigger className="hidden h-[30px] w-[120px] justify-center text-xl font-bold text-[#F6F7F8] md:flex">
                 Destaques
               </MenubarTrigger>
               <MenubarContent>
@@ -53,7 +59,7 @@ const Home = () => {
             </MenubarMenu>
 
             <MenubarMenu>
-              <MenubarTrigger className="h-[30px] w-[80px] justify-center text-xl font-bold text-[#F6F7F8] hidden md:flex">
+              <MenubarTrigger className="hidden h-[30px] w-[80px] justify-center text-xl font-bold text-[#F6F7F8] md:flex">
                 Jogos
               </MenubarTrigger>
               <MenubarContent>
@@ -115,11 +121,11 @@ const Home = () => {
               </MenubarContent>
             </MenubarMenu>
           </Menubar>
-          <div className="flex items-center mr-4">
-            <Search className="text-white mr-2" />
+          <div className="mr-4 flex items-center">
+            <Search className="mr-2 text-white" />
             <input
               type="text"
-              className="bg-transparent text-white w-24 md:w-auto"
+              className="w-24 bg-transparent text-white md:w-auto"
               placeholder="Search"
             />
           </div>

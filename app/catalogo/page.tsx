@@ -5,6 +5,7 @@ import gameCatalog from "./models/jogos";
 import Image from "next/image";
 import NavBarp from "../comp/navbar/navbar";
 import Botaocora from "../catalogo2/botaocora";
+import Link from "next/link";
 
 interface CatalogoProps {
   id: string;
@@ -198,9 +199,9 @@ const Catalogo = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#02030a] to-[#0E304A]">
       {/* Header */}
-      <header className="bg-gray-800 shadow-lg">
+      <div className="mb-6">
         <NavBarp />
-      </header>
+      </div>
 
       {/* Hero Banner */}
       <div className="mb-8 bg-gradient-to-r from-[#0d1a26] to-[#193f60] py-12">
@@ -256,9 +257,11 @@ const Catalogo = () => {
                       <div className="text-sm">
                         {formatPrice(game.price, game.discount)}
                       </div>
-                      <button className="rounded-lg bg-blue-500 px-4 py-2 text-white transition-colors duration-200 hover:bg-blue-600">
-                        Ver Detalhes
-                      </button>
+                      <Link href="/jogo">
+                        <button className="rounded-lg bg-blue-500 px-4 py-2 text-white transition-colors duration-200 hover:bg-blue-600">
+                          Ver Detalhes
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -421,9 +424,11 @@ const Catalogo = () => {
                     <div className="text-sm">
                       {formatPrice(game.price, game.discount)}
                     </div>
-                    <button className="rounded-lg bg-blue-500 px-3 py-1 text-sm text-white transition-colors duration-200 hover:bg-blue-600">
-                      Detalhes
-                    </button>
+                    <Link href="/jogo">
+                      <button className="rounded-lg bg-blue-500 px-3 py-1 text-sm text-white transition-colors duration-200 hover:bg-blue-600">
+                        Detalhes
+                      </button>
+                    </Link>
                     <Botaocora />
                   </div>
                 </div>

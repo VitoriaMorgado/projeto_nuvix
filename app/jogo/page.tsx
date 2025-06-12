@@ -22,6 +22,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import BotaoFav from "../componente/botaofav";
+import Link from "next/link";
 
 const GameShowcasePage = () => {
   const [jogoSelecionado, setJogoSelecionado] = useState(jogos[0]);
@@ -186,7 +187,9 @@ const GameShowcasePage = () => {
                 <button className="w-full transform rounded-xl bg-cyan-500 px-6 py-4 font-bold text-white transition-all duration-300 hover:scale-105">
                   <div className="flex items-center justify-center space-x-2">
                     <Play className="h-5 w-5" fill="currentColor" />
-                    <span>Jogar Agora</span>
+                    <Link href="/resgate_chave">
+                      <span>Jogar Agora</span>
+                    </Link>
                   </div>
                 </button>
               </div>
