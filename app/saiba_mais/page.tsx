@@ -1,32 +1,22 @@
 "use client";
 
-<<<<<<< HEAD
-=======
 import { ChevronRight } from "lucide-react";
->>>>>>> 1668353724b6e015fe58a6b735e8bf8857fbd5a5
 import Image from "next/image";
 import Link from "next/link";
 import Carsaiba from "./car_saiba";
 import Carsaiba2 from "./car_saiba2";
-<<<<<<< HEAD
-import { ChevronRight } from "lucide-react";
-
-=======
 import NavBarp from "../comp/navbar/navbar";
->>>>>>> 1668353724b6e015fe58a6b735e8bf8857fbd5a5
+import Rodape from "../Componentes/navbar/rodape";
 
 const Saiba = () => {
   return (
     <>
       <div className="flex min-h-screen w-full flex-col bg-black">
         <div>
-<<<<<<< HEAD
-=======
           {/* Navbar Inicio */}
           <NavBarp />
           {/* Navbar Fim */}
 
->>>>>>> 1668353724b6e015fe58a6b735e8bf8857fbd5a5
           {/* BANNER */}
           <div className="relative h-[550px] w-full overflow-hidden">
             {/* Overlay gradient for better text readability */}
@@ -210,12 +200,9 @@ const Saiba = () => {
             </div>
           </div>
         </div>
-<<<<<<< HEAD
-=======
         <div>
-          <Rodape></Rodape>
+          <Rodape />
         </div>
->>>>>>> 1668353724b6e015fe58a6b735e8bf8857fbd5a5
       </div>
     </>
   );
