@@ -189,8 +189,13 @@ const GameShowcasePage = () => {
                 <button className="w-full transform rounded-xl bg-cyan-500 px-6 py-4 font-bold text-white transition-all duration-300 hover:scale-105">
                   <div className="flex items-center justify-center space-x-2">
                     <Play className="h-5 w-5" fill="currentColor" />
+<<<<<<< HEAD
                     <Link href="/pagamento">
                     <span>Jogar Agora</span>
+=======
+                    <Link href="/resgate_chave">
+                      <span>Jogar Agora</span>
+>>>>>>> 1668353724b6e015fe58a6b735e8bf8857fbd5a5
                     </Link>
                   </div>
                 </button>

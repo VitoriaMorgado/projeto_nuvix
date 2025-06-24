@@ -5,6 +5,7 @@ import gameCatalog from "./models/jogos";
 import Image from "next/image";
 
 import Botaocora from "../catalogo2/botaocora";
+import Link from "next/link";
 
 interface CatalogoProps {
   id: string;
@@ -199,6 +200,14 @@ return (
  <body>
   
     <div className="min-h-screen bg-gradient-to-b from-[#02030a] to-[#0E304A]">
+<<<<<<< HEAD
+=======
+      {/* Header */}
+      <div className="mb-6">
+        <NavBarp />
+      </div>
+
+>>>>>>> 1668353724b6e015fe58a6b735e8bf8857fbd5a5
       {/* Hero Banner */}
       <div className="mb-8 bg-gradient-to-r from-[#0d1a26] to-[#193f60] py-12">
         <div className="container mx-auto px-4">
@@ -253,9 +262,11 @@ return (
                       <div className="text-sm">
                         {formatPrice(game.price, game.discount)}
                       </div>
-                      <button className="rounded-lg bg-blue-500 px-4 py-2 text-white transition-colors duration-200 hover:bg-blue-600">
-                        Ver Detalhes
-                      </button>
+                      <Link href="/jogo">
+                        <button className="rounded-lg bg-blue-500 px-4 py-2 text-white transition-colors duration-200 hover:bg-blue-600">
+                          Ver Detalhes
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -418,9 +429,11 @@ return (
                     <div className="text-sm">
                       {formatPrice(game.price, game.discount)}
                     </div>
-                    <button className="rounded-lg bg-blue-500 px-3 py-1 text-sm text-white transition-colors duration-200 hover:bg-blue-600">
-                      Detalhes
-                    </button>
+                    <Link href="/jogo">
+                      <button className="rounded-lg bg-blue-500 px-3 py-1 text-sm text-white transition-colors duration-200 hover:bg-blue-600">
+                        Detalhes
+                      </button>
+                    </Link>
                     <Botaocora />
                   </div>
                 </div>
