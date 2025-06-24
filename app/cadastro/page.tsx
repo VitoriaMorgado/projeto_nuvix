@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import NavBarp from "../comp/navbar/navbar";
-import Rodape from "@/components/ui/rodape";
+
 
 const Cadastro = () => {
   const [formData, setFormData] = useState({
@@ -260,12 +260,7 @@ const Cadastro = () => {
           </div>
         </div>
       </div>
-
-      {/* Rodapé */}
-      <div className="mt-0 w-full">
-        <Rodape />
-      </div>
-    </div>
+</div>
   );
 };
 

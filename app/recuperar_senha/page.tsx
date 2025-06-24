@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import NavBarp from "../comp/navbar/navbar";
-import Rodape from "@/components/ui/rodape";
+import Rodape from "@/app/Componentes/navbar/rodape";
 
 const RecuperarSenha = () => {
   const [formData, setFormData] = useState({

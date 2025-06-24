@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import gameCatalog from "./models/jogos";
 import Image from "next/image";
-import NavBarp from "../comp/navbar/navbar";
+
 import Botaocora from "../catalogo2/botaocora";
 
 interface CatalogoProps {
@@ -195,13 +195,10 @@ const Catalogo = () => {
     return <span className="font-bold text-white">R$ {price.toFixed(2)}</span>;
   };
 
-  return (
+return (
+ <body>
+  
     <div className="min-h-screen bg-gradient-to-b from-[#02030a] to-[#0E304A]">
-      {/* Header */}
-      <header className="bg-gray-800 shadow-lg">
-        <NavBarp />
-      </header>
-
       {/* Hero Banner */}
       <div className="mb-8 bg-gradient-to-r from-[#0d1a26] to-[#193f60] py-12">
         <div className="container mx-auto px-4">
@@ -454,107 +451,8 @@ const Catalogo = () => {
           </div>
         )}
       </div>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 py-8 text-gray-400">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
-            <div>
-              <h3 className="mb-4 text-lg font-bold text-white">
-                Nuvix Gaming
-              </h3>
-              <p className="mb-4">
-                A melhor plataforma de jogos online para os gamers mais
-                exigentes.
-              </p>
-              <div className="flex space-x-4">
-                <a href="#" className="hover:text-white">
-                  Facebook
-                </a>
-                <a href="#" className="hover:text-white">
-                  Twitter
-                </a>
-                <a href="#" className="hover:text-white">
-                  Instagram
-                </a>
-              </div>
-            </div>
-            <div>
-              <h4 className="mb-4 text-lg font-bold text-white">
-                Links Rápidos
-              </h4>
-              <ul className="space-y-2">
-                <li>
-                  <a href="#" className="hover:text-white">
-                    Início
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">
-                    Jogos
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">
-                    Planos
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">
-                    Sobre Nós
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="mb-4 text-lg font-bold text-white">Suporte</h4>
-              <ul className="space-y-2">
-                <li>
-                  <a href="#" className="hover:text-white">
-                    FAQ
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">
-                    Contato
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">
-                    Política de Privacidade
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">
-                    Termos de Uso
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="mb-4 text-lg font-bold text-white">Newsletter</h4>
-              <p className="mb-4">
-                Inscreva-se para receber novidades e promoções exclusivas.
-              </p>
-              <div className="flex">
-                <input
-                  type="email"
-                  placeholder="Seu email"
-                  className="flex-1 rounded-l-lg bg-gray-800 p-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-                <button className="rounded-r-lg bg-blue-500 px-4 py-2 text-white transition-colors duration-200 hover:bg-blue-600">
-                  Enviar
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="mt-8 border-t border-gray-800 pt-6 text-center">
-            <p>&copy; 2025 Nuvix Gaming. Todos os direitos reservados.</p>
-          </div>
-        </div>
-      </footer>
     </div>
+</body>
   );
 };
-
 export default Catalogo;

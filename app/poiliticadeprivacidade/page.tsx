@@ -1,5 +1,5 @@
 import React from "react";
-import Rodape from "@/components/ui/rodape";
+import Rodape from "@/app/Componentes/navbar/rodape";
 
 const PrivacyPolicy = () => {
   return (

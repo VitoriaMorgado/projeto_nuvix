@@ -3,8 +3,7 @@
 //========IMPORTE DE COMPONENTES========//
 import Image from "next/image";
 import Link from "next/link";
-import NavBarp from "../comp/navbar/navbar";
-import Rodape from "@/components/ui/rodape";
+
 
 const Novidades = () => {
   // Dados mockados para demonstração
@@ -83,7 +82,7 @@ const noticiasPrincipais = [
   return (
     <div className="flex min-h-screen w-full flex-col bg-black">
       {/* NAVBAR */}
-      <NavBarp />
+      
 
       <div className="flex-grow">
         {/* BANNER DE NOVIDADES */}
@@ -242,11 +241,6 @@ const noticiasPrincipais = [
             </div>
           </div>
         </div>
-      </div>
-
-      {/* RODAPÉ */}
-      <div className="mt-0 w-full">
-        <Rodape />
       </div>
     </div>
   );

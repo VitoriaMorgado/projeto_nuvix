@@ -1,9 +1,8 @@
-import Rodape from "@/components/ui/rodape";
+
 import TermsCheckbox from "@/components/ui/terms";
 
 const Privacy = () => {
   return (
-    <>
       <div className="m-0 flex min-h-screen w-full flex-col bg-gradient-to-b from-[#02030a] to-[#0E304A] p-0">
 <div className="bg-[#02030a p-4 md:p-6 text-xl md:text-3xl font-bold text-white shadow-2xl">
           Termos de uso
@@ -93,11 +92,11 @@ const Privacy = () => {
             <TermsCheckbox />
           </div>
         </div>
-        <div className="h-4 mt-6 md:mt-9 w-full p-0 max-w-full overflow-hidden">
-        <Rodape />
+        <div>
+          N
         </div>
       </div>
-    </>
+   
   );
 };
 

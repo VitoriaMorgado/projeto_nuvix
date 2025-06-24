@@ -1,17 +1,8 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
+import NavBarp from "./comp/navbar/navbar";
+import Rodape from "./Componentes/navbar/rodape";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
 
 export const metadata: Metadata = {
   title: "Nuvix",
@@ -23,13 +14,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+   return (
+    <>
+    <html lang="pt-br">
+      <NavBarp/>
+      <body className="antialiased">
         {children}
       </body>
+      <Rodape />
     </html>
+    </>
   );
 }

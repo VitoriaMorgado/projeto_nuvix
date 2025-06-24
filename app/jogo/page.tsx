@@ -12,7 +12,6 @@ import {
   Award,
 } from "lucide-react";
 import Image from "next/image";
-import NavBarp from "../comp/navbar/navbar";
 import jogos from "@/app/models/data";
 import {
   Carousel,
@@ -22,6 +21,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import BotaoFav from "../componente/botaofav";
+import Link from "next/link";
 
 const GameShowcasePage = () => {
   const [jogoSelecionado, setJogoSelecionado] = useState(jogos[0]);
@@ -32,6 +32,9 @@ const GameShowcasePage = () => {
   };
 
   return (
+    <>
+    <header></header>
+    <body>
     <div className="min-h-screen bg-gradient-to-br from-[#02030a] to-[#0E304A] text-white">
       {/* Particles Background Effect */}
       <div className="pointer-events-none fixed inset-0 overflow-hidden">
@@ -55,7 +58,7 @@ const GameShowcasePage = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-[#02030a] to-[#0E304A]"></div>
 
         {/* Navigation */}
-        <NavBarp />
+       
 
         {/* Game Title Section */}
         <div className="relative z-10 px-6 py-12">
@@ -186,7 +189,9 @@ const GameShowcasePage = () => {
                 <button className="w-full transform rounded-xl bg-cyan-500 px-6 py-4 font-bold text-white transition-all duration-300 hover:scale-105">
                   <div className="flex items-center justify-center space-x-2">
                     <Play className="h-5 w-5" fill="currentColor" />
+                    <Link href="/pagamento">
                     <span>Jogar Agora</span>
+                    </Link>
                   </div>
                 </button>
               </div>
@@ -233,6 +238,8 @@ const GameShowcasePage = () => {
         </div>
       </div>
     </div>
+    </body>
+    </>
   );
 };
 

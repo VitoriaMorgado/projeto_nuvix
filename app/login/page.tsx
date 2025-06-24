@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import NavBarp from "../comp/navbar/navbar";
-import Rodape from "@/components/ui/rodape";
+
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -46,7 +45,7 @@ const Login = () => {
       
       // Simulando redirecionamento após login bem-sucedido
       setTimeout(() => {
-        window.location.href = "/dashboard"; // Redirecionar para a página inicial após login
+        window.location.href = "/."; // Redirecionar para a página inicial após login
       }, 2000);
     } else {
       setLoginStatus({
@@ -69,7 +68,6 @@ const Login = () => {
   return (
     <div className="flex min-h-screen w-full flex-col bg-black">
       {/* Navbar */}
-      <NavBarp />
 
       <div className="flex-grow">
         {/* Container para conteúdo da página */}
@@ -228,12 +226,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-
-      {/* Rodapé */}
-      <div className="mt-0 w-full">
-        <Rodape />
       </div>
-    </div>
   );
 };
 

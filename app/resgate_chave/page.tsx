@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import NavBarp from "../comp/navbar/navbar";
-import Rodape from "@/components/ui/rodape";
+import Rodape from "@/app/Componentes/navbar/rodape";
 import { Copy } from "lucide-react";
 
 const RedemptionKey = () => {

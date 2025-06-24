@@ -1,11 +1,9 @@
 "use client";
 
-//========IMPORTE DE COMPONENTES========//
+//========IMPORTS========//
 
 
 import Link from "next/link";
-import Rodape from "@/components/ui/rodape";
-import NavBarp from "../comp/navbar/navbar";
 import { useState } from "react";
 
 const Support = () => {
@@ -82,7 +80,6 @@ const Support = () => {
   return (
     <div className="flex min-h-screen w-full flex-col bg-black">
       {/* NAVBAR */}
-      <NavBarp />
 
       <div className="flex-grow">
         
@@ -210,12 +207,6 @@ const Support = () => {
             </div>
           </div>
         </div>
-      
-
-      {/* RODAPÉ */}
-      <div className="mt-0 w-full">
-        <Rodape />
-      </div>
     </div>
   );
 };

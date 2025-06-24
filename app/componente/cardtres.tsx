@@ -21,7 +21,7 @@ const CardTres = () => {
             pode explorar mundos, enfrentar desafios e se divertir em equipe. A
             diversão é garantida, onde quer que você esteja!
           </p>
-          <Link href="/SaibaMais">
+          <Link href="/saiba_mais">
             <button className="mt-3 h-[30px] w-full rounded-bl-3xl rounded-tr-3xl bg-[#019EC2] text-xl font-bold text-[#F6F7F8] transition-colors hover:bg-[#198097] sm:w-[50%] sm:text-2xl">
               SAIBA MAIS
             </button>

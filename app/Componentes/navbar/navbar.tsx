@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState, useRef, useEffect } from 'react';
 import { Menu, X, User, Bell, Search, LogOut, Settings} from 'lucide-react';
 import Link from 'next/link';

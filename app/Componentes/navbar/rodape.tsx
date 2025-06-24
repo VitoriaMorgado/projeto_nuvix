@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 
 const Rodape = () => {
@@ -37,12 +39,12 @@ const Rodape = () => {
                 </a>
               </li>
               <li>
-                <a href="/destaques" className="text-gray-300 transition-colors hover:text-blue-400">
+                <a href="/novidades" className="text-gray-300 transition-colors hover:text-blue-400">
                   Jogos em Destaque
                 </a>
               </li>
               <li>
-                <a href="/assinatura" className="text-gray-300 transition-colors hover:text-blue-400">
+                <a href="/saiba_mais" className="text-gray-300 transition-colors hover:text-blue-400">
                   Saiba Mais
                 </a>
               </li>
