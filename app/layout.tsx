@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import NavBarp from "./comp/navbar/navbar";
+import NavBarp from "./Componentes/navbar/navbar";
 import Rodape from "./Componentes/navbar/rodape";
-
 
 export const metadata: Metadata = {
   title: "Nuvix",
@@ -14,15 +13,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-   return (
+  return (
     <>
-    <html lang="pt-br">
-      <NavBarp/>
-      <body className="antialiased">
-        {children}
-      </body>
-      <Rodape />
-    </html>
+      <html lang="pt-br">
+        <body className="antialiased">
+          <NavBarp />
+          {children}
+          <Rodape />
+        </body>
+      </html>
     </>
   );
 }

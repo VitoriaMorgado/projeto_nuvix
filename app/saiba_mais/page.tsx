@@ -5,18 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 import Carsaiba from "./car_saiba";
 import Carsaiba2 from "./car_saiba2";
-import NavBarp from "../comp/navbar/navbar";
-import Rodape from "../Componentes/navbar/rodape";
 
 const Saiba = () => {
   return (
     <>
       <div className="flex min-h-screen w-full flex-col bg-black">
         <div>
-          {/* Navbar Inicio */}
-          <NavBarp />
-          {/* Navbar Fim */}
-
           {/* BANNER */}
           <div className="relative h-[550px] w-full overflow-hidden">
             {/* Overlay gradient for better text readability */}
@@ -199,9 +193,6 @@ const Saiba = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div>
-          <Rodape />
         </div>
       </div>
     </>

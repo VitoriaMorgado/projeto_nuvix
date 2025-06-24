@@ -196,18 +196,8 @@ const Catalogo = () => {
     return <span className="font-bold text-white">R$ {price.toFixed(2)}</span>;
   };
 
-return (
- <body>
-  
+  return (
     <div className="min-h-screen bg-gradient-to-b from-[#02030a] to-[#0E304A]">
-<<<<<<< HEAD
-=======
-      {/* Header */}
-      <div className="mb-6">
-        <NavBarp />
-      </div>
-
->>>>>>> 1668353724b6e015fe58a6b735e8bf8857fbd5a5
       {/* Hero Banner */}
       <div className="mb-8 bg-gradient-to-r from-[#0d1a26] to-[#193f60] py-12">
         <div className="container mx-auto px-4">
@@ -465,7 +455,6 @@ return (
         )}
       </div>
     </div>
-</body>
   );
 };
 export default Catalogo;
