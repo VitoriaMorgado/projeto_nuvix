@@ -1,23 +1,8 @@
-<<<<<<< HEAD
 "use client";
 
 import React, { useState, useRef, useEffect } from 'react';
 import { Menu, X, User, Bell, Search, LogOut, Settings} from 'lucide-react';
 import Link from 'next/link';
-=======
-import React, { useState, useRef, useEffect } from "react";
-import {
-  Menu,
-  X,
-  User,
-  Bell,
-  Search,
-  LogOut,
-  Settings,
-  MessageSquare,
-} from "lucide-react";
-import Link from "next/link";
->>>>>>> 1668353724b6e015fe58a6b735e8bf8857fbd5a5
 
 const NavBarp = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -70,17 +55,10 @@ const NavBarp = () => {
   ];
 
   const userMenuItems = [
-<<<<<<< HEAD
     { name: 'Meu Perfil', icon: User, href: '/perfil' },
     { name: 'Configurações', icon: Settings, href: '/tela-conta' },
     { name: 'Ajuda', icon: User, href: '/suporte' },
     { name: 'Sair', icon: LogOut, href: '/login', danger: true }
-=======
-    { name: "Meu Perfil", icon: User, href: "/perfil" },
-    { name: "Configurações", icon: Settings, href: "/configuracoes" },
-    { name: "Mensagens", icon: MessageSquare, href: "/mensagens" },
-    { name: "Sair", icon: LogOut, href: "/logout", danger: true },
->>>>>>> 1668353724b6e015fe58a6b735e8bf8857fbd5a5
   ];
 
   // Fechar dropdowns quando clicar fora
@@ -139,7 +117,6 @@ const NavBarp = () => {
         <div className="flex h-14 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-<<<<<<< HEAD
             <div className="relative group">
               <Link href="/">
               <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#F6F7F8] to-[#019EC2] hover:from-[#019EC2] hover:to-[#198097] transition-all duration-300 ">
@@ -149,17 +126,6 @@ const NavBarp = () => {
               <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-[#019EC2] to-[#198097] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
             <div className="w-2 h-2 bg-[#019EC2] rounded-full animate-pulse"></div>
-=======
-            <Link href="/">
-              <div className="group relative">
-                <h1 className="cursor-pointer bg-gradient-to-r from-[#F6F7F8] to-[#019EC2] bg-clip-text text-2xl font-bold text-transparent transition-all duration-300 hover:from-[#019EC2] hover:to-[#198097]">
-                  Nuvix
-                </h1>
-                <div className="absolute -bottom-1 left-0 h-0.5 w-full bg-gradient-to-r from-[#019EC2] to-[#198097] opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-              </div>
-            </Link>
-            <div className="h-2 w-2 animate-pulse rounded-full bg-[#019EC2]"></div>
->>>>>>> 1668353724b6e015fe58a6b735e8bf8857fbd5a5
           </div>
 
           {/* Desktop Navigation */}
