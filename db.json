@@ -1,0 +1,47 @@
+{
+  "games": [
+
+    {
+      "id": "1",
+      "nome": "jogo1",
+      "descricao": "Um jogo de aventura em um mundo mágico com dragões e castelos.",
+      "desenvolvedor": "Estúdio Fantasia",
+      "genero": "Aventura",
+      "data_lancamento": "2025-06-25",
+      "plataformas": ["PC", "PlayStation 5", "Xbox Series X"],
+      "classificacao_indicativa": "12+",
+      "modo_jogo": ["Single Player", "Multiplayer"],
+      "preco": 149.90,
+      "idiomas": ["Português", "Inglês", "Espanhol"],
+      "site_oficial": "https://www.superaventuras.com",
+      "imagens": [
+        "htpps://placeholder.com/300x200",
+        "https://placeholder.com/300x200",
+        "https://placeholder.com/300x200"
+      ],
+      "trailer": "https://youtube.com/superaventuras_trailer",
+      "avaliacao": 4.7
+    },
+    {
+      "id": "2",
+      "nome": "jogo2",
+      "descricao": "Um jogo dois.",
+      "desenvolvedor": "Estúdio Fantasia2",
+      "genero": "Aventura",
+      "data_lancamento": "2025-06-25",
+      "plataformas": ["PC", "PlayStation 5", "Xbox Series X"],
+      "classificacao_indicativa": "12+",
+      "modo_jogo": ["Single Player", "Multiplayer"],
+      "preco": 149.90,
+      "idiomas": ["Português", "Inglês", "Espanhol"],
+      "site_oficial": "https://www.superaventuras.com",
+      "imagens": [
+        "htpps://placeholder.com/300x200",
+        "https://placeholder.com/300x200",
+        "https://placeholder.com/300x200"
+      ],
+      "trailer": "https://youtube.com/superaventuras_trailer",
+      "avaliacao": 4.7
+    }
+  ]
+}
