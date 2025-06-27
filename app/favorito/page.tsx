@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import NavBarp from "../comp/navbar/navbar";
-import Rodape from "@/components/ui/rodape";
+import NavBarp from "../Componentes/navbar/navbar";
+import Rodape from "../Componentes/navbar/rodape";
 import { Heart, X, PlayCircle } from "lucide-react";
 import favoriteGames from "../catalogo/models/jogos";
 import Botaocora from "../catalogo2/botaocora";
