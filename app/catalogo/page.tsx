@@ -3,8 +3,6 @@
 import React, { useState, useEffect } from "react";
 import gameCatalog from "./models/jogos";
 import Image from "next/image";
-
-import Botaocora from "../catalogo2/botaocora";
 import Link from "next/link";
 
 interface CatalogoProps {
@@ -424,7 +422,6 @@ const Catalogo = () => {
                         Detalhes
                       </button>
                     </Link>
-                    <Botaocora />
                   </div>
                 </div>
               </div>
