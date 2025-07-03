@@ -1,5 +1,4 @@
 import React from "react";
-import Rodape from "@/app/Componentes/navbar/rodape";
 
 const PrivacyPolicy = () => {
   return (
@@ -116,9 +115,6 @@ const PrivacyPolicy = () => {
         </p>
       </div>
 
-      <footer className="mt-9 w-full p-0">
-        <Rodape />
-      </footer>
     </div>
   );
 };

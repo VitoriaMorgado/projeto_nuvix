@@ -1,6 +1,6 @@
 "use client";
 
-import CardMuda from "./comp/carromuda";
+import CardMuda from "./Componentes/index/destaqueHome/carromuda";
 import Image from "next/image";
 import CatalogoHome from "./Componentes/index/catalogohome";
 import Link from "next/link";

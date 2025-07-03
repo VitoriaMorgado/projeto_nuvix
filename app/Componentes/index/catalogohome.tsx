@@ -1,6 +1,8 @@
 "use client";
 
-import CataCarro from "@/app/comp/carrosselcatalogo/catacarro";
+import CataCarro from "../carrosselcatalogo/catacarro";
+
+
 
 const CatalogoHome = () => {
     return ( 

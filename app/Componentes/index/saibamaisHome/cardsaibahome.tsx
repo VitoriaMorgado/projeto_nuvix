@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import estilo from "../../../componente/card.module.css";
+import estilo from "./card.module.css";
 
 interface CardsaibaHomeProps {
     id: number;

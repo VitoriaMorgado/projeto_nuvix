@@ -12,7 +12,7 @@ import {
   Award,
 } from "lucide-react";
 import Image from "next/image";
-import jogos from "@/app/models/data";
+import jogos from "@/app/jogo/models/data";
 import {
   Carousel,
   CarouselContent,
@@ -20,7 +20,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import BotaoFav from "../componente/botaofav";
+
 import Link from "next/link";
 
 const GameShowcasePage = () => {
@@ -96,7 +96,7 @@ const GameShowcasePage = () => {
                 </div>
               </div>
               <div className="mt-5">
-                <BotaoFav />
+               
               </div>
             </div>
           </div>

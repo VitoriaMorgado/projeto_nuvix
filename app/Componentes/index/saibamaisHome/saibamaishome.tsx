@@ -1,6 +1,6 @@
 "use client";
 
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/app/componente/qualquer/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import CardsaibaHome from "./cardsaibahome";
 import conteudo from "./models/saibahome";
 import { useState } from "react";
