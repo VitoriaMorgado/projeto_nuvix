@@ -3,11 +3,8 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import NavBarp from "../Componentes/navbar/navbar";
-import Rodape from "../Componentes/navbar/rodape";
 import { Heart, X, PlayCircle } from "lucide-react";
 import favoriteGames from "../catalogo/models/jogos";
-import Botaocora from "../catalogo2/botaocora";
 
 // Definição do tipo dos jogos favoritos
 interface FavoritoProps {
@@ -46,8 +43,6 @@ const Favoritos = () => {
 
   return (
     <div className="flex min-h-screen w-full flex-col bg-black">
-      <NavBarp />
-
       <div className="flex-grow">
         <div className="relative h-64 w-full overflow-hidden">
           <div className="relative z-20 flex h-full items-center">
@@ -123,7 +118,6 @@ const Favoritos = () => {
                               Jogar agora
                             </button>
                           </Link>
-                          <Botaocora />
                         </div>
                       </div>
                     </div>
@@ -188,7 +182,6 @@ const Favoritos = () => {
                             Ver detalhes
                           </button>
                         </Link>
-                        <Botaocora />
                       </div>
                     </div>
                   </div>
@@ -197,10 +190,6 @@ const Favoritos = () => {
             </div>
           </div>
         )}
-      </div>
-
-      <div className="mt-0 w-full">
-        <Rodape />
       </div>
     </div>
   );
