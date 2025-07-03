@@ -9,7 +9,7 @@ const CatalogoHome = () => {
              {/* CATALOGO COMEÇO */}
           <div className="py-20">
             <div className="container mx-auto px-6">
-              <h2 className="mb-12 text-center text-5xl font-bold text-white md:text-6xl">
+              <h2 className="mb-12 text-center text-5xl font-bold text-white sm:text-xl md:text-6xl">
                 Explorar <span className="text-[#019EC2]">Catálogo</span>
               </h2>
               <CataCarro />

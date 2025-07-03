@@ -3,7 +3,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-import Link from "next/link";
+
 import destaque from "./models/muda";
 import { useState } from "react";
 import CardMuda from "./cardmuda";
@@ -19,8 +19,8 @@ const CarroMuda = () => {
 
   return (
     <>
-      <div className="px-4 py-8 sm:py-12">
-        <div className="mx-auto max-w-7xl">
+      <div className="px-2 py-6 sm:px-4 sm:py-8 md:py-12">
+        <div className="mx-auto w-full max-w-7xl">
           <div className="flex flex-col overflow-hidden rounded bg-[#000101] lg:flex-row">
             <Carousel
               plugins={[
@@ -33,8 +33,8 @@ const CarroMuda = () => {
                 loop: true,
               }}
             >
-              <div className="flex h-[500px] w-[1300px]">
-                <div className="flex">
+              <div className="flex w-full h-[300px] sm:h-[400px] md:h-[500px]">
+                <div className="flex w-full">
                   <CarouselContent>
                     {destaque.map((change) => (
                       <CarouselItem
@@ -48,20 +48,6 @@ const CarroMuda = () => {
                 </div>
               </div>
             </Carousel>
-          </div>
-
-          <div className="mt-6 flex flex-col justify-center gap-4 sm:flex-row">
-            <Link href="/catalogo">
-              <button className="h-[50px] w-full rounded-bl-3xl rounded-tr-3xl bg-[#019EC2] text-xl font-bold text-[#F6F7F8] transition-colors hover:bg-[#198097] sm:w-[230px] sm:text-2xl">
-                Semelhantes
-              </button>
-            </Link>
-            <Link href="/catalogo">
-              <button className="h-[50px] w-full rounded-bl-3xl rounded-tr-3xl bg-[#019EC2] text-xl font-bold text-[#F6F7F8] transition-colors hover:bg-[#198097] sm:w-[230px] sm:text-2xl">
-                Catálogo
-              </button>
-            </Link>
-            <button>Qualquer</button>
           </div>
         </div>
       </div>

@@ -22,20 +22,20 @@ const CataCarro = () => {
   return (
     <>
       <div className="py-12 sm:py-16 md:py-20">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto  max-w-7xl">
           <Carousel
             opts={{
               align: "start",
               loop: true,
             }}
-            className="w-full"
+            className="w-full "
           >
             <CarouselContent>
               {jogoscategoria.map((cat) => (
                 <CarouselItem
                   key={cat.id}
                   onClick={() => clicaParaMudar(cat.id)}
-                  className="pl-4 md:basis-1/6"
+                  className="pl-4 sm:mx-4 md:mx-14 lg:mx-2 md:basis-1/6 sm:basis-1/3 lg:basis-1/6 basis-1/2 8 flex-shrink-0"
                 >
                   <Link href="/catalogo">
                     <CardCataa cat={cat} />
