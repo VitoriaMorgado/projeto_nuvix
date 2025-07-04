@@ -29,7 +29,7 @@ const RedemptionKey = () => {
   };
 
   return (
-    <div className="flex min-h-screen w-full flex-col bg-black">
+    <div className="flex mt-[2%] min-h-screen w-full flex-col bg-black">
       <div className="flex-grow">
         {/* Gradient Background */}
         <div className="min-h-screen bg-gradient-to-b from-[#02030a] to-[#0E304A] py-16">

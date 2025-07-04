@@ -33,7 +33,7 @@ const GameShowcasePage = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-gradient-to-br mt-[4%] from-[#02030a] to-[#0E304A] text-white">
+      <div className="min-h-screen bg-gradient-to-br mt-[2%] from-[#02030a] to-[#0E304A] text-white">
         {/* Particles Background Effect */}
         <div className="pointer-events-none fixed inset-0 overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]"></div>
@@ -183,14 +183,15 @@ const GameShowcasePage = () => {
                   </div>
 
                   {/* Play Button */}
+                  <Link href="/resgate_chave" className="flex items-center space-x-2">
                   <button className="w-full transform rounded-xl bg-cyan-500 px-6 py-4 font-bold text-white transition-all duration-300 hover:scale-105">
                     <div className="flex items-center justify-center space-x-2">
                       <Play className="h-5 w-5" fill="currentColor" />
-                      <Link href="/resgate_chave">
+                        
                         <span>Jogar Agora</span>
-                      </Link>
                     </div>
                   </button>
+                  </Link>
                 </div>
               </div>
             </div>

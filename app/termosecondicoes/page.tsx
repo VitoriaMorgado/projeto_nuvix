@@ -18,7 +18,7 @@ const TermsCheckbox = () => {
 
 const Privacy = () => {
   return (
-    <div className="min-h-screen mt-[4%] bg-gradient-to-b from-[#000000] to-[#1E293B]">
+    <div className="min-h-screen mt-[2%] bg-gradient-to-b from-[#000000] to-[#1E293B]">
       {/* Hero Banner */}
       <div className="mb-8 bg-gradient-to-r from-black/80 via-black/50 to-transparent py-16">
         <div className="container mx-auto px-4">
