@@ -1,50 +1,42 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { Menu, X, User, Bell, Search, LogOut, Settings } from "lucide-react";
+import { Menu, X, User, Search, LogOut, Settings, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 
 const NavBarp = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [showNotifications, setShowNotifications] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
-  const [notifications, setNotifications] = useState([
-    {
-      id: 1,
-      title: "Novo jogo disponível!",
-      message: "Cyberpunk 2077 foi adicionado ao catálogo",
-      time: "2 min atrás",
-      read: false,
-      type: "game",
+  const [showSearch, setShowSearch] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [showCart, setShowCart] = useState(false);
+  const [cartItems] = useState([
+
+  //LINKAR COM O BANCO DE DADOS
+    { 
+      id: 1, 
+      name: "Cyberpunk 2077", 
+      price: 89.99, 
+      quantity: 1,
     },
-    {
-      id: 2,
-      title: "Desconto especial",
-      message: "20% off em todos os planos premium",
-      time: "1 hora atrás",
-      read: false,
-      type: "offer",
+    { 
+      id: 2, 
+      name: "Minecraft", 
+      price: 99.99, 
+      quantity: 1,
     },
-    {
-      id: 3,
-      title: "Manutenção programada",
-      message: "Servidor offline das 02:00 às 04:00",
-      time: "3 horas atrás",
-      read: true,
-      type: "info",
-    },
-    {
-      id: 4,
-      title: "Conquista desbloqueada!",
-      message: "Você completou 10 jogos este mês",
-      time: "1 dia atrás",
-      read: true,
-      type: "achievement",
+    { 
+      id: 3, 
+      name: "The Legend of Zelda: Breath of the Wild",
+      price: 79.99, 
+      quantity: 1,
+
     },
   ]);
 
-  const notificationRef = useRef<HTMLDivElement>(null);
   const userMenuRef = useRef<HTMLDivElement>(null);
+  const searchRef = useRef<HTMLDivElement>(null);
+  const cartRef = useRef<HTMLDivElement>(null);
 
   const navItems = [
     { name: "Início", href: "/" },
@@ -61,55 +53,52 @@ const NavBarp = () => {
     { name: "Sair", icon: LogOut, href: "/login", danger: true },
   ];
 
-  // Fechar dropdowns quando clicar fora
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      // Aqui você pode implementar a lógica de busca
+      console.log("Buscando por:", searchQuery);
+      // Exemplo: window.location.href = `/busca?q=${encodeURIComponent(searchQuery)}`;
+      setShowSearch(false);
+      setSearchQuery("");
+    }
+  };
+
+
+
+  const getTotalPrice = () => {
+    return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+  };
+
+  const getTotalItems = () => {
+    return cartItems.reduce((total, item) => total + item.quantity, 0);
+  };
+
   useEffect(() => {
     const handleClickOutside = (event: { target: unknown }) => {
-      if (
-        notificationRef.current &&
-        !notificationRef.current.contains(event.target as Node)
-      ) {
-        setShowNotifications(false);
-      }
       if (
         userMenuRef.current &&
         !userMenuRef.current.contains(event.target as Node)
       ) {
         setShowUserMenu(false);
       }
+      if (
+        searchRef.current &&
+        !searchRef.current.contains(event.target as Node)
+      ) {
+        setShowSearch(false);
+      }
+      if (
+        cartRef.current &&
+        !cartRef.current.contains(event.target as Node)
+      ) {
+        setShowCart(false);
+      }
     };
 
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
-
-  const unreadCount = notifications.filter((n) => !n.read).length;
-
-  const markAsRead = (id: number) => {
-    setNotifications((prev) =>
-      prev.map((notification) =>
-        notification.id === id ? { ...notification, read: true } : notification,
-      ),
-    );
-  };
-
-  const markAllAsRead = () => {
-    setNotifications((prev) =>
-      prev.map((notification) => ({ ...notification, read: true })),
-    );
-  };
-
-  const getNotificationIcon = (type: string) => {
-    switch (type) {
-      case "game":
-        return "🎮";
-      case "offer":
-        return "💰";
-      case "achievement":
-        return "🏆";
-      default:
-        return "📢";
-    }
-  };
 
   return (
     <>
@@ -144,86 +133,109 @@ const NavBarp = () => {
               ))}
             </div>
 
-            {/* Right Side - Search, Notifications, User */}
+            {/* Right Side - Search, Cart, User */}
             <div className="hidden items-center space-x-2 md:flex">
               {/* Search Button */}
-              <button className="group rounded-lg p-2 text-[#F6F7F8] transition-all duration-300 hover:bg-[#019EC2]/10 hover:text-[#019EC2]">
-                <Search className="h-4 w-4 transition-transform group-hover:scale-110" />
-              </button>
+              <div className="relative" ref={searchRef}>
+                <button 
+                  onClick={() => setShowSearch(!showSearch)}
+                  className="group rounded-lg p-2 text-[#F6F7F8] transition-all duration-300 hover:bg-[#019EC2]/10 hover:text-[#019EC2]"
+                >
+                  <Search className="h-4 w-4 transition-transform group-hover:scale-110" />
+                </button>
 
-              {/* Notifications */}
-              <div className="relative" ref={notificationRef}>
+                {/* Search Dropdown */}
+                {showSearch && (
+                  <div className="absolute right-0 top-12 w-80 overflow-hidden rounded-xl border border-[#019EC2]/20 bg-black/95 shadow-2xl backdrop-blur-xl">
+                    <div className="p-4">
+                      <form onSubmit={handleSearch} className="space-y-3">
+                        <div className="relative">
+                          <input
+                            type="text"
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            placeholder="Buscar produtos..."
+                            className="w-full rounded-lg border border-[#019EC2]/20 bg-black/50 px-4 py-2 text-[#F6F7F8] placeholder-gray-400 focus:border-[#019EC2] focus:outline-none focus:ring-2 focus:ring-[#019EC2]/20"
+                            autoFocus
+                          />
+                          <Search className="absolute right-3 top-2.5 h-4 w-4 text-gray-400" />
+                        </div>
+                        <button
+                          type="submit"
+                          className="w-full rounded-lg bg-gradient-to-r from-[#019EC2] to-[#198097] px-4 py-2 text-white transition-all duration-300 hover:from-[#198097] hover:to-[#019EC2]"
+                        >
+                          Buscar
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Cart */}
+              <div className="relative" ref={cartRef}>
                 <button
-                  onClick={() => setShowNotifications(!showNotifications)}
+                  onClick={() => setShowCart(!showCart)}
                   className="group relative rounded-lg p-2 text-[#F6F7F8] transition-all duration-300 hover:bg-[#019EC2]/10 hover:text-[#019EC2]"
                 >
-                  <Bell className="h-4 w-4 transition-transform group-hover:scale-110" />
-                  {unreadCount > 0 && (
-                    <div className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-[#019EC2]">
-                      <span className="text-xs font-bold text-white">
-                        {unreadCount}
-                      </span>
-                    </div>
+                  <ShoppingCart className="h-4 w-4 transition-transform group-hover:scale-110" />
+                  {getTotalItems() > 0 && (
+                    <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-[#019EC2] text-xs font-bold text-white">
+                      {getTotalItems()}
+                    </span>
                   )}
                 </button>
 
-                {/* Dropdown de Notificações */}
-                {showNotifications && (
-                  <div className="absolute right-0 top-12 w-80 overflow-hidden rounded-xl border border-[#019EC2]/20 bg-black/95 shadow-2xl backdrop-blur-xl">
-                    <div className="flex items-center justify-between border-b border-[#019EC2]/20 p-4">
-                      <h3 className="text-lg font-semibold text-[#F6F7F8]">
-                        Notificações
+                {/* Cart Dropdown */}
+                {showCart && (
+                  <div className="absolute right-0 top-12 w-96 overflow-hidden rounded-xl border border-[#019EC2]/20 bg-black/95 shadow-2xl backdrop-blur-xl">
+                    <div className="border-b border-[#019EC2]/20 p-4">
+                      <h3 className="font-semibold text-[#F6F7F8]">
+                        Carrinho ({getTotalItems()} {getTotalItems() === 1 ? 'item' : 'itens'})
                       </h3>
-                      {unreadCount > 0 && (
-                        <button
-                          onClick={markAllAsRead}
-                          className="text-sm text-[#019EC2] transition-colors hover:text-[#198097]"
-                        >
-                          Marcar todas como lidas
-                        </button>
+                    </div>
+
+                    <div className="max-h-64 overflow-y-auto">
+                      {cartItems.length === 0 ? (
+                        <div className="p-6 text-center">
+                          <ShoppingCart className="mx-auto h-12 w-12 text-gray-400" />
+                          <p className="mt-2 text-gray-400">Seu carrinho está vazio</p>
+                        </div>
+                      ) : (
+                        <div className="space-y-2 p-2">
+                          {cartItems.slice(0, 3).map((item) => (
+                            <div key={item.id} className="flex items-center justify-between rounded-lg border border-[#019EC2]/10 p-3">
+                              <div className="flex-1">
+                                <h4 className="font-medium text-[#F6F7F8]">{item.name}</h4>
+                                <p className="text-sm text-gray-400">R$ {item.price.toFixed(2)} x {item.quantity}</p>
+                              </div>
+                              <div className="text-right">
+                                <p className="font-medium text-[#F6F7F8]">R$ {(item.price * item.quantity).toFixed(2)}</p>
+                              </div>
+                            </div>
+                          ))}
+                          {cartItems.length > 3 && (
+                            <div className="p-2 text-center">
+                              <p className="text-sm text-gray-400">+{cartItems.length - 3} outros itens</p>
+                            </div>
+                          )}
+                        </div>
                       )}
                     </div>
 
-                    <div className="max-h-96 overflow-y-auto">
-                      {notifications.map((notification) => (
-                        <Link href="novidades" key={notification.id}>
-                          <div
-                            onClick={() => markAsRead(notification.id)}
-                            className={`cursor-pointer border-b border-[#019EC2]/10 p-4 transition-colors hover:bg-[#019EC2]/5 ${
-                              !notification.read ? "bg-[#019EC2]/5" : ""
-                            }`}
-                          >
-                            <div className="flex items-start space-x-3">
-                              <div className="text-2xl">
-                                {getNotificationIcon(notification.type)}
-                              </div>
-                              <div className="flex-1">
-                                <h4
-                                  className={`font-medium ${!notification.read ? "text-[#F6F7F8]" : "text-gray-300"}`}
-                                >
-                                  {notification.title}
-                                </h4>
-                                <p className="mt-1 text-sm text-gray-400">
-                                  {notification.message}
-                                </p>
-                                <p className="mt-2 text-xs text-gray-500">
-                                  {notification.time}
-                                </p>
-                              </div>
-                              {!notification.read && (
-                                <div className="h-2 w-2 rounded-full bg-[#019EC2]"></div>
-                              )}
-                            </div>
-                          </div>
+                    {cartItems.length > 0 && (
+                      <div className="border-t border-[#019EC2]/20 p-4">
+                        <div className="mb-3 flex justify-between text-lg font-semibold text-[#F6F7F8]">
+                          <span>Total:</span>
+                          <span>R$ {getTotalPrice().toFixed(2)}</span>
+                        </div>
+                        <Link href="/carrinho">
+                          <button className="w-full rounded-lg bg-gradient-to-r from-[#019EC2] to-[#198097] px-4 py-2 text-white transition-all duration-300 hover:from-[#198097] hover:to-[#019EC2]">
+                            Ver Carrinho Completo
+                          </button>
                         </Link>
-                      ))}
-                    </div>
-
-                    <div className="border-t border-[#019EC2]/20 p-4">
-                      <button className="w-full text-center font-medium text-[#019EC2] transition-colors hover:text-[#198097]">
-                        Ver todas as notificações
-                      </button>
-                    </div>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
@@ -321,16 +333,21 @@ const NavBarp = () => {
               ))}
 
               <div className="mt-2 flex items-center justify-between border-t border-[#019EC2]/20 px-4 py-2">
-                <button className="rounded-lg p-2 text-[#F6F7F8] transition-all duration-300 hover:bg-[#019EC2]/10 hover:text-[#019EC2]">
+                <button 
+                  onClick={() => setShowSearch(!showSearch)}
+                  className="rounded-lg p-2 text-[#F6F7F8] transition-all duration-300 hover:bg-[#019EC2]/10 hover:text-[#019EC2]"
+                >
                   <Search className="h-4 w-4" />
                 </button>
                 <button
-                  onClick={() => setShowNotifications(!showNotifications)}
+                  onClick={() => setShowCart(!showCart)}
                   className="relative rounded-lg p-2 text-[#F6F7F8] transition-all duration-300 hover:bg-[#019EC2]/10 hover:text-[#019EC2]"
                 >
-                  <Bell className="h-4 w-4" />
-                  {unreadCount > 0 && (
-                    <div className="absolute -right-1 -top-1 h-3 w-3 rounded-full bg-[#019EC2]"></div>
+                  <ShoppingCart className="h-4 w-4" />
+                  {getTotalItems() > 0 && (
+                    <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-[#019EC2] text-xs font-bold text-white">
+                      {getTotalItems()}
+                    </span>
                   )}
                 </button>
                 <button

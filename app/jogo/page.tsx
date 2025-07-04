@@ -33,7 +33,7 @@ const GameShowcasePage = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-gradient-to-br from-[#02030a] to-[#0E304A] text-white">
+      <div className="min-h-screen bg-gradient-to-br mt-[4%] from-[#02030a] to-[#0E304A] text-white">
         {/* Particles Background Effect */}
         <div className="pointer-events-none fixed inset-0 overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]"></div>

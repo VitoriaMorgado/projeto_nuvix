@@ -78,7 +78,7 @@ const Support = () => {
   });
 
   return (
-    <div className="flex min-h-screen w-full flex-col bg-black">
+    <div className="flex min-h-screen mt-[3%] w-full flex-col bg-black">
       {/* NAVBAR */}
 
       <div className="flex-grow">

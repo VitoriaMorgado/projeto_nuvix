@@ -80,7 +80,7 @@ const noticiasPrincipais = [
   };
 
   return (
-    <div className="flex min-h-screen w-full flex-col bg-black">
+    <div className="flex min-h-screen mt-[4%] w-full flex-col bg-black">
       {/* NAVBAR */}
       
 
