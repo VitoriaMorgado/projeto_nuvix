@@ -70,7 +70,7 @@ const jogos: Jogo[] = [
       "/demo_4_ittakestwo.jpg",
       "/demo_5_ittakestwo.jpg",
     ],
-    capa: "/capa_jogo_ittakestwo.jpg",
+    capa: "/capa_jogo_Ittakestwo.jpg",
     rating: 4.8,
   },
   {
@@ -78,7 +78,7 @@ const jogos: Jogo[] = [
     nome: "Buckshot Roulette",
     descricao:
       "Buckshot Roulette é um jogo de ação com elementos de roguelike, onde os jogadores enfrentam desafios imprevisíveis a cada rodada, combinando sorte e estratégia. O objetivo é sobreviver o máximo possível em uma roleta cheia de riscos e inimigos.",
-    video: "video_promo_buckshot.webm",
+    video: "/video_promo_buckshot.webm",
     imagens: [
       "/demo_1_buckshot.jpg",
       "/demo_2_buckshot.jpg",

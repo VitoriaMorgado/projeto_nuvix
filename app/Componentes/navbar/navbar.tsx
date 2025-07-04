@@ -55,7 +55,7 @@ const NavBarp = () => {
   ];
 
   const userMenuItems = [
-    { name: "Meu Perfil", icon: User, href: "/perfil" },
+    { name: "Meu Perfil", icon: User, href: "/tela-conta" },
     { name: "Configurações", icon: Settings, href: "/tela-conta" },
     { name: "Ajuda", icon: User, href: "/suporte" },
     { name: "Sair", icon: LogOut, href: "/login", danger: true },
