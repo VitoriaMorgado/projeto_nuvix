@@ -73,10 +73,10 @@ const SettingsDashboard: React.FC = () => {
     switch (activeTab) {
       case 'profile':
         return (
-          <div className="space-y-8">
+            <div className="space-y-8 mt-[5%]">
             <div className="text-center">
               <div className="w-24 h-24 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full mx-auto mb-4 flex items-center justify-center shadow-2xl">
-                <User className="w-12 h-12 text-white" />
+              <User className="w-12 h-12 text-white" />
               </div>
               <h1 className="text-3xl font-bold text-white mb-2">Meu Perfil</h1>
               <p className="text-gray-400">Gerencie suas informações pessoais</p>
@@ -84,50 +84,50 @@ const SettingsDashboard: React.FC = () => {
 
             <div className="grid gap-6 md:grid-cols-2">
               <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-6 border border-white/10 hover:border-blue-500/50 transition-all duration-300 group">
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-400">Nome</span>
-                    <span className="text-white font-medium">{profile.name}</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-400">Email</span>
-                    <span className="text-white font-medium">{profile.email}</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-400">Gênero</span>
-                    <span className="text-white font-medium">{profile.gender}</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-400">Nascimento</span>
-                    <span className="text-white font-medium">
-                      {new Date(profile.birthDate).toLocaleDateString('pt-BR')}
-                    </span>
-                  </div>
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                <span className="text-gray-400">Nome</span>
+                <span className="text-white font-medium">{profile.name}</span>
                 </div>
+                <div className="flex items-center justify-between">
+                <span className="text-gray-400">Email</span>
+                <span className="text-white font-medium">{profile.email}</span>
+                </div>
+                <div className="flex items-center justify-between">
+                <span className="text-gray-400">Gênero</span>
+                <span className="text-white font-medium">{profile.gender}</span>
+                </div>
+                <div className="flex items-center justify-between">
+                <span className="text-gray-400">Nascimento</span>
+                <span className="text-white font-medium">
+                  {new Date(profile.birthDate).toLocaleDateString('pt-BR')}
+                </span>
+                </div>
+              </div>
               </div>
 
               <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300 group">
-                <div className="flex items-center space-x-3 mb-4">
-                  <GamepadIcon className="w-6 h-6 text-purple-400" />
-                  <h3 className="text-lg font-semibold text-white">Jogos Recentes</h3>
+              <div className="flex items-center space-x-3 mb-4">
+                <GamepadIcon className="w-6 h-6 text-purple-400" />
+                <h3 className="text-lg font-semibold text-white">Jogos Recentes</h3>
+              </div>
+              <div className="space-y-2 text-sm text-gray-400">
+                <div className="flex justify-between">
+                <span>Cyberpunk 2077</span>
+                <span className="text-purple-400">2h</span>
                 </div>
-                <div className="space-y-2 text-sm text-gray-400">
-                  <div className="flex justify-between">
-                    <span>Cyberpunk 2077</span>
-                    <span className="text-purple-400">2h</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>The Witcher 3</span>
-                    <span className="text-purple-400">5h</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>GTA V</span>
-                    <span className="text-purple-400">1h</span>
-                  </div>
+                <div className="flex justify-between">
+                <span>The Witcher 3</span>
+                <span className="text-purple-400">5h</span>
+                </div>
+                <div className="flex justify-between">
+                <span>GTA V</span>
+                <span className="text-purple-400">1h</span>
                 </div>
               </div>
+              </div>
             </div>
-          </div>
+            </div>
         );
 
       case 'privacy':
