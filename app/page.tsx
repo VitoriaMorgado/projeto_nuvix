@@ -84,7 +84,6 @@ const Home = () => {
               Maximize sua <span className="text-[#019EC2]">diversão</span> com
               a Nuvix
             </h2>
-
             {/* CARROSSEL COMPONENT */}
             <SaibamaisHome />
           </div>
