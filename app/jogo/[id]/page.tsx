@@ -100,7 +100,7 @@ const JogoCard = () => {
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#02030a] to-cyan-500 opacity-20 blur transition-opacity duration-300 group-hover:opacity-40"></div>
                   <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black/40 backdrop-blur-sm">
                     <Image
-                      src=""
+                      src="/imagemjogo.png"
                       width={800}
                       height={450}
                       alt="Game Cover"
@@ -115,7 +115,7 @@ const JogoCard = () => {
                     <CarouselContent>
                       <CarouselItem className="md:basis-1/4">
                         <Image
-                          src=""
+                          src="/imagemjogo.png"
                           width={220}
                           height={140}
                           alt=""
@@ -124,7 +124,7 @@ const JogoCard = () => {
                       </CarouselItem>
                       <CarouselItem className="md:basis-1/4">
                         <Image
-                          src=""
+                          src="/imagemjogo.png"
                           width={220}
                           height={140}
                           alt=""
@@ -133,7 +133,7 @@ const JogoCard = () => {
                       </CarouselItem>
                       <CarouselItem className="md:basis-1/4">
                         <Image
-                          src=""
+                          src="/imagemjogo.png"
                           width={220}
                           height={140}
                           alt=""
@@ -142,7 +142,7 @@ const JogoCard = () => {
                       </CarouselItem>
                       <CarouselItem className="md:basis-1/4">
                         <Image
-                          src=""
+                          src="/imagemjogo.png"
                           width={220}
                           height={140}
                           alt=""
@@ -151,7 +151,7 @@ const JogoCard = () => {
                       </CarouselItem>
                       <CarouselItem className="md:basis-1/4">
                         <Image
-                          src=""
+                          src="/imagemjogo.png"
                           width={220}
                           height={140}
                           alt=""
@@ -160,7 +160,7 @@ const JogoCard = () => {
                       </CarouselItem>
                       <CarouselItem className="md:basis-1/4">
                         <Image
-                          src=""
+                          src="/imagemjogo.png"
                           width={220}
                           height={140}
                           alt=""
