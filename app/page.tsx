@@ -3,7 +3,6 @@
 import CardMuda from "./Componentes/index/destaqueHome/carromuda";
 import Image from "next/image";
 import CatalogoHome from "./Componentes/index/catalogohome";
-import Link from "next/link";
 import SaibamaisHome from "./Componentes/index/saibamaisHome/saibamaishome";
 
 const Home = () => {
@@ -44,14 +43,6 @@ const Home = () => {
                 jogar seus títulos favoritos com amigos e familiares, tudo em um
                 só lugar.
               </p>
-
-              <div className="flex flex-col gap-4 sm:flex-row">
-                <Link href="/jogo">
-                  <button className="min-w-[200px] transform rounded-br-3xl rounded-tl-3xl bg-[#019EC2] px-8 py-4 text-lg font-bold text-[#F6F7F8] shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#198097] lg:px-10 lg:py-5 lg:text-2xl">
-                    Jogue agora
-                  </button>
-                </Link>
-              </div>
             </div>
           </div>
 

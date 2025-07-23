@@ -1,6 +1,7 @@
 "use client";
-import CardGame from "../../jogo/card";
+
 import { IGames } from "@/app/interface/IGames"; // Adjust the import path if needed
+import CardGame from "./card";
 
 interface JogosListProps {
   games: IGames[];
@@ -8,7 +9,7 @@ interface JogosListProps {
 
 const JogoList = ({ games }: JogosListProps) => {
   return (
-    <div className="">
+    <div className="flex">
       {games.map((jogo) => (
         <CardGame key={jogo.id_game} jogo={jogo} />
       ))}

@@ -4,7 +4,6 @@ import { IGames } from "@/app/interface/IGames";
 import Link from "next/link";
 import Image from "next/image";
 
-
 // Defina ou importe a interface IGames antes de usá-la
 
 interface JogosListProps {
@@ -14,11 +13,11 @@ interface JogosListProps {
 // Componente principal
 const CardGame = ({ jogo }: JogosListProps) => {
   return (
-    <div className="mt-[2%] min-h-screen bg-gradient-to-b from-[#000000] to-[#1E293B]">
+    <div className="items-center justify-center p-4">
       {/* Games Grid */}
 
       <Link href={`/jogo/${jogo.id_game}`}>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div className="w-[330px]">
           <div
             key={jogo.id_game}
             className="overflow-hidden rounded-lg border border-[#019EC2]/20 bg-black/30 shadow-lg transition-transform duration-300 hover:scale-105 hover:transform"
@@ -26,11 +25,13 @@ const CardGame = ({ jogo }: JogosListProps) => {
             <div className="relative h-40 bg-[#1E293B]">
               <div className="absolute inset-0 flex text-[#F6F7F8]/60">
                 <Image
-                  src={jogo.imagem || "/default-image.jpg"}
+                  src={`http://localhost:8081/games/imagens/${
+                    jogo?.imagem || "default.jpg"
+                  }`}
                   width={500}
-                  height={500}
-                  className="h-full w-full object-cover"
-                  alt={jogo.titulo || "Imagem do jogo"}
+                  height={300}
+                  alt="Game Cover"
+                  className="w-full rounded-2xl border border-white/10 shadow-2xl"
                 />
               </div>
             </div>

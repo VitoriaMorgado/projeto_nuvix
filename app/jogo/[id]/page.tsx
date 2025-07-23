@@ -1,9 +1,6 @@
 "use client";
-
-import React, { useState } from "react";
 import {
   Play,
-  Star,
   Download,
   Calendar,
   Users,
@@ -12,7 +9,6 @@ import {
   Award,
 } from "lucide-react";
 import Image from "next/image";
-import jogos from "@/app/jogo/models/data";
 import {
   Carousel,
   CarouselContent,
@@ -20,31 +16,37 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-
 import Link from "next/link";
+import { IGames } from "@/app/interface/IGames";
+import { useParams } from "next/navigation";
+import { useEffect, useState } from "react";
+import { getGames } from "@/app/services/game/get";
 
 const JogoCard = () => {
-  const [jogoSelecionado] = useState(jogos[0]);
+  const params = useParams();
+  const { id } = params || {};
+  const [games, setGames] = useState<IGames | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const loadGame = async () => {
+      try {
+        const jogos = await getGames();
+        const foundGames = jogos.find((g) => Number(g.id_game) === Number(id));
+        setGames(foundGames || null);
+      } catch (err) {
+        setError("Erro ao carregar o produto.");
+        console.error(err);
+      }
+    };
+    loadGame();
+  }, [id]);
 
   return (
     <>
       <div className="mt-[2%] min-h-screen bg-gradient-to-br from-[#02030a] to-[#0E304A] text-white">
         {/* Particles Background Effect */}
-        <div className="pointer-events-none fixed inset-0 overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]"></div>
-          {[...Array(50)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute h-1 w-1 animate-pulse rounded-full bg-cyan-400 opacity-30"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 2}s`,
-                animationDuration: `${2 + Math.random() * 3}s`,
-              }}
-            ></div>
-          ))}
-        </div>
+        <div className="pointer-events-none fixed inset-0 overflow-hidden"></div>
 
         {/* Hero Section */}
         <div className="relative">
@@ -57,14 +59,8 @@ const JogoCard = () => {
             <div className="mx-auto max-w-7xl">
               <div className="mb-4 flex items-center space-x-4">
                 <div className="flex items-center space-x-2">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className={`h-5 w-5 ${i < Math.floor(jogoSelecionado.rating) ? "fill-current text-yellow-400" : "text-gray-400"}`}
-                    />
-                  ))}
                   <span className="font-semibold text-yellow-400">
-                    {jogoSelecionado.rating}
+                    avaliação
                   </span>
                 </div>
                 <div className="rounded-full from-[#02030a] to-[#0E304A] px-3 py-1 text-sm font-semibold">
@@ -73,7 +69,7 @@ const JogoCard = () => {
               </div>
 
               <h1 className="mb-6 bg-gradient-to-r from-white via-cyan-200 to-purple-200 bg-clip-text text-6xl font-black leading-tight text-transparent">
-                {jogoSelecionado.nome}
+                {games?.titulo}
               </h1>
 
               <div className="flex flex-wrap items-center gap-6 text-gray-300">
@@ -103,11 +99,12 @@ const JogoCard = () => {
                 <div className="group relative">
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#02030a] to-cyan-500 opacity-20 blur transition-opacity duration-300 group-hover:opacity-40"></div>
                   <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black/40 backdrop-blur-sm">
-                    <video
-                      src={jogoSelecionado.video}
-                      className="aspect-video w-full object-cover"
-                      controls
-                      autoPlay
+                    <Image
+                      src="/imagemjogo.png"
+                      width={800}
+                      height={450}
+                      alt="Game Cover"
+                      className="w-full rounded-2xl border border-white/10 shadow-2xl"
                     />
                   </div>
                 </div>
@@ -116,17 +113,60 @@ const JogoCard = () => {
                 <div className="relative">
                   <Carousel opts={{ align: "start", loop: true }}>
                     <CarouselContent>
-                      {jogoSelecionado.imagens.map((imgSrc, index) => (
-                        <CarouselItem key={index} className="md:basis-1/4">
-                          <Image
-                            src={imgSrc}
-                            width={220}
-                            height={140}
-                            alt={`Imagem ${index + 1} do jogo`}
-                            className="rounded-md border border-[#232B3F]"
-                          />
-                        </CarouselItem>
-                      ))}
+                      <CarouselItem className="md:basis-1/4">
+                        <Image
+                          src="/imagemjogo.png"
+                          width={220}
+                          height={140}
+                          alt=""
+                          className="rounded-md border border-[#232B3F]"
+                        />
+                      </CarouselItem>
+                      <CarouselItem className="md:basis-1/4">
+                        <Image
+                          src="/imagemjogo.png"
+                          width={220}
+                          height={140}
+                          alt=""
+                          className="rounded-md border border-[#232B3F]"
+                        />
+                      </CarouselItem>
+                      <CarouselItem className="md:basis-1/4">
+                        <Image
+                          src="/imagemjogo.png"
+                          width={220}
+                          height={140}
+                          alt=""
+                          className="rounded-md border border-[#232B3F]"
+                        />
+                      </CarouselItem>
+                      <CarouselItem className="md:basis-1/4">
+                        <Image
+                          src="/imagemjogo.png"
+                          width={220}
+                          height={140}
+                          alt=""
+                          className="rounded-md border border-[#232B3F]"
+                        />
+                      </CarouselItem>
+                      <CarouselItem className="md:basis-1/4">
+                        <Image
+                          src="/imagemjogo.png"
+                          width={220}
+                          height={140}
+                          alt=""
+                          className="rounded-md border border-[#232B3F]"
+                        />
+                      </CarouselItem>
+                      <CarouselItem className="md:basis-1/4">
+                        <Image
+                          src="/imagemjogo.png"
+                          width={220}
+                          height={140}
+                          alt=""
+                          className="rounded-md border border-[#232B3F]"
+                        />
+                      </CarouselItem>
                     </CarouselContent>
                     <CarouselPrevious className="ml-2 text-black" />
                     <CarouselNext className="mr-2 text-black" />
@@ -141,7 +181,9 @@ const JogoCard = () => {
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#02030a] to-cyan-500 opacity-20 blur transition-opacity duration-300 group-hover:opacity-40"></div>
                   <div className="relative">
                     <Image
-                      src={jogoSelecionado.capa}
+                      src={`http://localhost:8081/games/imagens/${
+                        games?.imagem || "default.jpg"
+                      }`}
                       width={500}
                       height={300}
                       alt="Game Cover"
@@ -156,7 +198,7 @@ const JogoCard = () => {
                     Sobre o Jogo
                   </h3>
                   <p className="mb-6 leading-relaxed text-gray-300">
-                    {jogoSelecionado.descricao}
+                    {games?.descricao}
                   </p>
 
                   {/* Game Features */}
@@ -189,6 +231,7 @@ const JogoCard = () => {
                     </button>
                   </Link>
                 </div>
+                {error && <p className="mt-2 text-red-500">{error}</p>}
               </div>
             </div>
           </div>
