@@ -9,7 +9,7 @@ interface JogosListProps {
 
 const JogoList = ({ games }: JogosListProps) => {
   return (
-    <div className="">
+    <div className="flex">
       {games.map((jogo) => (
         <CardGame key={jogo.id_game} jogo={jogo} />
       ))}

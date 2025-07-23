@@ -17,7 +17,7 @@ const CardGame = ({ jogo }: JogosListProps) => {
       {/* Games Grid */}
 
       <Link href={`/jogo/${jogo.id_game}`}>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div className="w-[330px]">
           <div
             key={jogo.id_game}
             className="overflow-hidden rounded-lg border border-[#019EC2]/20 bg-black/30 shadow-lg transition-transform duration-300 hover:scale-105 hover:transform"
