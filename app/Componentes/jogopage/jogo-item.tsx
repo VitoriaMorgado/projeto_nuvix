@@ -1,6 +1,4 @@
 "use client";
-
-import React, { useState } from "react";
 import {
   Play,
   Star,
@@ -12,7 +10,6 @@ import {
   Award,
 } from "lucide-react";
 import Image from "next/image";
-import jogos from "@/app/jogo/models/data";
 import {
   Carousel,
   CarouselContent,
@@ -20,12 +17,14 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-
 import Link from "next/link";
+import { IGames } from "@/app/interface/IGames";
 
-const JogoCard = () => {
-  const [jogoSelecionado] = useState(jogos[0]);
+interface GameItemProps {
+  games: IGames;
+}
 
+const JogoCard = ({ games }: GameItemProps) => {
   return (
     <>
       <div className="mt-[2%] min-h-screen bg-gradient-to-br from-[#02030a] to-[#0E304A] text-white">
@@ -60,11 +59,11 @@ const JogoCard = () => {
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}
-                      className={`h-5 w-5 ${i < Math.floor(jogoSelecionado.rating) ? "fill-current text-yellow-400" : "text-gray-400"}`}
+                      className={`h-5 w-5 ${i < Math.floor(games.rating) ? "fill-current text-yellow-400" : "text-gray-400"}`}
                     />
                   ))}
                   <span className="font-semibold text-yellow-400">
-                    {jogoSelecionado.rating}
+                    {games.rating}
                   </span>
                 </div>
                 <div className="rounded-full from-[#02030a] to-[#0E304A] px-3 py-1 text-sm font-semibold">
@@ -73,7 +72,7 @@ const JogoCard = () => {
               </div>
 
               <h1 className="mb-6 bg-gradient-to-r from-white via-cyan-200 to-purple-200 bg-clip-text text-6xl font-black leading-tight text-transparent">
-                {jogoSelecionado.nome}
+                {games.nome}
               </h1>
 
               <div className="flex flex-wrap items-center gap-6 text-gray-300">
@@ -104,7 +103,7 @@ const JogoCard = () => {
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#02030a] to-cyan-500 opacity-20 blur transition-opacity duration-300 group-hover:opacity-40"></div>
                   <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black/40 backdrop-blur-sm">
                     <video
-                      src={jogoSelecionado.video}
+                      src={games.video}
                       className="aspect-video w-full object-cover"
                       controls
                       autoPlay
@@ -116,7 +115,7 @@ const JogoCard = () => {
                 <div className="relative">
                   <Carousel opts={{ align: "start", loop: true }}>
                     <CarouselContent>
-                      {jogoSelecionado.imagens.map((imgSrc, index) => (
+                      {games.imagens.map((imgSrc, index) => (
                         <CarouselItem key={index} className="md:basis-1/4">
                           <Image
                             src={imgSrc}
@@ -141,7 +140,7 @@ const JogoCard = () => {
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#02030a] to-cyan-500 opacity-20 blur transition-opacity duration-300 group-hover:opacity-40"></div>
                   <div className="relative">
                     <Image
-                      src={jogoSelecionado.capa}
+                      src={games.capa}
                       width={500}
                       height={300}
                       alt="Game Cover"
@@ -156,7 +155,7 @@ const JogoCard = () => {
                     Sobre o Jogo
                   </h3>
                   <p className="mb-6 leading-relaxed text-gray-300">
-                    {jogoSelecionado.descricao}
+                    {games.descricao}
                   </p>
 
                   {/* Game Features */}

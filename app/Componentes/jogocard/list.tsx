@@ -1,6 +1,7 @@
 "use client";
-import CardGame from "../../jogo/card";
+
 import { IGames } from "@/app/interface/IGames"; // Adjust the import path if needed
+import CardGame from "./card";
 
 interface JogosListProps {
   games: IGames[];

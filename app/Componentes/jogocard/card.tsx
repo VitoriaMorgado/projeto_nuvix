@@ -2,8 +2,7 @@
 
 import { IGames } from "@/app/interface/IGames";
 import Link from "next/link";
-import Image from "next/image";
-
+// import Image from "next/image";
 
 // Defina ou importe a interface IGames antes de usá-la
 
@@ -25,13 +24,13 @@ const CardGame = ({ jogo }: JogosListProps) => {
           >
             <div className="relative h-40 bg-[#1E293B]">
               <div className="absolute inset-0 flex text-[#F6F7F8]/60">
-                <Image
-                  src={jogo.imagem || "/default-image.jpg"}
+                {/* <Image
+                  src={`http://localhost:8081/games/imagens/${jogo.imagem}`}
                   width={500}
                   height={500}
                   className="h-full w-full object-cover"
                   alt={jogo.titulo || "Imagem do jogo"}
-                />
+                /> */}
               </div>
             </div>
             <div className="p-4">

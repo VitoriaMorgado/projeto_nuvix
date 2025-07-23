@@ -1,9 +1,21 @@
 "use client";
 
-import GameList from "./card";
+import { useEffect, useState } from "react";
+import GamePageList from "../Componentes/jogopage/jogo-list";
 import MoreGames from "./more";
+import { IGames } from "../interface/IGames";
+import { getGames } from "../services/game/get";
 
 const GameShowcasePage = () => {
+  const [jogos, setJogos] = useState<IGames[]>([]);
+
+  useEffect(() => {
+    const loadGames = async () => {
+      const fetchedGames = await getGames();
+      setJogos(fetchedGames);
+    };
+    loadGames();
+  }, []);
   return (
     <>
       <div className="mt-[2%] min-h-screen bg-gradient-to-br from-[#02030a] to-[#0E304A] text-white">
@@ -31,7 +43,7 @@ const GameShowcasePage = () => {
           {/* Navigation */}
 
           {/* Game Title Section */}
-          <GameList />
+          <GamePageList games={jogos} />
 
           {/* More Games Section */}
 
