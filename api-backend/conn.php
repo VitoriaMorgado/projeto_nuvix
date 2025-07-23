@@ -2,7 +2,7 @@
 // Database connection settings
 define('DB_HOST', 'localhost'); // Database host
 define('DB_USER', 'root'); // Database user
-define('DB_PASS', 'root'); // Database password
+define('DB_PASS', ''); // Database password
 define('DB_NAME', 'nuvix_db_ofc'); // Database name
 
 try {
@@ -15,4 +15,3 @@ try {
     echo "Connection failed: " . $e->getMessage();
     exit;
 }
-

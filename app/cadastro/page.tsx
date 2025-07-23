@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { cadastrarUsuario } from "../services/login/post";
+
 
 const Cadastro = () => {
   const [formData, setFormData] = useState({
@@ -22,16 +24,23 @@ const Cadastro = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Verificar se as senhas são iguais
+
     if (formData.password !== formData.confirmPassword) {
       alert("As senhas não coincidem!");
       return;
     }
-    // Lógica de cadastro aqui
-    console.log("Dados de cadastro:", formData);
-    setCadastroRealizado(true);
+
+
+      await cadastrarUsuario({
+        id_usuario: "", // ou gere um ID conforme necessário
+        nome: formData.nome,
+        email: formData.email,
+        senha: formData.password
+      });
+      setCadastroRealizado(true);
+    
   };
 
   return (
