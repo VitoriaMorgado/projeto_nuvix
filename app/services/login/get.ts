@@ -1,10 +1,13 @@
-import { IUser } from "@/app/interfaces/IUser";
+import { IUser } from "@/app/interface/IUser";
 
-export const fetchLogin = async (email: string, senha: string): Promise<IUser[]> =>{
+export const fetchLogin = async (
+  email: string,
+  senha: string,
+): Promise<IUser[]> => {
   try {
     const response = await fetch(
       `http://localhost:8080/usuarios/?email=${encodeURIComponent(
-        email
+        email,
       )}&senha=${encodeURIComponent(senha)}`,
       {
         method: "GET",
@@ -14,11 +17,8 @@ export const fetchLogin = async (email: string, senha: string): Promise<IUser[]>
       },
     );
 
-    
-
     const result = await response.json();
     return Array.isArray(result.data) ? result.data : [];
-
   } catch (error) {
     console.error("Erro ao buscar usuaario:", error);
     return [];

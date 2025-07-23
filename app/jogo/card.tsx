@@ -23,7 +23,7 @@ import {
 
 import Link from "next/link";
 
-const GameList = () => {
+const GameCard = () => {
   const [jogoSelecionado] = useState(jogos[0]);
 
   return (
@@ -200,4 +200,4 @@ const GameList = () => {
   );
 };
 
-export default GameList;
+export default GameCard;
