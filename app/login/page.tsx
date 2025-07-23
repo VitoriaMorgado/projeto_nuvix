@@ -45,7 +45,7 @@ export default function Login() {
         ? response.find((u) => u.email === formData.email)
         : null;
       if (user) {
-        router.push("/pagamento");
+        router.push("/home");
         setLoginStatus({ success: true, message: "Login realizado com sucesso.", isError: false });
       } else {
         setLoginStatus({ success: false, message: "Email não encontrado ou inválido.", isError: true });
@@ -86,7 +86,9 @@ export default function Login() {
               <div className="w-full bg-[#020913] p-8 md:p-12 lg:w-1/2">
                 <div className="mb-8 text-center">
                   <h3 className="mb-2 text-4xl font-bold text-white">
-                    Bem-vindo de volta
+                    Bem-vindo a 
+                      <span className="text-[#019EC2]"> Nuvix</span>
+                    .
                   </h3>
                   {loginStatus.message && (
                     <div className="mt-4 flex w-full justify-center">
@@ -102,14 +104,16 @@ export default function Login() {
                       </div>
                     </div>
                   )}
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-6 mt-2">
                     <div>
-                      <label
-                        htmlFor="email"
-                        className="mb-2 block text-sm font-medium text-[#F6F7F8]"
-                      >
-                        Email
-                      </label>
+                        <div className="mb-2  flex items-center justify-between">
+                        <label
+                          htmlFor="email"
+                          className="block text-sm font-medium text-[#F6F7F8]"
+                        >
+                          Email
+                        </label>
+                        </div>
                       <input
                         type="email"
                         id="email"
@@ -131,7 +135,7 @@ export default function Login() {
                           Senha
                         </label>
                         <Link
-                          href="/recuperar-senha"
+                          href="/recuperar_senha"
                           className="text-sm text-[#019EC2] hover:text-[#198097]"
                         >
                           Esqueceu a senha?
