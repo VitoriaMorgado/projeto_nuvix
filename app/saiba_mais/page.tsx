@@ -20,7 +20,7 @@ const Saiba = () => {
             <div className="relative z-20 flex h-full w-screen items-center">
               <div className="absolute inset-0 -z-10">
                 <Image
-                  src="/banner_saiBamais.jpg"
+                  src="/banner_saibamais.jpg"
                   alt="banner"
                   fill
                   className="object-cover"
