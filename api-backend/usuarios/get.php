@@ -15,7 +15,7 @@ try {
         // Preparar a sintaxe SQL
         $stmt = $conn->prepare($sql);
         // Vincular o parâmetro :id com o valor da variável $id
-        $stmt->bindParam(':id_usuario', $id, PDO::PARAM_INT);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
     }
 
 
@@ -83,47 +83,47 @@ try {
 exit;
 
 
-// VERIFICAR SE O ID FOI PASSADO NA URL E SE É UM NÚMERO
-if (isset($_GET["id_usuario"]) && is_numeric($_GET["id_usuario"])) {
-    $id = $_GET["id_usuario"];
-    // BUSCAR O produto COM O ID PASSADO NA URL
-    $found = false;
-    foreach ($data as $usuarios) {
-        if ($nome->id == $id) {
-            $data = $usuarios;
-            $found = true;
-            break;
-        }
-    }
-    // SE O usuario NÃO FOI ENCONTRADO, RETORNAR UM ERRO
-    // $data = $found ? $data : null;
-    if(!$found) {
-        http_response_code(204);
-    }
-} elseif (isset($_GET["nome"]) && is_string($_GET["nome"])) {
-    $nome = $_GET["nome"];
-    $result = array();
-    // BUSCAR O nome COM O ID PASSADO NA URL
-    $found = false;
-    foreach ($data as $usuarios) {
-        if (stripos($usuarios->nome, $nome) !== false) {
-            $result[] = $usuarios;
-            $found = true;
-        }
-    }
-    // SE O nome NÃO FOI ENCONTRADO, RETORNAR UM ERRO
-    // $data = $found ? $data : null;
-    if(!$found) {
-        http_response_code(204);
-    } else {
-        $data = $result;
-    }
-}
+// // VERIFICAR SE O ID FOI PASSADO NA URL E SE É UM NÚMERO
+// if (isset($_GET["id_usuario"]) && is_numeric($_GET["id_usuario"])) {
+//     $id = $_GET["id_usuario"];
+//     // BUSCAR O produto COM O ID PASSADO NA URL
+//     $found = false;
+//     foreach ($data as $usuarios) {
+//         if ($nome->id == $id) {
+//             $data = $usuarios;
+//             $found = true;
+//             break;
+//         }
+//     }
+//     // SE O usuario NÃO FOI ENCONTRADO, RETORNAR UM ERRO
+//     // $data = $found ? $data : null;
+//     if(!$found) {
+//         http_response_code(204);
+//     }
+// } elseif (isset($_GET["nome"]) && is_string($_GET["nome"])) {
+//     $nome = $_GET["nome"];
+//     $result = array();
+//     // BUSCAR O nome COM O ID PASSADO NA URL
+//     $found = false;
+//     foreach ($data as $usuarios) {
+//         if (stripos($usuarios->nome, $nome) !== false) {
+//             $result[] = $usuarios;
+//             $found = true;
+//         }
+//     }
+//     // SE O nome NÃO FOI ENCONTRADO, RETORNAR UM ERRO
+//     // $data = $found ? $data : null;
+//     if(!$found) {
+//         http_response_code(204);
+//     } else {
+//         $data = $result;
+//     }
+// }
 
-echo json_encode(
-    array(
-        'status' => 'success',
-        'message' => 'GET method called',
-        'data' => $data
-    )
-);
+// echo json_encode(
+//     array(
+//         'status' => 'success',
+//         'message' => 'GET method called',
+//         'data' => $data
+//     )
+// );

@@ -31,13 +31,13 @@ try {
             email = :email,
             senha = :senha,
             tipo_usuario = :tipo_usuario
-            WHERE id_usuario = :id_usuario
+            WHERE id_usuario = :id
         ";
         // $sql = "UPDATE usuarios SET nome = :nome, email = :email, senha = :senha, tipo_usuario = :tipo_usuario WHERE id = :id";
 
         // Supondo que $conn já está definido e conectado ao banco de dados
         $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':id_usuario', $id, PDO::PARAM_INT);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->bindParam(':nome', $nome, PDO::PARAM_STR);
         $stmt->bindParam(':email', $email, is_null($email) ? PDO::PARAM_NULL : PDO::PARAM_STR);
         $stmt->bindParam(':senha', $senha, is_null($senha) ? PDO::PARAM_NULL : PDO::PARAM_STR);

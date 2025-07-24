@@ -8,17 +8,13 @@ $pagina = "games";
 if (isset($_GET["key"])) {
     $key = $_GET["key"];
     require("../requests/games/get.php");
-    if (isset($response["data"]) && !empty($response["data"])) {
-        $games = $response["data"][0];
-    } else {
-        $games = null; 
-    }
+    $games = (isset($response["data"]) && !empty($response["data"])) ? $response["data"][0] : null;
 }
-$key = null;
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,6 +23,7 @@ $key = null;
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://cdn.datatables.net/2.3.2/css/dataTables.dataTables.min.css" rel="stylesheet">
 </head>
+
 <body>
     <?php
     include "../mensagens.php";
@@ -62,8 +59,8 @@ $key = null;
                                 //limpar a variável $key para trazer todos os jogos
                                 $key = null;
                                 require("../requests/games/get.php");
-                                if(!empty($response)) {
-                                    foreach($response["data"] as $key => $games) {
+                                if(!empty($response) && !empty($response["data"])) {
+                                    foreach($response["data"] as $games) {
                                         echo '
                                         <tr>
                                             <th scope="row">'.$games["id_game"].'</th>
@@ -87,6 +84,7 @@ $key = null;
                                     </tr>
                                     ';
                                 }
+                               
                                 ?>
                             </tbody>
                         </table>
@@ -103,10 +101,11 @@ $key = null;
     <!-- jQuery Mask Plugin -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 
-    
-    
 
-</script>
+
+
+    </script>
 
 </body>
+
 </html>

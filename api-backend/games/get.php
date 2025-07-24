@@ -2,20 +2,20 @@
 try {
 
     // Verifica se há um ID na URL para consulta específica
-    if(isset($_GET["id_game"]) && is_numeric($_GET["idgame"])) {
+    if(isset($_GET["id_game"]) && is_numeric($_GET["id_game"])) {
         $id = $_GET["id_game"];
 
         // Monta a sintaxe SQL de busca
         $sql = "
             SELECT * 
             FROM games
-            WHERE id = :id
+            WHERE id_game = :id
         ";
 
         // Preparar a sintaxe SQL
         $stmt = $conn->prepare($sql);
         // Vincular o parâmetro :id com o valor da variável $id
-        $stmt->bindParam(':id_game', $id, PDO::PARAM_INT);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
     }
 
 
@@ -113,47 +113,47 @@ try {
 exit;
 
 
-// VERIFICAR SE O ID FOI PASSADO NA URL E SE É UM NÚMERO
-if (isset($_GET["id_game"]) && is_numeric($_GET["id_game"])) {
-    $id = $_GET["id_game"];
-    // BUSCAR O jogo COM O ID PASSADO NA URL
-    $found = false;
-    foreach ($data as $games) {
-        if ($games->id == $id) {
-            $data = $games;
-            $found = true;
-            break;
-        }
-    }
-    // SE O Jogo NÃO FOI ENCONTRADO, RETORNAR UM ERRO
-    // $data = $found ? $data : null;
-    if(!$found) {
-        http_response_code(204);
-    }
-} elseif (isset($_GET["titulo"]) && is_string($_GET["titulo"])) {
-    $titulo = $_GET["titulo"];
-    $result = array();
-    // BUSCAR O titulo COM O ID PASSADO NA URL
-    $found = false;
-    foreach ($data as $games) {
-        if (stripos($games->titulo, $titulo) !== false) {
-            $result[] = $games;
-            $found = true;
-        }
-    }
-    // SE O titulo NÃO FOI ENCONTRADO, RETORNAR UM ERRO
-    // $data = $found ? $data : null;
-    if(!$found) {
-        http_response_code(204);
-    } else {
-        $data = $result;
-    }
-}
+// // VERIFICAR SE O ID FOI PASSADO NA URL E SE É UM NÚMERO
+// if (isset($_GET["id_game"]) && is_numeric($_GET["id_game"])) {
+//     $id = $_GET["id_game"];
+//     // BUSCAR O jogo COM O ID PASSADO NA URL
+//     $found = false;
+//     foreach ($data as $games) {
+//         if ($games->id == $id) {
+//             $data = $games;
+//             $found = true;
+//             break;
+//         }
+//     }
+//     // SE O Jogo NÃO FOI ENCONTRADO, RETORNAR UM ERRO
+//     // $data = $found ? $data : null;
+//     if(!$found) {
+//         http_response_code(204);
+//     }
+// } elseif (isset($_GET["titulo"]) && is_string($_GET["titulo"])) {
+//     $titulo = $_GET["titulo"];
+//     $result = array();
+//     // BUSCAR O titulo COM O ID PASSADO NA URL
+//     $found = false;
+//     foreach ($data as $games) {
+//         if (stripos($games->titulo, $titulo) !== false) {
+//             $result[] = $games;
+//             $found = true;
+//         }
+//     }
+//     // SE O titulo NÃO FOI ENCONTRADO, RETORNAR UM ERRO
+//     // $data = $found ? $data : null;
+//     if(!$found) {
+//         http_response_code(204);
+//     } else {
+//         $data = $result;
+//     }
+// }
 
-echo json_encode(
-    array(
-        'status' => 'success',
-        'message' => 'GET method called',
-        'data' => $data
-    )
-);
+// echo json_encode(
+//     array(
+//         'status' => 'success',
+//         'message' => 'GET method called',
+//         'data' => $data
+//     )
+// );

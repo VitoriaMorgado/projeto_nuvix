@@ -1,7 +1,15 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { Menu, X, User, Search, LogOut, Settings, ShoppingCart } from "lucide-react";
+import {
+  Menu,
+  X,
+  User,
+  Search,
+  LogOut,
+  Settings,
+  ShoppingCart,
+} from "lucide-react";
 import Link from "next/link";
 
 const NavBarp = () => {
@@ -11,26 +19,24 @@ const NavBarp = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [showCart, setShowCart] = useState(false);
   const [cartItems] = useState([
-
-  //LINKAR COM O BANCO DE DADOS
-    { 
-      id: 1, 
-      name: "Cyberpunk 2077", 
-      price: 89.99, 
+    //LINKAR COM O BANCO DE DADOS
+    {
+      id: 1,
+      name: "Cyberpunk 2077",
+      price: 89.99,
       quantity: 1,
     },
-    { 
-      id: 2, 
-      name: "Minecraft", 
-      price: 99.99, 
+    {
+      id: 2,
+      name: "Minecraft",
+      price: 99.99,
       quantity: 1,
     },
-    { 
-      id: 3, 
+    {
+      id: 3,
       name: "The Legend of Zelda: Breath of the Wild",
-      price: 79.99, 
+      price: 79.99,
       quantity: 1,
-
     },
   ]);
 
@@ -41,7 +47,6 @@ const NavBarp = () => {
   const navItems = [
     { name: "Início", href: "/" },
     { name: "Catálogo", href: "/catalogo" },
-    { name: "Jogos", href: "/jogo" },
     { name: "Novidades", href: "/novidades" },
     { name: "Suporte", href: "/suporte" },
   ];
@@ -64,10 +69,11 @@ const NavBarp = () => {
     }
   };
 
-
-
   const getTotalPrice = () => {
-    return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+    return cartItems.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0,
+    );
   };
 
   const getTotalItems = () => {
@@ -88,10 +94,7 @@ const NavBarp = () => {
       ) {
         setShowSearch(false);
       }
-      if (
-        cartRef.current &&
-        !cartRef.current.contains(event.target as Node)
-      ) {
+      if (cartRef.current && !cartRef.current.contains(event.target as Node)) {
         setShowCart(false);
       }
     };
@@ -137,7 +140,7 @@ const NavBarp = () => {
             <div className="hidden items-center space-x-2 md:flex">
               {/* Search Button */}
               <div className="relative" ref={searchRef}>
-                <button 
+                <button
                   onClick={() => setShowSearch(!showSearch)}
                   className="group rounded-lg p-2 text-[#F6F7F8] transition-all duration-300 hover:bg-[#019EC2]/10 hover:text-[#019EC2]"
                 >
@@ -191,7 +194,8 @@ const NavBarp = () => {
                   <div className="absolute right-0 top-12 w-96 overflow-hidden rounded-xl border border-[#019EC2]/20 bg-black/95 shadow-2xl backdrop-blur-xl">
                     <div className="border-b border-[#019EC2]/20 p-4">
                       <h3 className="font-semibold text-[#F6F7F8]">
-                        Carrinho ({getTotalItems()} {getTotalItems() === 1 ? 'item' : 'itens'})
+                        Carrinho ({getTotalItems()}{" "}
+                        {getTotalItems() === 1 ? "item" : "itens"})
                       </h3>
                     </div>
 
@@ -199,24 +203,37 @@ const NavBarp = () => {
                       {cartItems.length === 0 ? (
                         <div className="p-6 text-center">
                           <ShoppingCart className="mx-auto h-12 w-12 text-gray-400" />
-                          <p className="mt-2 text-gray-400">Seu carrinho está vazio</p>
+                          <p className="mt-2 text-gray-400">
+                            Seu carrinho está vazio
+                          </p>
                         </div>
                       ) : (
                         <div className="space-y-2 p-2">
                           {cartItems.slice(0, 3).map((item) => (
-                            <div key={item.id} className="flex items-center justify-between rounded-lg border border-[#019EC2]/10 p-3">
+                            <div
+                              key={item.id}
+                              className="flex items-center justify-between rounded-lg border border-[#019EC2]/10 p-3"
+                            >
                               <div className="flex-1">
-                                <h4 className="font-medium text-[#F6F7F8]">{item.name}</h4>
-                                <p className="text-sm text-gray-400">R$ {item.price.toFixed(2)} x {item.quantity}</p>
+                                <h4 className="font-medium text-[#F6F7F8]">
+                                  {item.name}
+                                </h4>
+                                <p className="text-sm text-gray-400">
+                                  R$ {item.price.toFixed(2)} x {item.quantity}
+                                </p>
                               </div>
                               <div className="text-right">
-                                <p className="font-medium text-[#F6F7F8]">R$ {(item.price * item.quantity).toFixed(2)}</p>
+                                <p className="font-medium text-[#F6F7F8]">
+                                  R$ {(item.price * item.quantity).toFixed(2)}
+                                </p>
                               </div>
                             </div>
                           ))}
                           {cartItems.length > 3 && (
                             <div className="p-2 text-center">
-                              <p className="text-sm text-gray-400">+{cartItems.length - 3} outros itens</p>
+                              <p className="text-sm text-gray-400">
+                                +{cartItems.length - 3} outros itens
+                              </p>
                             </div>
                           )}
                         </div>
@@ -333,7 +350,7 @@ const NavBarp = () => {
               ))}
 
               <div className="mt-2 flex items-center justify-between border-t border-[#019EC2]/20 px-4 py-2">
-                <button 
+                <button
                   onClick={() => setShowSearch(!showSearch)}
                   className="rounded-lg p-2 text-[#F6F7F8] transition-all duration-300 hover:bg-[#019EC2]/10 hover:text-[#019EC2]"
                 >

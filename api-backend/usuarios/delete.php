@@ -2,12 +2,12 @@
 
 try {
     // Verificar se está vindo ID na URL
-    if (isset($_GET['id_usuario']) && is_numeric($_GET['id_usuario'])) {
-        $id = $_GET['id_usuario'];
+    if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+        $id = $_GET['id'];
         
         $sql = "
         DELETE FROM usuarios 
-        WHERE id_usuario = :id_usuario
+        WHERE id_usuario = :id
         ";
 
         $stmt = $conn->prepare($sql);

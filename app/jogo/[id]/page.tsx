@@ -4,18 +4,25 @@ import {
   Download,
   Calendar,
   Users,
-  Zap,
-  Target,
-  Award,
+  // Zap,
+  // Target,
+  // Award,
+  Star,
+  // Clock,
+  // GamepadIcon,
+  Volume2,
+  Maximize,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import Image from "next/image";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+// import {
+//   Carousel,
+//   CarouselContent,
+//   CarouselItem,
+//   CarouselNext,
+//   CarouselPrevious,
+// } from "@/components/ui/carousel";
 import Link from "next/link";
 import { IGames } from "@/app/interface/IGames";
 import { useParams } from "next/navigation";
@@ -27,6 +34,8 @@ const JogoCard = () => {
   const { id } = params || {};
   const [games, setGames] = useState<IGames | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [selectedImage, setSelectedImage] =
+    useState<string>("/notfound(3).png");
 
   useEffect(() => {
     const loadGame = async () => {
@@ -42,204 +51,193 @@ const JogoCard = () => {
     loadGame();
   }, [id]);
 
+  const gameImages = [
+    "/notfound(3).png",
+    "/notfound(2).png",
+    "/notfound(1).png",
+    "/notfound(4).jpg",
+    "/notfound.jpeg",
+  ];
+
   return (
-    <>
-      <div className="mt-[2%] min-h-screen bg-gradient-to-br from-[#02030a] to-[#0E304A] text-white">
-        {/* Particles Background Effect */}
-        <div className="pointer-events-none fixed inset-0 overflow-hidden"></div>
-
-        {/* Hero Section */}
-        <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-b from-[#02030a] to-[#0E304A]"></div>
-
-          {/* Navigation */}
-
-          {/* Game Title Section */}
-          <div className="relative z-10 px-6 py-12">
-            <div className="mx-auto max-w-7xl">
-              <div className="mb-4 flex items-center space-x-4">
-                <div className="flex items-center space-x-2">
-                  <span className="font-semibold text-yellow-400">
-                    avaliação
-                  </span>
-                </div>
-                <div className="rounded-full from-[#02030a] to-[#0E304A] px-3 py-1 text-sm font-semibold">
-                  {/* {jogoSelecionado.genre} */}
-                </div>
-              </div>
-
-              <h1 className="mb-6 bg-gradient-to-r from-white via-cyan-200 to-purple-200 bg-clip-text text-6xl font-black leading-tight text-transparent">
-                {games?.titulo}
-              </h1>
-
-              <div className="flex flex-wrap items-center gap-6 text-gray-300">
-                <div className="flex items-center space-x-2">
-                  <Users className="h-5 w-5 text-cyan-400" />
-                  {/* <span>{jogoSelecionado.players}</span> */}
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Calendar className="h-5 w-5 text-cyan-400" />
-                  {/* <span>{jogoSelecionado.releaseDate}</span> */}
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Download className="h-5 w-5 text-cyan-400" />
-                  {/* <span>{jogoSelecionado.size}</span> */}
-                </div>
-              </div>
-              <div className="mt-5"></div>
-            </div>
-          </div>
-
-          {/* Main Content */}
-          <div className="relative z-10 mx-auto max-w-7xl px-6 pb-16">
-            <div className="grid gap-8 lg:grid-cols-3">
-              {/* Media Section */}
-              <div className="space-y-6 lg:col-span-2">
-                {/* Main Video/Image Display */}
-                <div className="group relative">
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#02030a] to-cyan-500 opacity-20 blur transition-opacity duration-300 group-hover:opacity-40"></div>
-                  <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black/40 backdrop-blur-sm">
-                    <Image
-                      src="/imagemjogo.png"
-                      width={800}
-                      height={450}
-                      alt="Game Cover"
-                      className="w-full rounded-2xl border border-white/10 shadow-2xl"
-                    />
-                  </div>
-                </div>
-
-                {/* Thumbnail Gallery */}
-                <div className="relative">
-                  <Carousel opts={{ align: "start", loop: true }}>
-                    <CarouselContent>
-                      <CarouselItem className="md:basis-1/4">
-                        <Image
-                          src="/imagemjogo.png"
-                          width={220}
-                          height={140}
-                          alt=""
-                          className="rounded-md border border-[#232B3F]"
-                        />
-                      </CarouselItem>
-                      <CarouselItem className="md:basis-1/4">
-                        <Image
-                          src="/imagemjogo.png"
-                          width={220}
-                          height={140}
-                          alt=""
-                          className="rounded-md border border-[#232B3F]"
-                        />
-                      </CarouselItem>
-                      <CarouselItem className="md:basis-1/4">
-                        <Image
-                          src="/imagemjogo.png"
-                          width={220}
-                          height={140}
-                          alt=""
-                          className="rounded-md border border-[#232B3F]"
-                        />
-                      </CarouselItem>
-                      <CarouselItem className="md:basis-1/4">
-                        <Image
-                          src="/imagemjogo.png"
-                          width={220}
-                          height={140}
-                          alt=""
-                          className="rounded-md border border-[#232B3F]"
-                        />
-                      </CarouselItem>
-                      <CarouselItem className="md:basis-1/4">
-                        <Image
-                          src="/imagemjogo.png"
-                          width={220}
-                          height={140}
-                          alt=""
-                          className="rounded-md border border-[#232B3F]"
-                        />
-                      </CarouselItem>
-                      <CarouselItem className="md:basis-1/4">
-                        <Image
-                          src="/imagemjogo.png"
-                          width={220}
-                          height={140}
-                          alt=""
-                          className="rounded-md border border-[#232B3F]"
-                        />
-                      </CarouselItem>
-                    </CarouselContent>
-                    <CarouselPrevious className="ml-2 text-black" />
-                    <CarouselNext className="mr-2 text-black" />
-                  </Carousel>
-                </div>
-              </div>
-
-              {/* Game Info Sidebar */}
-              <div className="space-y-6">
-                {/* Game Cover */}
-                <div className="group relative">
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#02030a] to-cyan-500 opacity-20 blur transition-opacity duration-300 group-hover:opacity-40"></div>
-                  <div className="relative">
-                    <Image
-                      src={`http://localhost:8081/games/imagens/${
-                        games?.imagem || "default.jpg"
-                      }`}
-                      width={500}
-                      height={300}
-                      alt="Game Cover"
-                      className="w-full rounded-2xl border border-white/10 shadow-2xl"
-                    />
-                  </div>
-                </div>
-
-                {/* Game Description */}
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-                  <h3 className="mb-4 text-xl font-bold text-cyan-400">
-                    Sobre o Jogo
-                  </h3>
-                  <p className="mb-6 leading-relaxed text-gray-300">
-                    {games?.descricao}
-                  </p>
-
-                  {/* Game Features */}
-                  <div className="mb-6 space-y-3">
-                    <div className="flex items-center space-x-3">
-                      <Zap className="h-5 w-5 text-yellow-400" />
-                      <span className="text-sm">Ação em tempo real</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Target className="h-5 w-5 text-green-400" />
-                      <span className="text-sm">Sistema de progressão</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Award className="h-5 w-5 text-purple-400" />
-                      <span className="text-sm">Conquistas desbloqueáveis</span>
-                    </div>
-                  </div>
-
-                  {/* Play Button */}
-                  <Link
-                    href="/resgate_chave"
-                    className="flex items-center space-x-2"
-                  >
-                    <button className="w-full transform rounded-xl bg-cyan-500 px-6 py-4 font-bold text-white transition-all duration-300 hover:scale-105">
-                      <div className="flex items-center justify-center space-x-2">
-                        <Play className="h-5 w-5" fill="currentColor" />
-
-                        <span>Jogar Agora</span>
-                      </div>
-                    </button>
-                  </Link>
-                </div>
-                {error && <p className="mt-2 text-red-500">{error}</p>}
-              </div>
-            </div>
-          </div>
+    <div className="min-h-screen bg-[#0B1426] pb-12 text-white">
+      {/* Header com rating */}
+      <div className="container mx-auto px-6 pt-8">
+        <div className="mb-4 flex items-center space-x-2">
+          {[...Array(4)].map((_, i) => (
+            <Star key={i} className="h-5 w-5 fill-current text-yellow-400" />
+          ))}
+          <Star className="h-5 w-5 text-gray-600" />
+          <span className="ml-2 font-semibold text-yellow-400">4.8</span>
         </div>
 
-        {/* More Games Section */}
+        {/* Título Principal */}
+        <h1 className="mb-8 text-4xl font-bold text-white md:text-5xl lg:text-6xl">
+          {games?.titulo || "God of War Ragnarök"}
+        </h1>
+
+        {/* Ícones de informações */}
+        <div className="mb-12 flex items-center space-x-4 text-gray-400">
+          <Users className="h-5 w-5" />
+          <Calendar className="h-5 w-5" />
+          <Download className="h-5 w-5" />
+          <span className="text-sm">•••</span>
+        </div>
       </div>
-    </>
+
+      {/* Layout Principal */}
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          {/* Coluna Principal - Player e Thumbnails */}
+          <div className="space-y-6 lg:col-span-2">
+            {/* Player Principal */}
+            <div className="group relative">
+              <div className="relative h-[400px] w-full overflow-hidden rounded-2xl border border-gray-700 bg-black md:h-[500px]">
+                <Image
+                  src={selectedImage}
+                  alt="Game Screenshot"
+                  fill
+                  className="object-cover"
+                />
+
+                {/* Overlay do Player */}
+                <div className="absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <button className="rounded-full bg-white/20 p-4 backdrop-blur-sm transition-all duration-300 hover:bg-white/30">
+                      <Play className="h-8 w-8 fill-current text-white" />
+                    </button>
+                  </div>
+                </div>
+
+                {/* Texto overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
+                  <div className="absolute bottom-8 left-8 right-8">
+                    <h2 className="mb-2 text-2xl font-bold text-white md:text-3xl">
+                      A HALLMARK OF EXCELLENCE
+                    </h2>
+                    <p className="text-lg text-gray-300">DESTRUCTOID</p>
+                  </div>
+                </div>
+
+                {/* Controles do Player */}
+                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <div className="flex items-center space-x-4">
+                    <button>
+                      <Play className="h-5 w-5" />
+                    </button>
+                    <span className="text-sm">0:00 / 0:30</span>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <button>
+                      <Volume2 className="h-5 w-5" />
+                    </button>
+                    <button>
+                      <Maximize className="h-5 w-5" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Thumbnails Gallery */}
+            <div className="relative">
+              <div className="flex items-center space-x-4">
+                <button className="rounded-full bg-gray-800 p-2 transition-colors hover:bg-gray-700">
+                  <ChevronLeft className="h-5 w-5" />
+                </button>
+
+                <div className="flex flex-1 space-x-4 overflow-hidden">
+                  {gameImages.map((src, index) => (
+                    <div
+                      key={index}
+                      className={`relative flex-shrink-0 cursor-pointer transition-all duration-300 ${
+                        selectedImage === src ? "ring-2 ring-[#019EC2]" : ""
+                      }`}
+                      onClick={() => setSelectedImage(src)}
+                    >
+                      <Image
+                        src={src}
+                        width={120}
+                        height={80}
+                        alt={`Thumbnail ${index + 1}`}
+                        className={`rounded-lg object-cover transition-all duration-300 ${
+                          selectedImage === src
+                            ? "scale-105 opacity-100"
+                            : "opacity-70 hover:opacity-100"
+                        }`}
+                      />
+                    </div>
+                  ))}
+                </div>
+
+                <button className="rounded-full bg-gray-800 p-2 transition-colors hover:bg-gray-700">
+                  <ChevronRight className="h-5 w-5" />
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Sidebar - Informações do Jogo */}
+          <div className="space-y-6">
+            {/* Game Cover */}
+            <div className="relative">
+              <Image
+                src={`http://localhost:8081/games/imagens/${
+                  games?.imagem || "default.jpg"
+                }`}
+                width={400}
+                height={240}
+                alt="Game Cover"
+                className="h-60 w-full rounded-2xl object-cover"
+              />
+            </div>
+
+            {/* Sobre o Jogo */}
+            <div className="rounded-2xl border border-gray-700 bg-[#1A2332] p-6">
+              <h3 className="mb-4 text-xl font-bold text-[#019EC2]">
+                Sobre o Jogo
+              </h3>
+              <p className="mb-6 text-sm leading-relaxed text-gray-300">
+                {games?.descricao ||
+                  "God of War Ragnarök segue Kratos e seu filho Atreus enquanto se preparam para o iminente Ragnarök. Juntos, pai e filho devem aventurar-se pelos Nove Reinos em busca de respostas enquanto as forças Asgard se preparam para a batalha profetizada que encerrará o mundo. Ao longo da jornada, eles vão explorar paisagens míticas deslumbrantes, enfrentar seus destinos, enquanto Atreus busca entender seu papel como Loki."}
+              </p>
+
+              {/* Características */}
+              <div className="mb-6 space-y-3">
+                <div className="flex items-center space-x-3 text-sm">
+                  <div className="h-2 w-2 rounded-full bg-green-400"></div>
+                  <span className="text-gray-300">Ação em tempo real</span>
+                </div>
+                <div className="flex items-center space-x-3 text-sm">
+                  <div className="h-2 w-2 rounded-full bg-blue-400"></div>
+                  <span className="text-gray-300">Sistema de progressão</span>
+                </div>
+                <div className="flex items-center space-x-3 text-sm">
+                  <div className="h-2 w-2 rounded-full bg-purple-400"></div>
+                  <span className="text-gray-300">
+                    Conquistas desbloqueáveis
+                  </span>
+                </div>
+              </div>
+
+              {/* Botão Jogar */}
+              <Link href="/resgate_chave">
+                <button className="flex w-full items-center justify-center space-x-2 rounded-xl bg-[#019EC2] px-6 py-4 font-bold text-white transition-all duration-300 hover:bg-[#017A9B]">
+                  <Play className="h-5 w-5 fill-current" />
+                  <span>Jogar Agora</span>
+                </button>
+              </Link>
+            </div>
+
+            {error && (
+              <div className="rounded-xl border border-red-500/30 bg-red-500/20 p-4">
+                <p className="text-sm text-red-400">{error}</p>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

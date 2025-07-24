@@ -2,16 +2,16 @@
 
 try {
     // Verificar se está vindo ID na URL
-    if (isset($_GET['id_game']) && is_numeric($_GET['id_game'])) {
+    if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         $id = $_GET['id'];
         
         $sql = "
         DELETE FROM games 
-        WHERE id_game = :id_game
+        WHERE id_game = :id
         ";
 
         $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':id_game', $id, PDO::PARAM_INT);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
         
     } else {

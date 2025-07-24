@@ -34,11 +34,11 @@ try {
         data_lancamento = :data_lancamento,
         categoria = :categoria,
         imagem = :imagem
-        WHERE id_game = :id_game
+        WHERE id_game = :id
         ";
 
         $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':id_game', $id, PDO::PARAM_INT);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->bindParam(':titulo', $titulo, PDO::PARAM_STR);
         $stmt->bindParam(':descricao', $descricao, PDO::PARAM_STR);
         $stmt->bindParam(':desenvolvedora', $desenvolvedora, PDO::PARAM_STR);

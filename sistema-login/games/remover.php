@@ -1,27 +1,65 @@
 <?php
-
 // CHAMA O ARQUIVO ABAIXO NESTA TELA
 include "../verificar-autenticacao.php";
 
-if(isset($_GET["key"])) {
-    $key = $_GET["key"];
-
+try {
+    // Verificar se a key foi fornecida
+    if (!isset($_GET["key"]) || empty($_GET["key"])) {
+        throw new Exception("ID do jogo não foi fornecido.");
+    }
     
-    // EXCLUIR IMAGEM DO ITEM
-    // if (file_exists("imagens/" . $_SESSION["clientes"][$key]["clientImage"])) {
-    //     unlink("imagens/" . $_SESSION["clientes"][$key]["clientImage"]);
-    // }
-
-
-    // // UNSET = REMOVE UM ITEM DE UM ARRAY
-    // unset($_SESSION["clientes"][$key]);
-    // // ARRAY_VALUES = REORGANIZA OS ÍNDICES DO ARRAY
-    // $_SESSION["clientes"] = array_values($_SESSION["clientes"]);
-    // $_SESSION["msg"] = "Jogo removido com sucesso!";
+    $key = $_GET["key"];
+    
+    // Verificar se a key é um número válido
+    if (!is_numeric($key)) {
+        throw new Exception("ID do jogo deve ser um número válido.");
+    }
+    
+    // Antes de excluir, vamos buscar os dados do jogo para pegar a imagem
+    require("../requests/games/get.php");
+    $game_to_delete = null;
+    
+    if (isset($response["data"]) && !empty($response["data"])) {
+        if (is_array($response["data"]) && count($response["data"]) > 0) {
+            // Procurar o jogo com o ID correto
+            foreach ($response["data"] as $game) {
+                if ($game["id_game"] == $key) {
+                    $game_to_delete = $game;
+                    break;
+                }
+            }
+            
+            // Se não encontrou pelo loop, pegar o primeiro (caso a API já filtre)
+            if ($game_to_delete === null && count($response["data"]) == 1) {
+                $game_to_delete = $response["data"][0];
+            }
+        } else if (isset($response["data"]["id_game"])) {
+            $game_to_delete = $response["data"];
+        }
+    }
+    
+    // Agora fazer o DELETE
     require("../requests/games/delete.php");
-    $_SESSION["msg"] = $response["message"];
-
-
+    
+    // Se a exclusão foi bem-sucedida e havia uma imagem, excluir o arquivo
+    if (isset($response["success"]) && $response["success"] && $game_to_delete && isset($game_to_delete["imagem"]) && !empty($game_to_delete["imagem"])) {
+        $arquivo_imagem = "imagens/" . $game_to_delete["imagem"];
+        if (file_exists($arquivo_imagem)) {
+            unlink($arquivo_imagem);
+        }
+    }
+    
+    // Definir mensagem de sucesso/erro
+    if (isset($response["message"])) {
+        $_SESSION["msg"] = $response["message"];
+    } else {
+        $_SESSION["msg"] = "Jogo excluído com sucesso!";
+    }
+    
+} catch (Exception $e) {
+    $_SESSION["msg"] = "Erro: " . $e->getMessage();
+} finally {
+    header("Location: ./");
+    exit();
 }
-header("Location: ./");
-exit;
+?>
