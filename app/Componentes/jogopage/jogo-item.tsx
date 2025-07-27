@@ -1,7 +1,6 @@
 "use client";
 import {
   Play,
-  Star,
   Download,
   Calendar,
   Users,
@@ -9,7 +8,7 @@ import {
   Target,
   Award,
 } from "lucide-react";
-import Image from "next/image";
+
 import {
   Carousel,
   CarouselContent,
@@ -56,14 +55,8 @@ const JogoCard = ({ games }: GameItemProps) => {
             <div className="mx-auto max-w-7xl">
               <div className="mb-4 flex items-center space-x-4">
                 <div className="flex items-center space-x-2">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className={`h-5 w-5 ${i < Math.floor(games.rating) ? "fill-current text-yellow-400" : "text-gray-400"}`}
-                    />
-                  ))}
                   <span className="font-semibold text-yellow-400">
-                    {games.rating}
+                    avaliação
                   </span>
                 </div>
                 <div className="rounded-full from-[#02030a] to-[#0E304A] px-3 py-1 text-sm font-semibold">
@@ -72,7 +65,7 @@ const JogoCard = ({ games }: GameItemProps) => {
               </div>
 
               <h1 className="mb-6 bg-gradient-to-r from-white via-cyan-200 to-purple-200 bg-clip-text text-6xl font-black leading-tight text-transparent">
-                {games.nome}
+                {games.titulo}
               </h1>
 
               <div className="flex flex-wrap items-center gap-6 text-gray-300">
@@ -102,12 +95,7 @@ const JogoCard = ({ games }: GameItemProps) => {
                 <div className="group relative">
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#02030a] to-cyan-500 opacity-20 blur transition-opacity duration-300 group-hover:opacity-40"></div>
                   <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black/40 backdrop-blur-sm">
-                    <video
-                      src={games.video}
-                      className="aspect-video w-full object-cover"
-                      controls
-                      autoPlay
-                    />
+                    video
                   </div>
                 </div>
 
@@ -115,17 +103,9 @@ const JogoCard = ({ games }: GameItemProps) => {
                 <div className="relative">
                   <Carousel opts={{ align: "start", loop: true }}>
                     <CarouselContent>
-                      {games.imagens.map((imgSrc, index) => (
-                        <CarouselItem key={index} className="md:basis-1/4">
-                          <Image
-                            src={imgSrc}
-                            width={220}
-                            height={140}
-                            alt={`Imagem ${index + 1} do jogo`}
-                            className="rounded-md border border-[#232B3F]"
-                          />
-                        </CarouselItem>
-                      ))}
+                      <CarouselItem className="md:basis-1/4">
+                        Imagem
+                      </CarouselItem>
                     </CarouselContent>
                     <CarouselPrevious className="ml-2 text-black" />
                     <CarouselNext className="mr-2 text-black" />
@@ -138,15 +118,7 @@ const JogoCard = ({ games }: GameItemProps) => {
                 {/* Game Cover */}
                 <div className="group relative">
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#02030a] to-cyan-500 opacity-20 blur transition-opacity duration-300 group-hover:opacity-40"></div>
-                  <div className="relative">
-                    <Image
-                      src={games.capa}
-                      width={500}
-                      height={300}
-                      alt="Game Cover"
-                      className="w-full rounded-2xl border border-white/10 shadow-2xl"
-                    />
-                  </div>
+                  <div className="relative">Imagem</div>
                 </div>
 
                 {/* Game Description */}
